@@ -19,8 +19,7 @@ export function ScrollDown() {
   const handleClick = () => window.scrollBy(0, window.innerHeight);
 
   const [display, setDisplay] = useState("block");
-  const handleScroll = () =>
-    setDisplay(window.scrollY === 0 ? "block" : "none");
+  const handleScroll = () => setDisplay(window.scrollY < 80 ? "block" : "none");
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);

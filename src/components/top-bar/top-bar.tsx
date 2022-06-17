@@ -1,18 +1,9 @@
 import { Box, Flex, Hide, Show, Spacer } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import { Logo } from "./logo";
 import { NavHorizontal, NavVertical } from "./nav";
 import { ToolkitHorizontal, ToolkitVertical } from "./toolkit";
 
 export function TopBar() {
-  // Compress top bar if not on page top.
-  const [py, setPy] = useState("16px");
-  const togglePy = () => setPy(window.scrollY < 100 ? "16px" : "8px");
-  useEffect(() => {
-    window.addEventListener("scroll", togglePy);
-    return () => window.removeEventListener("scroll", togglePy);
-  }, []);
-
   return (
     <Flex
       as="header"
@@ -22,7 +13,7 @@ export function TopBar() {
       left="0"
       right="0"
       px="32px"
-      py={py}
+      py="16px"
       gap="20px"
       zIndex="9999"
       transition="ease 0.2s"
