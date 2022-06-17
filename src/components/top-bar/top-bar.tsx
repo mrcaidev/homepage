@@ -7,7 +7,7 @@ import { ToolkitHorizontal, ToolkitVertical } from "./toolkit";
 export function TopBar() {
   // Compress top bar if not on page top.
   const [py, setPy] = useState("16px");
-  const togglePy = () => setPy(window.scrollY === 0 ? "16px" : "4px");
+  const togglePy = () => setPy(window.scrollY < 100 ? "16px" : "8px");
   useEffect(() => {
     window.addEventListener("scroll", togglePy);
     return () => window.removeEventListener("scroll", togglePy);
@@ -21,7 +21,7 @@ export function TopBar() {
       top="0"
       left="0"
       right="0"
-      px="48px"
+      px="32px"
       py={py}
       gap="20px"
       zIndex="9999"

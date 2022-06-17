@@ -7,8 +7,8 @@ export function ViewOnGithub() {
 
   return (
     <NextLink href="https://github.com/mrcaidev/home" passHref>
-      <Link isExternal p="8px 9px 0" rounded="md" _hover={{ bg }}>
-        <Icon as={FaGithub} boxSize="22px" />
+      <Link isExternal p="8px 8px 0" rounded="md" _hover={{ bg }}>
+        <Icon as={FaGithub} boxSize="24px" />
       </Link>
     </NextLink>
   );

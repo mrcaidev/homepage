@@ -1,15 +1,14 @@
 import { HStack } from "@chakra-ui/react";
+import { ButtonLink } from "src/components/common/button-link";
 import sections from "src/data/sections.json";
-import { toKebabCase } from "src/utils/to-kebab-case";
-import { NavLink } from "./nav-link";
 
 export function NavHorizontal() {
   return (
     <HStack as="nav">
-      {sections.map(name => (
-        <NavLink key={name} href={`#${toKebabCase(name)}`}>
+      {sections.map(({ name, href }) => (
+        <ButtonLink key={href} href={href}>
           {name}
-        </NavLink>
+        </ButtonLink>
       ))}
     </HStack>
   );

@@ -11,7 +11,6 @@ import {
 import NextLink from "next/link";
 import { FiMenu } from "react-icons/fi";
 import sections from "src/data/sections.json";
-import { toKebabCase } from "src/utils/to-kebab-case";
 
 export function NavVertical() {
   return (
@@ -21,13 +20,13 @@ export function NavVertical() {
           as={IconButton}
           variant="ghost"
           icon={<Icon as={FiMenu} boxSize="24px" />}
-          aria-label="Open navigation menu"
+          aria-label="Navigation menu"
         />
         <Box as="nav">
           <MenuList as="ul" pl="0">
-            {sections.map(name => (
-              <MenuItem as="li" key={name}>
-                <NextLink href={`#${toKebabCase(name)}`} passHref>
+            {sections.map(({ name, href }) => (
+              <MenuItem as="li" key={href}>
+                <NextLink href={href} passHref>
                   <Link w="100%" _hover={{ textDecor: "none" }}>
                     {name}
                   </Link>

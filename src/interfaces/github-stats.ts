@@ -1,7 +1,7 @@
 export interface GithubStats {
-  count: number;
-  stars: number;
-  forks: number;
+  count: number | null;
+  stars: number | null;
+  forks: number | null;
 }
 
 export interface GithubResponse {

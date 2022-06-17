@@ -1,12 +1,11 @@
 import { Box, Heading, Text, useColorModeValue } from "@chakra-ui/react";
-import { toKebabCase } from "src/utils/to-kebab-case";
 
 interface Props {
+  id: string;
   children: string;
 }
 
-export function Title({ children }: Props) {
-  const id = toKebabCase(children);
+export function Title({ id, children }: Props) {
   const bgGradient = useColorModeValue(
     "linear(to-t, transparent 0%, gray.300 100%)",
     "linear(to-t, transparent 0%, gray.700 100%)"

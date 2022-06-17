@@ -15,13 +15,12 @@ import { ViewOnGithub } from "./tools/view-on-github";
 
 export function ToolkitVertical() {
   const { isOpen, onToggle, onClose } = useDisclosure();
-  const hint = isOpen ? "Collapse toolkit" : "Expand toolkit";
-  const bg = useColorModeValue("white", "gray.800");
-  const ref = useRef(null);
-  useOutsideClick({ ref, handler: onClose });
+  const bg = useColorModeValue("gray.100", "gray.900");
+  const toolkitRef = useRef(null);
+  useOutsideClick({ ref: toolkitRef, handler: onClose });
 
   return (
-    <Box ref={ref}>
+    <Box ref={toolkitRef}>
       <IconButton
         variant="ghost"
         icon={
@@ -32,7 +31,7 @@ export function ToolkitVertical() {
             transform={isOpen ? "rotate(60deg)" : "rotate(0)"}
           />
         }
-        aria-label={hint}
+        aria-label="Toolkit"
         onClick={onToggle}
       />
       <Collapse in={isOpen}>

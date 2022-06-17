@@ -7,13 +7,13 @@ import { Title } from "./title";
 
 export function Cover() {
   return (
-    <Container as="section" maxW="8xl" h="100vh" p="40px">
+    <Container as="section" maxW="8xl" minH="100vh" h="100vh" p="40px">
       <Center h="100%">
         <Flex
           justify="center"
           align="center"
           rowGap="40px"
-          columnGap="100px"
+          columnGap={{ base: "50px", lg: "100px" }}
           wrap="wrap-reverse"
         >
           <Box>

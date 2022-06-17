@@ -18,17 +18,17 @@ export function GithubStats({ stats }: Props) {
     <StatGroup textAlign="center" py="10px">
       <Stat>
         <StatLabel>Built</StatLabel>
-        <StatNumber>{count}</StatNumber>
+        <StatNumber>{count ?? "N/A"}</StatNumber>
         <StatHelpText>projects</StatHelpText>
       </Stat>
       <Stat>
         <StatLabel>Received</StatLabel>
-        <StatNumber>{stars}</StatNumber>
+        <StatNumber>{stars ?? "N/A"}</StatNumber>
         <StatHelpText>stars</StatHelpText>
       </Stat>
       <Stat>
         <StatLabel>Got</StatLabel>
-        <StatNumber>{forks}</StatNumber>
+        <StatNumber>{forks ?? "N/A"}</StatNumber>
         <StatHelpText>forks</StatHelpText>
       </Stat>
     </StatGroup>

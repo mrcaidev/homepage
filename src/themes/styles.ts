@@ -10,6 +10,7 @@ export const styles = {
       scrollBehavior: "smooth",
     },
     body: {
+      bgColor: colorMode === "light" ? "gray.100" : "gray.900",
       color: colorMode === "light" ? "gray.700" : "gray.300",
       fontSize: "lg",
     },
@@ -47,7 +48,6 @@ export const styles = {
       lineHeight: "tall",
     },
     strong: {
-      color: colorMode === "light" ? "gray.800" : "gray.200",
       fontWeight: "semibold",
     },
     blockquote: {

@@ -12,13 +12,12 @@ export function ColorModeToggler() {
     <Icon as={FiMoon} boxSize="22px" />,
     <Icon as={FiSun} boxSize="22px" />
   );
-  const label = useColorModeValue("Toggle dark mode", "Toggle light mode");
 
   return (
     <IconButton
       variant="ghost"
       icon={icon}
-      aria-label={label}
+      aria-label="Toggle color mode"
       onClick={toggleColorMode}
     />
   );

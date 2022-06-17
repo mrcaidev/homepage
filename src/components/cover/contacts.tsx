@@ -3,6 +3,7 @@ import {
   Flex,
   HStack,
   Icon,
+  Link,
   ScaleFade,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -42,20 +43,12 @@ export function Contacts() {
       </Button>
       <ScaleFade in={isOpen}>
         <HStack spacing={4}>
-          <a
-            href="https://github.com/mrcaidev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon as={FaGithub} boxSize="32px" />
-          </a>
-          <a
-            href="mailto:mrcaidev@qq.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Icon as={MdEmail} boxSize="36px" />
-          </a>
+          <Link href="https://github.com/mrcaidev" isExternal>
+            <Icon as={FaGithub} boxSize="32px" _hover={{ color: "gray.500" }} />
+          </Link>
+          <Link href="mailto:mrcaidev@qq.com" isExternal>
+            <Icon as={MdEmail} boxSize="36px" _hover={{ color: "gray.500" }} />
+          </Link>
         </HStack>
       </ScaleFade>
     </Flex>

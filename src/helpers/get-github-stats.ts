@@ -23,7 +23,7 @@ export async function getGithubStats() {
     });
 
     if (!res.ok) {
-      return { count: -1, stars: -1, forks: -1 } as GithubStats;
+      return { count: null, stars: null, forks: null } as GithubStats;
     }
 
     const {
@@ -43,6 +43,6 @@ export async function getGithubStats() {
 
     return { count, stars, forks } as GithubStats;
   } catch {
-    return { count: -1, stars: -1, forks: -1 } as GithubStats;
+    return { count: null, stars: null, forks: null } as GithubStats;
   }
 }

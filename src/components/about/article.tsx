@@ -2,15 +2,15 @@ import { Box, Icon, Link, Text, useColorModeValue } from "@chakra-ui/react";
 import { HiExternalLink } from "react-icons/hi";
 
 export function Article() {
-  const strongColor = useColorModeValue("blue.600", "blue.200");
-  const weakColor = useColorModeValue("blue.700", "blue.100");
+  const strongColor = useColorModeValue("blue.700", "blue.300");
+  const weakColor = useColorModeValue("blue.800", "blue.200");
 
   return (
     <Box as="article">
       <Text as="h3">I&apos;m Yuwang Cai</Text>
-      <Text textAlign="right" fontSize="xl" fontWeight="semibold" mb="10px">
+      <Text fontSize="xl" fontWeight="semibold" mb="10px">
         —— A&nbsp;
-        <Text as="span" color={strongColor}>
+        <Text as="strong" color={strongColor}>
           college student
         </Text>
         &nbsp;in China
