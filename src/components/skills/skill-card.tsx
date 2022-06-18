@@ -46,7 +46,7 @@ export function SkillCard({ title, cover, children }: Props) {
         transition="ease 0.5s"
         transform={`rotateY(${isBackside ? "180deg" : "0"})`}
         rounded="3xl"
-        shadow="2xl"
+        shadow="md"
         cursor="pointer"
         sx={{ transformStyle: "preserve-3d" }}
         onClick={flipCard}

@@ -8,7 +8,7 @@ export function Skills() {
   return (
     <Container as="section" maxW="6xl" minH="100vh" p="40px">
       <Title id="skills">Skills</Title>
-      <Wrap justify="center" spacing={12}>
+      <Wrap justify="center" pb="10px" spacing={12}>
         <WrapItem>
           <FrontendCard />
         </WrapItem>
