@@ -1,6 +1,27 @@
-import { TopLang, TopLangsResponse } from "src/interfaces/top-langs";
+import { TopLang } from "src/models/stats.model";
 
 const TOP_LANGS_NUM = 10;
+
+interface Response {
+  data: {
+    user: {
+      repositories: {
+        nodes: {
+          languages: {
+            edges: {
+              size: number;
+              node: {
+                color: string;
+                name: string;
+              };
+            }[];
+          };
+        }[];
+      };
+    };
+  };
+}
+
 const query = `
 query userInfo {
   user(login: "mrcaidev") {
@@ -43,7 +64,7 @@ export async function getTopLangs() {
           repositories: { nodes },
         },
       },
-    }: TopLangsResponse = await res.json();
+    }: Response = await res.json();
     const topLangsMap: {
       [name: string]: {
         color: string;

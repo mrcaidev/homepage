@@ -5,14 +5,12 @@ import {
   StatLabel,
   StatNumber,
 } from "@chakra-ui/react";
-import { GithubStats } from "src/interfaces/github-stats";
+import { useStatsContext } from "src/contexts/stats.context";
 
-interface Props {
-  stats: GithubStats;
-}
-
-export function GithubStats({ stats }: Props) {
-  const { count, stars, forks } = stats;
+export function GithubStats() {
+  const {
+    githubStats: { count, stars, forks },
+  } = useStatsContext();
 
   return (
     <StatGroup textAlign="center" py="10px">

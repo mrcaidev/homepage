@@ -1,4 +1,15 @@
-import { GithubResponse, GithubStats } from "src/interfaces/github-stats";
+import { GithubStats } from "src/models/stats.model";
+
+interface Response {
+  data: {
+    user: {
+      repositories: {
+        totalCount: number;
+        nodes: { stargazerCount: number; forkCount: number }[];
+      };
+    };
+  };
+}
 
 const query = `
   query {
@@ -32,7 +43,7 @@ export async function getGithubStats() {
           repositories: { totalCount: count, nodes },
         },
       },
-    }: GithubResponse = await res.json();
+    }: Response = await res.json();
 
     const { stargazerCount: stars, forkCount: forks } = nodes.reduce(
       (pre, cur) => ({
