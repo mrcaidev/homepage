@@ -11,7 +11,7 @@ interface Props {
 
 export function About({ stats }: Props) {
   return (
-    <Container as="section" maxW="6xl" minH="100vh" h="100vh" p="40px">
+    <Container as="section" maxW="6xl" minH="100vh" p="40px">
       <Title id="about">About</Title>
       <Flex columnGap="80px" justify="center">
         <Picture />
