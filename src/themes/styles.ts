@@ -49,6 +49,7 @@ export const styles = {
     },
     strong: {
       fontWeight: "semibold",
+      color: colorMode === "light" ? "blue.800" : "blue.200",
     },
     blockquote: {
       color: "gray.500",
