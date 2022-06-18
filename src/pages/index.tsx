@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { About } from "src/components/about";
 import { Cover } from "src/components/cover";
+import { Skills } from "src/components/skills";
 import { getGithubStats } from "src/helpers/get-github-stats";
 import { GithubStats } from "src/interfaces/github-stats";
 
@@ -17,6 +18,7 @@ export default function IndexPage({ stats }: Props) {
       </Head>
       <Cover />
       <About stats={stats} />
+      <Skills />
     </>
   );
 }
