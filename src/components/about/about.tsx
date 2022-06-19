@@ -6,8 +6,8 @@ import { Picture } from "./picture";
 
 export function About() {
   return (
-    <Container as="section" maxW="6xl" minH="100vh" p="40px">
-      <Title id="about">About</Title>
+    <Container as="section" maxW="6xl" minH="100vh" p="40px" id="about">
+      <Title>About</Title>
       <Flex columnGap="80px" justify="center">
         <Picture />
         <Flex maxW="550px" direction="column" justify="space-between">
