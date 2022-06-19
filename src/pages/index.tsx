@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import { About } from "src/components/about";
 import { Cover } from "src/components/cover";
+import { Footer } from "src/components/footer";
 import { Projects } from "src/components/projects";
 import { Skills } from "src/components/skills";
 import { StatsContext } from "src/contexts/stats.context";
@@ -19,6 +20,7 @@ export default function IndexPage(stats: Stats) {
         <About />
         <Skills />
         <Projects />
+        <Footer />
       </StatsContext.Provider>
     </>
   );

@@ -1,0 +1,17 @@
+<svg width="440" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <polygon id="svg_2" fill="#4BAFFF" stroke="purple" stroke-width="0" style="fill:#4BAFFF;stroke:purple;stroke-width:0" points="0,100 200,100 100,150"/>
+  <polygon id="svg_3" fill="#4BC8FD" stroke="purple" stroke-width="0" style="fill:#4BC8FD;stroke:purple;stroke-width:0" points="120,50 320,50 220,100"/>
+  <polygon id="svg_4" fill="#85FAFD" stroke="purple" stroke-width="0" style="fill:#85FAFD;stroke:purple;stroke-width:0" points="240,0 440,0 340,50"/>
+  <polygon id="svg_5" fill="#3296FF" stroke="purple" stroke-width="0" style="fill:#3296FF;stroke:purple;stroke-width:0" points="0,100 100,150 150,600"/>
+  <polygon id="svg_6" fill="#32C8FF" stroke="purple" stroke-width="0" style="fill:#32C8FF;stroke:purple;stroke-width:0" points="120,50 220,100 270,550"/>
+  <polygon id="svg_7" fill="#32FFFF" stroke="purple" stroke-width="0" style="fill:#32FFFF;stroke:purple;stroke-width:0" points="240,0 340,50 390,500"/>
+ </g>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="931" width="1662" y="-1" x="-1"/>
+ </g>
+</svg>
