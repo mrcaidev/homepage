@@ -18,6 +18,7 @@ const hrefPrefix = "https://github.com/mrcaidev/";
 
 export function Repo({ description, forks, name, stars, lang }: Repo) {
   const descColor = useColorModeValue("gray.600", "gray.400");
+  const tagColor = useColorModeValue("gray.700", "gray.300");
   const bg = useColorModeValue("gray.200", "gray.800");
 
   return (
@@ -34,15 +35,17 @@ export function Repo({ description, forks, name, stars, lang }: Repo) {
       <HStack spacing={4}>
         <Tag px="0" bg={bg}>
           <Circle size="12px" bg={lang.color ?? "#888"} />
-          <TagLabel pl="8px">{lang.name}</TagLabel>
+          <TagLabel color={tagColor} pl="8px">
+            {lang.name}
+          </TagLabel>
         </Tag>
         <Tag px="0" bg={bg}>
-          <TagLeftIcon as={BiStar} boxSize="14px" />
-          <TagLabel>{stars}</TagLabel>
+          <TagLeftIcon as={BiStar} boxSize="14px" color={tagColor} />
+          <TagLabel color={tagColor}>{stars}</TagLabel>
         </Tag>
         <Tag px="0" bg={bg}>
-          <TagLeftIcon as={BiGitRepoForked} boxSize="14px" />
-          <TagLabel>{forks}</TagLabel>
+          <TagLeftIcon as={BiGitRepoForked} boxSize="14px" color={tagColor} />
+          <TagLabel color={tagColor}>{forks}</TagLabel>
         </Tag>
       </HStack>
     </LinkBox>
