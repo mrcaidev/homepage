@@ -1,5 +1,6 @@
 import repoNames from "src/data/repos.json";
 import { Repo } from "src/models/stats.model";
+import { queryGithub } from "src/utils/requests";
 
 interface Response {
   data: {
@@ -21,7 +22,7 @@ interface Response {
 }
 
 const query = `
-  query getRepo($repo: String!) {
+  query ($repo: String!) {
     user(login: "mrcaidev") {
       repository(name: $repo) {
         name
@@ -42,54 +43,28 @@ const query = `
 export async function getRepos() {
   try {
     const resList = await Promise.all(
-      repoNames.map(repo =>
-        fetch("https://api.github.com/graphql", {
-          method: "POST",
-          body: JSON.stringify({ query, variables: { repo } }),
-          headers: { authorization: `token ${process.env.GITHUB_TOKEN}` ?? "" },
-        })
-      )
+      repoNames.map(repo => queryGithub<Response>(query, { repo }))
     );
 
-    const repos: Repo[] = await Promise.all(
-      resList.map(async res => {
-        if (!res.ok) {
-          return {
-            name: null,
-            stars: null,
-            forks: null,
-            description: null,
-            lang: {
-              color: null,
-              name: null,
-            },
-          } as Repo;
-        }
-        const {
-          data: {
-            user: {
-              repository: {
-                description,
-                forkCount,
-                name,
-                stargazers: { totalCount },
-                primaryLanguage,
-              },
+    const repos: Repo[] = resList.map(
+      ({
+        data: {
+          user: {
+            repository: {
+              description,
+              forkCount: forks,
+              name,
+              stargazers: { totalCount: stars },
+              primaryLanguage: lang,
             },
           },
-        }: Response = await res.json();
-        return {
-          name,
-          description,
-          forks: forkCount,
-          stars: totalCount,
-          lang: primaryLanguage,
-        };
-      })
+        },
+      }) => ({ name, description, forks, stars, lang })
     );
 
     return repos;
-  } catch {
+  } catch (e) {
+    console.error(e);
     return [] as Repo[];
   }
 }

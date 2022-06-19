@@ -8,6 +8,7 @@ const defaultContext: Stats = {
     stars: null,
   },
   topLangs: [],
+  repos: [],
 };
 
 export const StatsContext = createContext<Stats>(defaultContext);

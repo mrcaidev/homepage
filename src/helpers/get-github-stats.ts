@@ -1,4 +1,5 @@
 import { GithubStats } from "src/models/stats.model";
+import { queryGithub } from "src/utils/requests";
 
 interface Response {
   data: {
@@ -27,23 +28,13 @@ const query = `
 
 export async function getGithubStats() {
   try {
-    const res = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      body: JSON.stringify({ query }),
-      headers: { authorization: `token ${process.env.GITHUB_TOKEN}` ?? "" },
-    });
-
-    if (!res.ok) {
-      return { count: null, stars: null, forks: null } as GithubStats;
-    }
-
     const {
       data: {
         user: {
           repositories: { totalCount: count, nodes },
         },
       },
-    }: Response = await res.json();
+    } = await queryGithub<Response>(query);
 
     const { stargazerCount: stars, forkCount: forks } = nodes.reduce(
       (pre, cur) => ({
@@ -53,7 +44,8 @@ export async function getGithubStats() {
     );
 
     return { count, stars, forks } as GithubStats;
-  } catch {
+  } catch (e) {
+    console.error(e);
     return { count: null, stars: null, forks: null } as GithubStats;
   }
 }

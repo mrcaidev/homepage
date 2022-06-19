@@ -1,4 +1,5 @@
 import { TopLang } from "src/models/stats.model";
+import { queryGithub } from "src/utils/requests";
 
 interface Response {
   data: {
@@ -20,7 +21,7 @@ interface Response {
 }
 
 const query = `
-query userInfo {
+query {
   user(login: "mrcaidev") {
     repositories(ownerAffiliations: OWNER, isFork: false, first: 100) {
       nodes {
@@ -41,21 +42,13 @@ query userInfo {
 
 export async function getTopLangs() {
   try {
-    const res = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      body: JSON.stringify({ query }),
-      headers: { authorization: `token ${process.env.GITHUB_TOKEN}` ?? "" },
-    });
-    if (!res.ok) {
-      return [] as TopLang[];
-    }
     const {
       data: {
         user: {
           repositories: { nodes },
         },
       },
-    }: Response = await res.json();
+    } = await queryGithub<Response>(query);
 
     // Record every language's size.
     const langsRecord: Record<string, number> = {};
@@ -76,7 +69,8 @@ export async function getTopLangs() {
       }));
 
     return topLangs;
-  } catch {
+  } catch (e) {
+    console.error(e);
     return [] as TopLang[];
   }
 }
