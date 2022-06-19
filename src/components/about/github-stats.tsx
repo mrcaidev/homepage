@@ -10,23 +10,24 @@ import { useStatsContext } from "src/contexts/stats.context";
 export function GithubStats() {
   const {
     githubStats: { count, stars, forks },
+    success,
   } = useStatsContext();
 
   return (
     <StatGroup textAlign="center" py="10px">
       <Stat>
         <StatLabel>Built</StatLabel>
-        <StatNumber>{count ?? "N/A"}</StatNumber>
+        <StatNumber>{success ? count : "N/A"}</StatNumber>
         <StatHelpText>projects</StatHelpText>
       </Stat>
       <Stat>
         <StatLabel>Received</StatLabel>
-        <StatNumber>{stars ?? "N/A"}</StatNumber>
+        <StatNumber>{success ? stars : "N/A"}</StatNumber>
         <StatHelpText>stars</StatHelpText>
       </Stat>
       <Stat>
         <StatLabel>Got</StatLabel>
-        <StatNumber>{forks ?? "N/A"}</StatNumber>
+        <StatNumber>{success ? forks : "N/A"}</StatNumber>
         <StatHelpText>forks</StatHelpText>
       </Stat>
     </StatGroup>

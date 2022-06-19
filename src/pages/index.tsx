@@ -5,9 +5,7 @@ import { Cover } from "src/components/cover";
 import { Projects } from "src/components/projects";
 import { Skills } from "src/components/skills";
 import { StatsContext } from "src/contexts/stats.context";
-import { getGithubStats } from "src/helpers/get-github-stats";
-import { getRepos } from "src/helpers/get-repos";
-import { getTopLangs } from "src/helpers/get-top-langs";
+import { getStats } from "src/helpers/get-stats.helper";
 import { Stats } from "src/models/stats.model";
 
 export default function IndexPage(stats: Stats) {
@@ -27,8 +25,6 @@ export default function IndexPage(stats: Stats) {
 }
 
 export const getStaticProps: GetStaticProps<Stats> = async () => {
-  const githubStats = await getGithubStats();
-  const topLangs = await getTopLangs();
-  const repos = await getRepos();
-  return { props: { githubStats, topLangs, repos }, revalidate: 60 * 60 * 24 };
+  const stats = await getStats();
+  return { props: stats, revalidate: 60 * 60 * 24 };
 };
