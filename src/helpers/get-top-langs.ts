@@ -62,7 +62,7 @@ export async function getTopLangs() {
     let totalSize = 0;
     nodes.forEach(({ languages: { edges } }) => {
       edges.forEach(({ size, node: { name } }) => {
-        langsRecord[name] = langsRecord[name] ?? 0 + size;
+        langsRecord[name] = (langsRecord[name] ?? 0) + size;
         totalSize += size;
       });
     });
