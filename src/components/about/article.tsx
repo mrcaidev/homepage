@@ -24,7 +24,7 @@ export function Article() {
             <Icon as={HiExternalLink} boxSize="16px" />
           </Link>
         </Text>
-        . I grown fond of coding in 2021, and has been teaching myself&nbsp;
+        . I grew fond of coding in 2021, and has been teaching myself&nbsp;
         <Text as="strong">frontend and backend</Text>
         &nbsp;technologies since. Now I&apos;m on the way to a&nbsp;
         <Text as="strong">full-stack</Text>
