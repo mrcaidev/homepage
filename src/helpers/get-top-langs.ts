@@ -1,7 +1,5 @@
 import { TopLang } from "src/models/stats.model";
 
-const TOP_LANGS_NUM = 10;
-
 interface Response {
   data: {
     user: {
@@ -11,7 +9,6 @@ interface Response {
             edges: {
               size: number;
               node: {
-                color: string;
                 name: string;
               };
             }[];
@@ -32,7 +29,6 @@ query userInfo {
           edges {
             size
             node {
-              color
               name
             }
           }
@@ -45,19 +41,14 @@ query userInfo {
 
 export async function getTopLangs() {
   try {
-    // Query GitHub API.
     const res = await fetch("https://api.github.com/graphql", {
       method: "POST",
       body: JSON.stringify({ query }),
       headers: { authorization: `token ${process.env.GITHUB_TOKEN}` ?? "" },
     });
-
-    // If status code does not equal 200.
     if (!res.ok) {
       return [] as TopLang[];
     }
-
-    // Calculate top languages into object form.
     const {
       data: {
         user: {
@@ -65,40 +56,24 @@ export async function getTopLangs() {
         },
       },
     }: Response = await res.json();
-    const topLangsMap: {
-      [name: string]: {
-        color: string;
-        size: number;
-      };
-    } = {};
-    nodes.forEach(project => {
-      const langs = project.languages.edges;
-      langs.forEach(({ size, node: { color, name } }) => {
-        if (name in topLangsMap) {
-          topLangsMap[name].size += size;
-        } else {
-          topLangsMap[name] = { color, size };
-        }
+
+    // Record every language's size.
+    const langsRecord: Record<string, number> = {};
+    let totalSize = 0;
+    nodes.forEach(({ languages: { edges } }) => {
+      edges.forEach(({ size, node: { name } }) => {
+        langsRecord[name] = langsRecord[name] ?? 0 + size;
+        totalSize += size;
       });
     });
 
-    // Convert object to array.
-    const langs = Object.entries(topLangsMap)
-      .map(([name, { color, size }]) => ({
-        name,
-        color,
-        size,
-      }))
-      .sort((a, b) => b.size - a.size)
-      .slice(0, TOP_LANGS_NUM);
-    const totalSize = langs
-      .map(lang => lang.size)
-      .reduce((pre, cur) => pre + cur);
-    const topLangs: TopLang[] = langs.map(lang => ({
-      name: lang.name,
-      color: lang.color,
-      percentage: +((100 * lang.size) / totalSize).toFixed(2),
-    }));
+    // Convert record to array and sort it by size.
+    const topLangs: TopLang[] = Object.entries(langsRecord)
+      .sort((a, b) => b[1] - a[1])
+      .map(lang => ({
+        name: lang[0],
+        percentage: +((100 * lang[1]) / totalSize).toFixed(2),
+      }));
 
     return topLangs;
   } catch {

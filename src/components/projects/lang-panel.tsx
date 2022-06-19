@@ -6,9 +6,9 @@ export function LangPanel() {
   const { topLangs } = useStatsContext();
 
   return (
-    <VStack minW="200px">
-      {topLangs.map(lang => (
-        <Lang key={lang.name} {...lang} />
+    <VStack w="100%" p="0 4px 8px">
+      {topLangs.slice(0, 8).map((lang, index) => (
+        <Lang key={lang.name ?? index} {...lang} />
       ))}
     </VStack>
   );

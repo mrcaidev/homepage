@@ -5,12 +5,23 @@ export interface GithubStats {
 }
 
 export interface TopLang {
-  name: string;
-  color: string;
-  percentage: number;
+  name: string | null;
+  percentage: number | null;
+}
+
+export interface Repo {
+  name: string | null;
+  stars: number | null;
+  forks: number | null;
+  description: string | null;
+  lang: {
+    name: string | null;
+    color: string | null;
+  };
 }
 
 export interface Stats {
   githubStats: GithubStats;
   topLangs: TopLang[];
+  repos: Repo[];
 }
