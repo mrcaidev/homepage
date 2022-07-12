@@ -12,7 +12,8 @@
   "dependencies": {
     "next": "^12.2.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",

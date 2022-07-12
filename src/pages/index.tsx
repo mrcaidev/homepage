@@ -8,7 +8,7 @@ const Home: NextPage = () => {
         <title>Home - MrCai</title>
       </Head>
       <main>
-        <h1>Homepage</h1>
+        <h1 className="text-5xl">Homepage</h1>
       </main>
     </>
   );
