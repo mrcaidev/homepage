@@ -1,6 +1,6 @@
-/node_modules
-/.next
-/.husky/_
-/.vscode
-/.env*
-/.eslintcache
+/node_modules/
+/.next/
+/.vercel/
+/.vscode/
+/next-env.d.ts
+.env*

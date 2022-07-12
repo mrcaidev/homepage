@@ -1,32 +1,17 @@
-import { GetStaticProps } from "next";
+import { type NextPage } from "next";
 import Head from "next/head";
-import { About } from "src/components/about";
-import { Cover } from "src/components/cover";
-import { Footer } from "src/components/footer";
-import { Projects } from "src/components/projects";
-import { Skills } from "src/components/skills";
-import { StatsContext } from "src/contexts/stats.context";
-import { getStats } from "src/helpers/get-stats.helper";
-import { Stats } from "src/models/stats.model";
 
-export default function IndexPage(stats: Stats) {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
         <title>Home - MrCai</title>
       </Head>
-      <StatsContext.Provider value={stats}>
-        <Cover />
-        <About />
-        <Skills />
-        <Projects />
-        <Footer />
-      </StatsContext.Provider>
+      <main>
+        <h1>Homepage</h1>
+      </main>
     </>
   );
-}
-
-export const getStaticProps: GetStaticProps<Stats> = async () => {
-  const stats = await getStats();
-  return { props: stats, revalidate: 60 * 60 * 24 };
 };
+
+export default Home;

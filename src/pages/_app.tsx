@@ -1,13 +1,8 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import type { AppProps } from "next/app";
-import { TopBar } from "src/components/top-bar";
-import { theme } from "src/themes/theme";
+import { type AppProps } from "next/app";
+import "src/styles/globals.css";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return (
-    <ChakraProvider theme={theme}>
-      <TopBar />
-      <Component {...pageProps} />
-    </ChakraProvider>
-  );
-}
+const App = ({ Component, pageProps }: AppProps) => (
+  <Component {...pageProps} />
+);
+
+export default App;
