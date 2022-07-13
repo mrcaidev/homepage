@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { useLocalStorage } from "./use-local-storage";
 import { useMediaQuery } from "./use-media-query";
 
+const MEDIA_QUERY = "(prefers-color-scheme: dark)";
+const LOCAL_STORAGE_THEME_KEY = "theme";
+
 export type ColorMode = "light" | "dark";
 
 /**
@@ -12,10 +15,13 @@ export type ColorMode = "light" | "dark";
  */
 export function useColorMode() {
   // User OS mode.
-  const isDarkPreferred = useMediaQuery("(prefers-color-scheme: dark)");
+  const isDarkPreferred = useMediaQuery(MEDIA_QUERY);
   const osMode = isDarkPreferred ? "dark" : "light";
   // User selected mode.
-  const [colorMode, setColorMode] = useLocalStorage<ColorMode>("theme", osMode);
+  const [colorMode, setColorMode] = useLocalStorage<ColorMode>(
+    LOCAL_STORAGE_THEME_KEY,
+    osMode
+  );
 
   // When color mode is changed, update `<html>` attribute.
   useEffect(() => {
