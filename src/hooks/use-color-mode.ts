@@ -5,37 +5,49 @@ import { useMediaQuery } from "./use-media-query";
 const MEDIA_QUERY = "(prefers-color-scheme: dark)";
 const LOCAL_STORAGE_THEME_KEY = "theme";
 
-export type ColorMode = "light" | "dark";
+export type Theme = "light" | "dark";
 
 /**
- * Use current color mode.
- * Priority level: User selected > OS preference > default dark.
+ * Use current theme.
+ * Priority level: User selected > OS > default dark.
  *
- * @returns Current color mode, and utility functions.
+ * @returns Current theme, and utility functions.
  */
-export function useColorMode() {
-  // User OS mode.
+export function useTheme() {
+  // OS theme.
   const isDarkPreferred = useMediaQuery(MEDIA_QUERY);
-  const osMode = isDarkPreferred ? "dark" : "light";
-  // User selected mode.
-  const [colorMode, setColorMode] = useLocalStorage<ColorMode>(
+  const osTheme = isDarkPreferred ? "dark" : "light";
+  // User selected theme, default to OS theme.
+  const [theme, setTheme] = useLocalStorage<Theme>(
     LOCAL_STORAGE_THEME_KEY,
-    osMode
+    osTheme
   );
 
-  // When color mode is changed, update `<html>` attribute.
+  // When theme is changed, update `<html>` attribute.
   useEffect(() => {
-    if (colorMode === "dark") {
+    if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [colorMode]);
+  }, [theme]);
 
   // Utility functions.
   const toggle = () => {
-    setColorMode((mode) => (mode === "dark" ? "light" : "dark"));
+    setTheme((theme) => (theme === "dark" ? "light" : "dark"));
   };
 
-  return { colorMode, toggle };
+  return { theme, toggle };
+}
+
+/**
+ * Use appropriate value for current theme.
+ *
+ * @param light Value for light theme.
+ * @param dark Value for dark theme.
+ * @returns Value for current theme.
+ */
+export function useThemeValue<T>(light: T, dark: T) {
+  const { theme } = useTheme();
+  return theme === "light" ? light : dark;
 }
