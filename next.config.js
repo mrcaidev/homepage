@@ -5,4 +5,9 @@ module.exports = {
     locales: ["en-US", "zh-CN"],
     defaultLocale: "en-US",
   },
+  experimental: {
+    images: {
+      allowFutureImage: true,
+    },
+  },
 };
