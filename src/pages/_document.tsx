@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="description" content="Yuwang Cai's portfolio homepage" />
+        <meta name="description" content="Yuwang Cai's homepage" />
       </Head>
       <body>
         <Main />
