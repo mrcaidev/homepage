@@ -1,6 +1,11 @@
-/node_modules/
-/.next/
-/.vercel/
-/.vscode/
-/next-env.d.ts
+node_modules
+coverage
+.next
+.vercel
+.vscode
+next-env.d.ts
 .env*
+*.log
+.DS_Store
+*.pem
+

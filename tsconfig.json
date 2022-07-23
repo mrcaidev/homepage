@@ -1,37 +1,31 @@
 {
   "compilerOptions": {
-    // Type Checking
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": false,
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "strict": true,
-    // Modules
     "baseUrl": ".",
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    // Emit
     "noEmit": true,
-    "removeComments": true,
-    // JavaScript Support
     "allowJs": true,
-    // Interop Constraints
-    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
     "isolatedModules": true,
-    // Language and Environment
     "jsx": "preserve",
     "target": "ES6",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    // Projects
     "incremental": true,
-    // Completeness
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "typeRoots": ["node_modules/@types", "src/types"]
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
