@@ -6,6 +6,12 @@
   html {
     -webkit-tap-highlight-color: transparent;
   }
+  html::-webkit-scrollbar {
+    @apply w-2 h-2 bg-slate-600;
+  }
+  html::-webkit-scrollbar-thumb {
+    @apply w-2 h-2 rounded-md bg-slate-400;
+  }
   body {
     @apply bg-slate-100 text-slate-700 transition-bg dark:bg-slate-900 dark:text-slate-300;
   }
