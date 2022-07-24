@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Cover } from "src/components/cover";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
         <title>Home - MrCai</title>
       </Head>
       <main>
-        <h1>Homepage</h1>
+        <Cover />
       </main>
     </>
   );

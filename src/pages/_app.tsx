@@ -1,5 +1,6 @@
 import "@fontsource/inter";
 import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
 import "@fontsource/inter/900.css";
 import { type AppProps } from "next/app";
 import { TopBar } from "src/components/top-bar";
