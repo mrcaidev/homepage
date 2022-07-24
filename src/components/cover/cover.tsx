@@ -1,6 +1,5 @@
 import { Avatar } from "./avatar";
 import { DownloadCV } from "./download-cv";
-import { ScrollDown } from "./scroll-down";
 import { Subtitle } from "./subtitle";
 import { Title } from "./title";
 
@@ -14,6 +13,5 @@ export const Cover = () => (
       </div>
       <Avatar />
     </div>
-    <ScrollDown />
   </section>
 );
