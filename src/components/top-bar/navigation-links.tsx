@@ -1,6 +1,6 @@
+import navLinks from "src/data/nav-links.json";
 import { useLocale } from "src/hooks/locale.hook";
 import { Link } from "../common/link";
-import navLinks from "./nav-links.json";
 
 export const NavigationLinks = () => {
   const { locale } = useLocale();
