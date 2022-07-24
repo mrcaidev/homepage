@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
   body {
     @apply bg-slate-100 text-slate-700 transition-bg dark:bg-slate-900 dark:text-slate-300;
   }
