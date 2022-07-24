@@ -1,17 +1,17 @@
-[
-  {
+{
+  "about": {
     "en": "About",
     "zh": "关于",
     "href": "#about"
   },
-  {
+  "skills": {
     "en": "Skills",
     "zh": "技术栈",
     "href": "#skills"
   },
-  {
+  "projects": {
     "en": "Projects",
     "zh": "项目",
     "href": "#projects"
   }
-]
+}
