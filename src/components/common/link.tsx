@@ -6,7 +6,7 @@ interface IProps extends HTMLProps<HTMLAnchorElement> {
 }
 
 export const Link = ({ href, children, ...rest }: IProps) => {
-  const isInternalLink = href.startsWith("/");
+  const isInternalLink = href.startsWith("/") || href.startsWith("#");
 
   return isInternalLink ? (
     <NextLink href={href}>
