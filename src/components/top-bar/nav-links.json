@@ -1,5 +1,17 @@
 [
-  { "name": "About", "href": "/about" },
-  { "name": "Skills", "href": "/skills" },
-  { "name": "Projects", "href": "/projects" }
+  {
+    "en": "About",
+    "zh": "关于",
+    "href": "/about"
+  },
+  {
+    "en": "Skills",
+    "zh": "技术栈",
+    "href": "/skills"
+  },
+  {
+    "en": "Projects",
+    "zh": "项目",
+    "href": "/projects"
+  }
 ]
