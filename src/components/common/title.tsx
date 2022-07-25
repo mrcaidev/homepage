@@ -10,7 +10,7 @@ const rightSlide = {
   show: {
     x: 0,
     opacity: 1,
-    transition: { ease: "easeOut", duration: 1 },
+    transition: { type: "tween", duration: 1 },
   },
 };
 
@@ -32,7 +32,7 @@ const Title = ({ id }: IProps) => {
     >
       <p
         aria-hidden
-        className="text-7xl text-slate-200 dark:text-slate-800 text-transparent font-bold select-none transition-colors"
+        className="text-7xl text-slate-200 dark:text-slate-800 font-bold select-none transition-colors"
       >
         {text}
       </p>

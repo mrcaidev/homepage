@@ -11,7 +11,7 @@ export const ThemeToggler = () => {
     <button
       onClick={toggle}
       aria-label={label}
-      className="h-fit p-2 rounded-md transition-bg hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700"
+      className="h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
     >
       {icon}
     </button>

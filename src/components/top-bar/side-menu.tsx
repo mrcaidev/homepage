@@ -8,6 +8,12 @@ import { LocaleToggler } from "./locale-toggler";
 import { NavigationLinks } from "./navigation-links";
 import { ThemeToggler } from "./theme-toggler";
 
+const backdrop = {
+  hide: { opacity: 0 },
+  show: { opacity: 0.4 },
+  exit: { opacity: 0 },
+};
+
 export const SideMenu = () => {
   const {
     value: shouldShow,
@@ -23,7 +29,7 @@ export const SideMenu = () => {
       <button
         onClick={showModal}
         aria-label={openLabel}
-        className="h-fit p-2 rounded-md transition-bg hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700"
+        className="h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
       >
         <FiMenu size="24px" />
       </button>
@@ -32,9 +38,10 @@ export const SideMenu = () => {
           <>
             <motion.div
               key="backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
-              exit={{ opacity: 0 }}
+              variants={backdrop}
+              initial="hide"
+              animate="show"
+              exit="exit"
               className="fixed top-0 left-0 right-0 bottom-0 bg-slate-700"
             />
             <motion.div
@@ -43,12 +50,12 @@ export const SideMenu = () => {
               animate={{ x: 0 }}
               exit={{ x: 300 }}
               transition={{ ease: "easeOut" }}
-              className="flex flex-col items-center fixed top-0 right-0 bottom-0 h-full p-8 rounded-l-2xl bg-slate-100 dark:bg-slate-900 shadow-2xl transition-bg z-50"
+              className="flex flex-col items-center fixed top-0 right-0 bottom-0 h-full px-8 py-4 rounded-l-2xl bg-slate-100 dark:bg-slate-900 shadow-2xl transition-bg"
             >
               <button
                 onClick={hideModal}
                 aria-label={closeLabel}
-                className="h-fit p-2 rounded-md transition-bg hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700"
+                className="self-end h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
               >
                 <FiX size="28px" />
               </button>

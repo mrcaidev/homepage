@@ -2,21 +2,21 @@ import { motion } from "framer-motion";
 import Image from "next/future/image";
 import about from "public/about.webp";
 
-const rise = {
+const rightSlide = {
   hide: {
-    y: 30,
+    x: -30,
     opacity: 0,
   },
   show: {
-    y: 0,
+    x: 0,
     opacity: 1,
-    transition: { ease: "easeOut", duration: 1 },
+    transition: { type: "tween", duration: 1 },
   },
 };
 
 export const SidePicture = () => (
   <motion.div
-    variants={rise}
+    variants={rightSlide}
     initial="hide"
     whileInView="show"
     className="hidden xl:block"

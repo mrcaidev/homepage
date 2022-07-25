@@ -11,7 +11,7 @@ export const NavigationLinks = () => {
         <Link
           key={id}
           href={"#" + id}
-          className="px-4 py-2 rounded-md text-lg font-semibold text-center transition-bg hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700"
+          className="px-4 py-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 text-lg text-center font-semibold transition-colors"
         >
           {locale === "en-US" ? en : zh}
         </Link>

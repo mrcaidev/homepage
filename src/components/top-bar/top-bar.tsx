@@ -6,7 +6,7 @@ import { SideMenu } from "./side-menu";
 import { ThemeToggler } from "./theme-toggler";
 
 export const TopBar = () => (
-  <header className="flex justify-between items-center fixed top-0 left-0 right-0 px-8 py-4 bg-slate-100 dark:bg-slate-900 transition-bg z-40">
+  <header className="flex justify-between items-center fixed top-0 left-0 right-0 px-8 py-4 bg-slate-100 dark:bg-slate-900 transition-bg z-10">
     <Logo />
     <nav className="gap-x-1 px-4 hidden md:flex">
       <NavigationLinks />

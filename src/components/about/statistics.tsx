@@ -10,7 +10,7 @@ const rise = {
   show: {
     y: 0,
     opacity: 1,
-    transition: { ease: "easeOut", duration: 0.5 },
+    transition: { type: "tween", duration: 0.5 },
   },
 };
 
@@ -38,7 +38,7 @@ export const Statistics = () => {
     <motion.div
       initial="hide"
       whileInView="show"
-      transition={{ staggerChildren: 0.2 }}
+      transition={{ delayChildren: 0.2, staggerChildren: 0.2 }}
       className="flex justify-around"
     >
       <Statistic
