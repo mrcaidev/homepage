@@ -6,7 +6,10 @@ export function useLocale() {
 
   const toggle = () => {
     const nextLocale = locale === "en-US" ? "zh-CN" : "en-US";
-    router.push({ pathname, query }, asPath, { locale: nextLocale });
+    router.push({ pathname, query }, asPath, {
+      locale: nextLocale,
+      scroll: false,
+    });
     document.cookie = "NEXT_LOCALE=" + nextLocale;
   };
 
