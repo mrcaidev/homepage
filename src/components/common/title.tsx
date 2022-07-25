@@ -27,8 +27,7 @@ const Title = ({ id }: IProps) => {
       variants={rightSlide}
       initial="hide"
       whileInView="show"
-      id={id}
-      className="w-fit m-auto py-10 text-center"
+      className="w-fit mx-auto text-center"
     >
       <p
         aria-hidden
