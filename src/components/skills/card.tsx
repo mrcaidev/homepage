@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import Image from "next/future/image";
-import { Children, PropsWithChildren } from "react";
 import { FiX } from "react-icons/fi";
 import { useBoolean } from "src/hooks/boolean.hook";
 import { useLocaleValue } from "src/hooks/locale.hook";
+import { Bold } from "../common/bold";
 import { IconButton } from "../common/icon-button";
 import { Modal } from "../common/modal";
 
@@ -19,12 +19,12 @@ const leftSlide = {
   },
 };
 
-interface IProps {
+interface ICardFaceProps {
   img: string;
   title: string;
 }
 
-const CardFace = ({ img, title }: IProps) => (
+const CardFace = ({ img, title }: ICardFaceProps) => (
   <div className="flex flex-col justify-center items-center gap-y-3">
     <motion.div
       layoutId={title + "-icon"}
@@ -41,7 +41,14 @@ const CardFace = ({ img, title }: IProps) => (
   </div>
 );
 
-export const Card = ({ img, title, children }: PropsWithChildren<IProps>) => {
+interface ICardProps extends ICardFaceProps {
+  content: {
+    topic: string;
+    description: string;
+  }[];
+}
+
+export const Card = ({ img, title, content }: ICardProps) => {
   const { value: shouldShow, on: showModal, off: hideModal } = useBoolean();
   const openLabel = useLocaleValue("Click to show details", "点击查看详情");
   const closeLabel = useLocaleValue("Hide details", "收起详情");
@@ -72,9 +79,9 @@ export const Card = ({ img, title, children }: PropsWithChildren<IProps>) => {
             transition={{ delayChildren: 0.1, staggerChildren: 0.1 }}
             className="max-w-sm list-disc"
           >
-            {Children.map(children, (child) => (
-              <motion.li variants={leftSlide} className="py-1">
-                {child}
+            {content.map(({ topic, description }) => (
+              <motion.li key={topic} variants={leftSlide} className="py-1">
+                <Bold>{topic}</Bold> - {description}
               </motion.li>
             ))}
           </motion.ul>
