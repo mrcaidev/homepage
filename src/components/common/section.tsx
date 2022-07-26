@@ -26,7 +26,7 @@ export const Section = ({ id, children }: IProps) => {
   return (
     <section
       id={id}
-      className="flex flex-col justify-center gap-y-12 min-h-screen px-10 py-20"
+      className="flex flex-col justify-center items-center gap-y-12 min-h-screen px-10 py-20"
     >
       <motion.div
         variants={rightSlide}
