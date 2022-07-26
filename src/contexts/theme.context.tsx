@@ -20,14 +20,11 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
   const isDarkPreferred = useMediaQuery(PREFER_DARK_QUERY);
   const osTheme: Theme = isDarkPreferred ? "dark" : "light";
 
-  // User specification.
-  const { value: userTheme, set: setUserTheme } = useLocalStorage<Theme>(
+  // User specification, defaults to OS preferrence.
+  const { value: theme, set: setUserTheme } = useLocalStorage<Theme>(
     LOCAL_STORAGE_THEME_KEY,
     osTheme
   );
-
-  // User > OS.
-  const theme = userTheme ?? osTheme;
 
   // Tailwind dark mode class.
   useEffect(() => {
@@ -38,9 +35,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
     }
   }, [theme]);
 
-  const toggle = () => {
-    setUserTheme(theme === "dark" ? "light" : "dark");
-  };
+  const toggle = () => setUserTheme(theme === "dark" ? "light" : "dark");
 
   return (
     <ThemeContext.Provider value={{ theme, toggle }}>
