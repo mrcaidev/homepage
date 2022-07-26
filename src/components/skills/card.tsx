@@ -3,6 +3,8 @@ import Image from "next/future/image";
 import { Children, PropsWithChildren } from "react";
 import { FiX } from "react-icons/fi";
 import { useBoolean } from "src/hooks/boolean.hook";
+import { useLocaleValue } from "src/hooks/locale.hook";
+import { IconButton } from "../common/icon-button";
 import { Modal } from "../common/modal";
 
 const leftSlide = {
@@ -23,16 +25,16 @@ interface IProps {
 }
 
 const CardFace = ({ img, title }: IProps) => (
-  <div className="flex flex-col justify-center items-center gap-y-4">
+  <div className="flex flex-col justify-center items-center gap-y-3">
     <motion.div
       layoutId={title + "-icon"}
-      className="w-28 h-28 sm:w-36 sm:h-36 lg:w-44 lg:h-44"
+      className="w-36 h-36 md:w-44 md:h-44 lg:w-36 lg:h-36 xl:w-44 xl:h-44"
     >
       <Image src={img} alt={title} draggable={false} />
     </motion.div>
     <motion.h3
       layoutId={title + "-title"}
-      className="text-3xl lg:text-4xl font-bold transition-colors"
+      className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-bold transition-colors"
     >
       {title}
     </motion.h3>
@@ -41,6 +43,8 @@ const CardFace = ({ img, title }: IProps) => (
 
 export const Card = ({ img, title, children }: PropsWithChildren<IProps>) => {
   const { value: shouldShow, on: showModal, off: hideModal } = useBoolean();
+  const openLabel = useLocaleValue("Click to show details", "点击查看详情");
+  const closeLabel = useLocaleValue("Hide details", "收起详情");
 
   return (
     <>
@@ -48,10 +52,10 @@ export const Card = ({ img, title, children }: PropsWithChildren<IProps>) => {
         <div className="min-h-[228px]" />
       ) : (
         <motion.div
-          aria-label="Click to show details"
+          aria-label={openLabel}
           onClick={showModal}
           layoutId={title}
-          className="p-8 rounded-3xl bg-slate-200 dark:bg-slate-800 cursor-pointer shadow-lg transition-bg"
+          className="p-12 rounded-3xl bg-slate-200 dark:bg-slate-800 cursor-pointer shadow-lg transition-bg"
         >
           <CardFace img={img} title={title} />
         </motion.div>
@@ -59,7 +63,7 @@ export const Card = ({ img, title, children }: PropsWithChildren<IProps>) => {
       <Modal show={shouldShow}>
         <motion.div
           layoutId={title}
-          className="flex flex-col md:flex-row justify-center items-center gap-8 relative p-12 rounded-3xl m-auto bg-slate-200 dark:bg-slate-800 shadow-lg"
+          className="flex flex-col md:flex-row justify-center items-center gap-x-12 gap-y-4 relative p-12 rounded-3xl m-auto bg-slate-200 dark:bg-slate-800 shadow-lg transition-bg"
         >
           <CardFace img={img} title={title} />
           <motion.ul
@@ -74,13 +78,11 @@ export const Card = ({ img, title, children }: PropsWithChildren<IProps>) => {
               </motion.li>
             ))}
           </motion.ul>
-          <button
-            aria-label="Hide details"
-            onClick={hideModal}
-            className="absolute top-6 right-6 h-fit p-2 rounded-md hover:bg-slate-300 hover:dark:bg-slate-700 active:bg-slate-400 active:dark:bg-slate-600 transition-colors"
-          >
-            <FiX size="24px" />
-          </button>
+          <div className="absolute top-6 right-6">
+            <IconButton ariaLabel={closeLabel} onClick={hideModal}>
+              <FiX size="24px" />
+            </IconButton>
+          </div>
         </motion.div>
       </Modal>
     </>

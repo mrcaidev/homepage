@@ -12,7 +12,7 @@ const rise = {
     y: 30,
     opacity: 0,
   },
-  back: {
+  up: {
     y: 0,
     opacity: 1,
     transition: { type: "tween", duration: 0.5 },
@@ -23,9 +23,9 @@ export const Skills = () => (
   <Section id="skills">
     <motion.div
       initial="down"
-      whileInView="back"
+      whileInView="up"
       transition={{ staggerChildren: 0.2 }}
-      className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-4 gap-8 sm:px-8 lg:px-36 py-8"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 py-8"
     >
       <motion.div variants={rise}>
         <Card img={reactjs} title="Frontend">
