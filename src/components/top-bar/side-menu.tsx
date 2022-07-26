@@ -1,18 +1,13 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useBoolean } from "src/hooks/boolean.hook";
 import { useLocaleValue } from "src/hooks/locale.hook";
 import { useMediaQuery } from "src/hooks/media-query.hook";
+import { IconButton } from "../common/icon-button";
 import { GithubLink } from "./github-link";
 import { LocaleToggler } from "./locale-toggler";
 import { NavigationLinks } from "./navigation-links";
+import { SideMenuContainer } from "./side-menu-container";
 import { ThemeToggler } from "./theme-toggler";
-
-const backdrop = {
-  hide: { opacity: 0 },
-  show: { opacity: 0.4 },
-  exit: { opacity: 0 },
-};
 
 export const SideMenu = () => {
   const {
@@ -26,51 +21,24 @@ export const SideMenu = () => {
 
   return (
     <>
-      <button
-        onClick={showModal}
-        aria-label={openLabel}
-        className="h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
-      >
+      <IconButton onClick={showModal} ariaLabel={openLabel}>
         <FiMenu size="24px" />
-      </button>
-      <AnimatePresence>
-        {shouldShow && belowMd && (
-          <>
-            <motion.div
-              key="backdrop"
-              variants={backdrop}
-              initial="hide"
-              animate="show"
-              exit="exit"
-              className="fixed top-0 left-0 right-0 bottom-0 bg-slate-700"
-            />
-            <motion.div
-              key="sidebar"
-              initial={{ x: 300 }}
-              animate={{ x: 0 }}
-              exit={{ x: 300 }}
-              transition={{ ease: "easeOut" }}
-              className="flex flex-col items-center fixed top-0 right-0 bottom-0 h-full px-8 py-4 rounded-l-2xl bg-slate-100 dark:bg-slate-900 shadow-2xl transition-bg"
-            >
-              <button
-                onClick={hideModal}
-                aria-label={closeLabel}
-                className="self-end h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
-              >
-                <FiX size="28px" />
-              </button>
-              <div className="flex flex-col justify-center gap-y-2 flex-grow px-4">
-                <NavigationLinks />
-              </div>
-              <div className="flex gap-x-4 px-4">
-                <LocaleToggler />
-                <GithubLink />
-                <ThemeToggler />
-              </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+      </IconButton>
+      <SideMenuContainer show={shouldShow && belowMd}>
+        <div className="self-end">
+          <IconButton onClick={hideModal} ariaLabel={closeLabel}>
+            <FiX size="28px" />
+          </IconButton>
+        </div>
+        <div className="flex flex-col justify-center gap-y-2 flex-grow px-4">
+          <NavigationLinks />
+        </div>
+        <div className="flex gap-x-4 px-4">
+          <LocaleToggler />
+          <GithubLink />
+          <ThemeToggler />
+        </div>
+      </SideMenuContainer>
     </>
   );
 };

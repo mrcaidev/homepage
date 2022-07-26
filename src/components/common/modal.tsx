@@ -1,7 +1,8 @@
-import { HTMLProps } from "react";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { Backdrop } from "./backdrop";
 
-interface IProps extends HTMLProps<HTMLDivElement> {
+interface IProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   show: boolean;
 }
 

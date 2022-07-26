@@ -3,18 +3,6 @@ import { PropsWithChildren } from "react";
 import navLinks from "src/data/nav-links.json";
 import { useLocaleValue } from "src/hooks/locale.hook";
 
-const rightSlide = {
-  hide: {
-    x: -30,
-    opacity: 0,
-  },
-  show: {
-    x: 0,
-    opacity: 1,
-    transition: { type: "tween", duration: 1 },
-  },
-};
-
 interface IProps extends PropsWithChildren {
   id: keyof typeof navLinks;
 }
@@ -29,9 +17,9 @@ export const Section = ({ id, children }: IProps) => {
       className="flex flex-col justify-center items-center gap-y-12 min-h-screen px-10 py-20"
     >
       <motion.div
-        variants={rightSlide}
-        initial="hide"
-        whileInView="show"
+        initial={{ x: -30, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ type: "tween", duration: 1 }}
         className="w-fit mx-auto text-center"
       >
         <p
