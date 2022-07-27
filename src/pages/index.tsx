@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { About } from "src/components/about";
 import { Cover } from "src/components/cover";
+import { Projects } from "src/components/projects";
 import { Skills } from "src/components/skills";
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <Cover />
         <About />
         <Skills />
+        <Projects />
       </main>
     </>
   );
