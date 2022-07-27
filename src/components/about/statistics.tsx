@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { useLocale } from "src/hooks/locale.hook";
+import { useStats } from "src/hooks/stats.hook";
 
 const rise = {
   hide: {
@@ -33,6 +34,9 @@ const Statistic = ({ top, bottom, children }: IProps) => (
 
 export const Statistics = () => {
   const { locale } = useLocale();
+  const {
+    profile: { count, stars, forks },
+  } = useStats();
 
   return (
     <motion.div
@@ -45,19 +49,19 @@ export const Statistics = () => {
         top={locale === "en-US" ? "Built" : "开源了"}
         bottom={locale === "en-US" ? "projects" : "个项目"}
       >
-        25
+        {count}
       </Statistic>
       <Statistic
         top={locale === "en-US" ? "Received" : "收到了"}
         bottom={locale === "en-US" ? "stars" : "个 star"}
       >
-        101
+        {stars}
       </Statistic>
       <Statistic
         top={locale === "en-US" ? "Got" : "至今被"}
         bottom={locale === "en-US" ? "forks" : "次 fork"}
       >
-        214
+        {forks}
       </Statistic>
     </motion.div>
   );

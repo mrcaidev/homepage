@@ -31,7 +31,7 @@ export const Repo = ({
 }: IProps) => (
   <motion.li
     variants={fadeIn}
-    className="relative px-5 py-3 rounded-lg bg-slate-200 dark:bg-slate-800 shadow-md transition-bg"
+    className="relative h-fit px-5 py-3 rounded-lg bg-slate-200 dark:bg-slate-800 shadow-md transition-bg"
   >
     <div className="flex items-center gap-x-2">
       <FiBook size="18px" className="transition-colors" />
