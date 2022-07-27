@@ -12,7 +12,7 @@ export const Subtitle = () => {
       initial={{ x: 30, opacity: 0 }}
       whileInView={{ x: 0, opacity: 1 }}
       transition={{ type: "tween", duration: 1 }}
-      className="py-5 text-lg sm:text-xl md:text-2xl text-slate-500 font-medium transition-colors"
+      className="py-5 text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium transition-colors"
     >
       {text}
     </m.p>

@@ -27,13 +27,13 @@ export const Footer = () => {
           <div className="grow flex flex-col items-center gap-y-3">
             <Image src={logo} alt="logo" width="44" height="60" />
             <p className="text-xl font-bold transition-colors">mrcai.space</p>
-            <p className="text-xs text-slate-300 dark:text-slate-700 text-center transition-colors">
+            <p className="text-xs text-slate-600 dark:text-slate-400 text-center transition-colors">
               Copyright © 2022 Yuwang Cai. All Rights Reserved.
             </p>
           </div>
           <div className="grow-[2] flex justify-evenly items-start gap-x-4">
             <div className="grow text-center">
-              <p className="pb-4 text-lg text-slate-500 font-semibold">
+              <p className="pb-4 text-lg text-slate-600 dark:text-slate-400 font-semibold">
                 {locale === "en-US" ? "SECTION" : "章节"}
               </p>
               <ul className="flex flex-col items-center gap-y-3">
@@ -50,7 +50,7 @@ export const Footer = () => {
               </ul>
             </div>
             <div className="grow text-center">
-              <p className="pb-4 text-lg text-slate-500 font-semibold">
+              <p className="pb-4 text-lg text-slate-600 dark:text-slate-400 font-semibold">
                 {locale === "en-US" ? "CONTACT" : "联系我"}
               </p>
               <ul className="flex flex-col items-center gap-y-3">

@@ -64,7 +64,7 @@ export const Article = () => {
       </m.h3>
       <m.p
         variants={leftSlide}
-        className="py-2 text-xl text-slate-500 font-medium"
+        className="py-2 text-xl text-slate-600 dark:text-slate-400 font-medium"
       >
         {subtitle}
       </m.p>

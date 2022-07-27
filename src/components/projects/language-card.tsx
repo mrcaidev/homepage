@@ -25,7 +25,9 @@ export const LanguageCard = ({ name, percentage, color }: IProps) => (
   >
     <div className="flex gap-x-4 justify-between pb-1">
       <p className="text-lg font-semibold transition-colors">{name}</p>
-      <p className="text-lg text-slate-500 font-semibold">{percentage}%</p>
+      <p className="text-lg text-slate-600 dark:text-slate-400 font-semibold">
+        {percentage}%
+      </p>
     </div>
     <div className="w-full rounded-full bg-slate-300 dark:bg-slate-700 transition-bg">
       <m.div
