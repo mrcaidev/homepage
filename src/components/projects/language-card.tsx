@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const rise = {
   hide: {
@@ -19,7 +19,7 @@ interface IProps {
 }
 
 export const LanguageCard = ({ name, percentage, color }: IProps) => (
-  <motion.li
+  <m.li
     variants={rise}
     className="w-full px-4 py-2 rounded-md bg-slate-200 dark:bg-slate-800 shadow-md transition-bg"
   >
@@ -28,7 +28,7 @@ export const LanguageCard = ({ name, percentage, color }: IProps) => (
       <p className="text-lg text-slate-500 font-semibold">{percentage}%</p>
     </div>
     <div className="w-full rounded-full bg-slate-300 dark:bg-slate-700 transition-bg">
-      <motion.div
+      <m.div
         initial={{ scaleX: 0 }}
         whileInView={{ scaleX: 1 }}
         transition={{ type: "tween", duration: 1 }}
@@ -36,5 +36,5 @@ export const LanguageCard = ({ name, percentage, color }: IProps) => (
         style={{ width: percentage + "%", backgroundColor: color }}
       />
     </div>
-  </motion.li>
+  </m.li>
 );

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FiBook, FiGitBranch, FiStar } from "react-icons/fi";
 import { Link } from "../common/link";
 
@@ -29,7 +29,7 @@ export const Repo = ({
   stars,
   forks,
 }: IProps) => (
-  <motion.li
+  <m.li
     variants={fadeIn}
     className="relative h-fit px-5 py-3 rounded-lg bg-slate-200 dark:bg-slate-800 shadow-md transition-bg"
   >
@@ -64,5 +64,5 @@ export const Repo = ({
         <p className="text-sm transition-colors">{forks}</p>
       </div>
     </div>
-  </motion.li>
+  </m.li>
 );

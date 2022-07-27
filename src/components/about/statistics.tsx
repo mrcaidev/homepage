@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { useLocale } from "src/hooks/locale.hook";
 import { useStats } from "src/hooks/stats.hook";
@@ -21,7 +21,7 @@ interface IProps extends PropsWithChildren {
 }
 
 const Statistic = ({ top, bottom, children }: IProps) => (
-  <motion.div variants={rise} className="text-center">
+  <m.div variants={rise} className="text-center">
     <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors">
       {top}
     </p>
@@ -29,7 +29,7 @@ const Statistic = ({ top, bottom, children }: IProps) => (
     <p className="text-sm text-slate-600 dark:text-slate-400 transition-colors">
       {bottom}
     </p>
-  </motion.div>
+  </m.div>
 );
 
 export const Statistics = () => {
@@ -39,7 +39,7 @@ export const Statistics = () => {
   } = useStats();
 
   return (
-    <motion.div
+    <m.div
       initial="hide"
       whileInView="show"
       transition={{ delayChildren: 0.2, staggerChildren: 0.2 }}
@@ -63,6 +63,6 @@ export const Statistics = () => {
       >
         {forks}
       </Statistic>
-    </motion.div>
+    </m.div>
   );
 };

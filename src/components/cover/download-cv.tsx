@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FiDownload } from "react-icons/fi";
 import { useLocaleValue } from "src/hooks/locale.hook";
 
@@ -6,7 +6,7 @@ export const DownloadCV = () => {
   const text = useLocaleValue("Download CV", "下载简历");
 
   return (
-    <motion.a
+    <m.a
       href="cv.txt"
       download
       initial={{ y: 30, opacity: 0 }}
@@ -16,6 +16,6 @@ export const DownloadCV = () => {
     >
       {text}
       <FiDownload size="16px" />
-    </motion.a>
+    </m.a>
   );
 };

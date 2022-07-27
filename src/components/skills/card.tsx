@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/future/image";
 import { FiX } from "react-icons/fi";
 import { useBoolean } from "src/hooks/boolean.hook";
@@ -26,18 +26,18 @@ interface ICardFaceProps {
 
 const CardFace = ({ img, title }: ICardFaceProps) => (
   <div className="flex flex-col justify-center items-center gap-y-3">
-    <motion.div
+    <m.div
       layoutId={title + "-icon"}
       className="w-36 h-36 md:w-44 md:h-44 lg:w-36 lg:h-36 xl:w-44 xl:h-44"
     >
       <Image src={img} alt={title} draggable={false} />
-    </motion.div>
-    <motion.h3
+    </m.div>
+    <m.h3
       layoutId={title + "-title"}
       className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-bold transition-colors"
     >
       {title}
-    </motion.h3>
+    </m.h3>
   </div>
 );
 
@@ -58,39 +58,39 @@ export const Card = ({ img, title, content }: ICardProps) => {
       {shouldShow ? (
         <div className="min-h-[228px]" />
       ) : (
-        <motion.div
+        <m.div
           aria-label={openLabel}
           onClick={showModal}
           layoutId={title}
           className="p-12 rounded-3xl bg-slate-200 dark:bg-slate-800 cursor-pointer shadow-lg transition-bg"
         >
           <CardFace img={img} title={title} />
-        </motion.div>
+        </m.div>
       )}
       <Modal show={shouldShow}>
-        <motion.div
+        <m.div
           layoutId={title}
           className="flex flex-col md:flex-row justify-center items-center gap-x-12 gap-y-4 relative p-12 rounded-3xl m-auto bg-slate-200 dark:bg-slate-800 shadow-lg transition-bg"
         >
           <CardFace img={img} title={title} />
-          <motion.ul
+          <m.ul
             initial="hide"
             whileInView="show"
             transition={{ delayChildren: 0.1, staggerChildren: 0.1 }}
             className="max-w-sm list-disc"
           >
             {content.map(({ topic, description }) => (
-              <motion.li key={topic} variants={leftSlide} className="py-1">
+              <m.li key={topic} variants={leftSlide} className="py-1">
                 <Bold>{topic}</Bold> - {description}
-              </motion.li>
+              </m.li>
             ))}
-          </motion.ul>
+          </m.ul>
           <div className="absolute top-6 right-6">
             <IconButton ariaLabel={closeLabel} onClick={hideModal}>
               <FiX size="24px" />
             </IconButton>
           </div>
-        </motion.div>
+        </m.div>
       </Modal>
     </>
   );

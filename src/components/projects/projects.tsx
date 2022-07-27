@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useStats } from "src/hooks/stats.hook";
 import { Section } from "../common/section";
 import { LanguageCard } from "./language-card";
@@ -10,7 +10,7 @@ export const Projects = () => {
   return (
     <Section id="projects">
       <div className="grid grid-cols-3 justify-center gap-8 w-full sm:px-16 md:px-8 xl:px-32 2xl:px-48">
-        <motion.ul
+        <m.ul
           initial="hide"
           whileInView="show"
           transition={{ staggerChildren: 0.2 }}
@@ -24,8 +24,8 @@ export const Projects = () => {
               color={color}
             />
           ))}
-        </motion.ul>
-        <motion.ul
+        </m.ul>
+        <m.ul
           initial="hide"
           whileInView="show"
           transition={{ staggerChildren: 0.2 }}
@@ -42,7 +42,7 @@ export const Projects = () => {
               color={color}
             />
           ))}
-        </motion.ul>
+        </m.ul>
       </div>
     </Section>
   );

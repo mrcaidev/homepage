@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Image from "next/future/image";
 import about from "public/about.webp";
 
 export const SidePicture = () => (
-  <motion.div
+  <m.div
     initial={{ x: -30, opacity: 0 }}
     whileInView={{ x: 0, opacity: 1 }}
     transition={{ type: "tween", duration: 1 }}
@@ -17,5 +17,5 @@ export const SidePicture = () => (
       height="400"
       className="rounded-3xl"
     />
-  </motion.div>
+  </m.div>
 );

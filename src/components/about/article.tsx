@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { useLocaleValue } from "src/hooks/locale.hook";
@@ -51,26 +51,26 @@ export const Article = () => {
   );
 
   return (
-    <motion.article
+    <m.article
       initial="hide"
       whileInView="show"
       transition={{ staggerChildren: 0.2 }}
     >
-      <motion.h3
+      <m.h3
         variants={leftSlide}
         className="py-2 text-3xl font-semibold transition-colors"
       >
         {title}
-      </motion.h3>
-      <motion.p
+      </m.h3>
+      <m.p
         variants={leftSlide}
         className="py-2 text-xl text-slate-500 font-medium"
       >
         {subtitle}
-      </motion.p>
-      <motion.p variants={leftSlide} className="py-2 text-lg transition-colors">
+      </m.p>
+      <m.p variants={leftSlide} className="py-2 text-lg transition-colors">
         {content}
-      </motion.p>
-    </motion.article>
+      </m.p>
+    </m.article>
   );
 };

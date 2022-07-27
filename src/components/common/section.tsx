@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { PropsWithChildren } from "react";
 import sections from "src/data/sections.json";
 import { useLocaleValue } from "src/hooks/locale.hook";
@@ -16,7 +16,7 @@ export const Section = ({ id, children }: IProps) => {
       id={id}
       className="flex flex-col items-center min-h-screen px-10 py-20"
     >
-      <motion.div
+      <m.div
         initial={{ x: -30, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ type: "tween", duration: 1 }}
@@ -32,7 +32,7 @@ export const Section = ({ id, children }: IProps) => {
           {text}
         </h2>
         <hr className="border-sky-700 dark:border-sky-300 bg-sky-700 dark:bg-sky-300 border-2 transition-colors -translate-y-4 scale-x-50" />
-      </motion.div>
+      </m.div>
       {children}
     </section>
   );

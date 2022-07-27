@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export const Divider = () => (
-  <motion.hr
+  <m.hr
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
     transition={{ type: "tween", duration: 1 }}
