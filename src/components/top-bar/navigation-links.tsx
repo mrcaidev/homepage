@@ -1,4 +1,4 @@
-import navLinks from "src/data/nav-links.json";
+import sections from "src/data/sections.json";
 import { useLocale } from "src/hooks/locale.hook";
 import { Link } from "../common/link";
 
@@ -7,7 +7,7 @@ export const NavigationLinks = () => {
 
   return (
     <>
-      {Object.entries(navLinks).map(([id, { en, zh }]) => (
+      {Object.entries(sections).map(([id, { en, zh }]) => (
         <Link
           key={id}
           href={"#" + id}

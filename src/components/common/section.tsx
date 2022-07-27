@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import { PropsWithChildren } from "react";
-import navLinks from "src/data/nav-links.json";
+import sections from "src/data/sections.json";
 import { useLocaleValue } from "src/hooks/locale.hook";
 
 interface IProps extends PropsWithChildren {
-  id: keyof typeof navLinks;
+  id: keyof typeof sections;
 }
 
 export const Section = ({ id, children }: IProps) => {
-  const { en, zh } = navLinks[id];
+  const { en, zh } = sections[id];
   const text = useLocaleValue(en, zh);
 
   return (
