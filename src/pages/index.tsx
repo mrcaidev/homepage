@@ -1,13 +1,26 @@
 import { GetStaticProps } from "next";
+import dynamic from "next/dynamic";
 import Head from "next/head";
-import { About } from "src/components/about";
-import { Cover } from "src/components/cover";
-import { Footer } from "src/components/footer";
-import { Projects } from "src/components/projects";
-import { Skills } from "src/components/skills";
+import { Suspense } from "react";
 import { StatsProvider } from "src/contexts/stats.context";
 import { getStats } from "src/helpers/stats.helper";
 import { Stats } from "src/models/stats.model";
+
+const About = dynamic(() => import("src/components/about"), {
+  suspense: true,
+});
+const Cover = dynamic(() => import("src/components/cover"), {
+  suspense: true,
+});
+const Footer = dynamic(() => import("src/components/footer"), {
+  suspense: true,
+});
+const Projects = dynamic(() => import("src/components/projects"), {
+  suspense: true,
+});
+const Skills = dynamic(() => import("src/components/skills"), {
+  suspense: true,
+});
 
 interface IProps {
   stats: Stats;
@@ -19,15 +32,17 @@ export default function Home({ stats }: IProps) {
       <Head>
         <title>Home - MrCai</title>
       </Head>
-      <StatsProvider value={stats}>
-        <main>
-          <Cover />
-          <About />
-          <Skills />
-          <Projects />
-          <Footer />
-        </main>
-      </StatsProvider>
+      <Suspense fallback="Loading...">
+        <StatsProvider value={stats}>
+          <main>
+            <Cover />
+            <About />
+            <Skills />
+            <Projects />
+            <Footer />
+          </main>
+        </StatsProvider>
+      </Suspense>
     </>
   );
 }
