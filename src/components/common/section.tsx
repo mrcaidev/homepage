@@ -14,13 +14,13 @@ export const Section = ({ id, children }: IProps) => {
   return (
     <section
       id={id}
-      className="flex flex-col justify-center items-center gap-y-12 min-h-screen px-10 py-20"
+      className="flex flex-col items-center min-h-screen px-10 py-20"
     >
       <motion.div
         initial={{ x: -30, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
         transition={{ type: "tween", duration: 1 }}
-        className="w-fit mx-auto text-center"
+        className="py-10 mx-auto text-center"
       >
         <p
           aria-hidden
