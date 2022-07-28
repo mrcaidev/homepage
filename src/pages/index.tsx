@@ -6,21 +6,18 @@ import { StatsProvider } from "src/contexts/stats.context";
 import { getStats } from "src/helpers/stats.helper";
 import { Stats } from "src/models/stats.model";
 
-const About = dynamic(() => import("src/components/about"), {
-  suspense: true,
-});
-const Cover = dynamic(() => import("src/components/cover"), {
-  suspense: true,
-});
-const Footer = dynamic(() => import("src/components/footer"), {
-  suspense: true,
-});
-const Projects = dynamic(() => import("src/components/projects"), {
-  suspense: true,
-});
-const Skills = dynamic(() => import("src/components/skills"), {
-  suspense: true,
-});
+const About = dynamic<{}>(() =>
+  import("src/components/about").then((mod) => mod.About)
+);
+const Cover = dynamic<{}>(() =>
+  import("src/components/cover").then((mod) => mod.Cover)
+);
+const Projects = dynamic<{}>(() =>
+  import("src/components/projects").then((mod) => mod.Projects)
+);
+const Skills = dynamic<{}>(() =>
+  import("src/components/skills").then((mod) => mod.Skills)
+);
 
 interface IProps {
   stats: Stats;
@@ -39,7 +36,6 @@ export default function Home({ stats }: IProps) {
             <About />
             <Skills />
             <Projects />
-            <Footer />
           </main>
         </StatsProvider>
       </Suspense>

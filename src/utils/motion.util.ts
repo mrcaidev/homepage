@@ -1,1 +1,1 @@
-export { domAnimation as default } from "framer-motion";
+export { domAnimation } from "framer-motion";

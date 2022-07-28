@@ -1,1 +1,1 @@
-export { Cover as default } from "./cover";
+export { Cover } from "./cover";
