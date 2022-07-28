@@ -2,15 +2,13 @@ import { GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { Suspense } from "react";
+import { Cover } from "src/components/cover";
 import { StatsProvider } from "src/contexts/stats.context";
 import { getStats } from "src/helpers/stats.helper";
 import { Stats } from "src/models/stats.model";
 
 const About = dynamic<{}>(() =>
   import("src/components/about").then((mod) => mod.About)
-);
-const Cover = dynamic<{}>(() =>
-  import("src/components/cover").then((mod) => mod.Cover)
 );
 const Projects = dynamic<{}>(() =>
   import("src/components/projects").then((mod) => mod.Projects)
