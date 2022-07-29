@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useBoolean } from "src/hooks/boolean.hook";
 import { useLocaleValue } from "src/hooks/locale.hook";
@@ -18,6 +19,10 @@ export const SideMenu = () => {
   const openLabel = useLocaleValue("Open sidebar menu", "打开侧边菜单栏");
   const closeLabel = useLocaleValue("Close sidebar menu", "关闭侧边菜单栏");
   const belowMd = useMediaQuery("(max-width: 768px)");
+
+  useEffect(() => {
+    // const handleKey
+  }, []);
 
   return (
     <>
