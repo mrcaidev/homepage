@@ -1,0 +1,12 @@
+{
+  "en": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects"
+  },
+  "zh": {
+    "about": "关于",
+    "skills": "技术栈",
+    "projects": "项目"
+  }
+}

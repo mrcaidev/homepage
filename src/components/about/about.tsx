@@ -1,17 +1,22 @@
+import { type IProfile } from "src/models/profile.model";
 import { Section } from "../common/section";
-import { Article } from "./article";
 import { Divider } from "./divider";
+import { Profile } from "./profile";
+import { SelfIntro } from "./self-intro";
 import { SidePicture } from "./side-picture";
-import { Statistics } from "./statistics";
 
-export const About = () => (
+interface IProps {
+  profile: IProfile;
+}
+
+export const About = ({ profile }: IProps) => (
   <Section id="about">
     <div className="flex justify-center gap-x-20">
       <SidePicture />
       <div className="flex flex-col justify-around max-w-lg">
-        <Article />
+        <SelfIntro />
         <Divider />
-        <Statistics />
+        <Profile profile={profile} />
       </div>
     </div>
   </Section>

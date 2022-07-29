@@ -1,13 +1,13 @@
 import { m } from "framer-motion";
-import Image from "next/future/image";
 import { FiX } from "react-icons/fi";
 import { useBoolean } from "src/hooks/boolean.hook";
 import { useLocaleValue } from "src/hooks/locale.hook";
 import { Bold } from "../common/bold";
 import { IconButton } from "../common/icon-button";
 import { Modal } from "../common/modal";
+import { CardFace } from "./card-face";
 
-const leftSlide = {
+const slide = {
   hide: {
     x: 30,
     opacity: 0,
@@ -19,36 +19,16 @@ const leftSlide = {
   },
 };
 
-interface ICardFaceProps {
+interface IProps {
   img: string;
   title: string;
-}
-
-const CardFace = ({ img, title }: ICardFaceProps) => (
-  <div className="flex flex-col justify-center items-center gap-y-3">
-    <m.div
-      layoutId={title + "-icon"}
-      className="w-36 h-36 md:w-44 md:h-44 lg:w-36 lg:h-36 xl:w-44 xl:h-44"
-    >
-      <Image src={img} alt={title} draggable={false} />
-    </m.div>
-    <m.h3
-      layoutId={title + "-title"}
-      className="text-3xl md:text-4xl lg:text-3xl xl:text-4xl font-bold transition-colors"
-    >
-      {title}
-    </m.h3>
-  </div>
-);
-
-interface ICardProps extends ICardFaceProps {
   content: {
     topic: string;
     description: string;
   }[];
 }
 
-export const Card = ({ img, title, content }: ICardProps) => {
+export const Card = ({ img, title, content }: IProps) => {
   const { value: shouldShow, on: showModal, off: hideModal } = useBoolean();
   const openLabel = useLocaleValue("Click to show details", "点击查看详情");
   const closeLabel = useLocaleValue("Hide details", "收起详情");
@@ -80,7 +60,7 @@ export const Card = ({ img, title, content }: ICardProps) => {
             className="max-w-sm list-disc"
           >
             {content.map(({ topic, description }) => (
-              <m.li key={topic} variants={leftSlide} className="py-1">
+              <m.li key={topic} variants={slide} className="py-1">
                 <Bold>{topic}</Bold> - {description}
               </m.li>
             ))}

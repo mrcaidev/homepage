@@ -1,12 +1,24 @@
-import { m } from "framer-motion";
+import { m, type Variants } from "framer-motion";
 import Image from "next/future/image";
 import about from "public/about.webp";
 
+const slide: Variants = {
+  hide: {
+    x: -30,
+    opacity: 0,
+  },
+  show: {
+    x: 0,
+    opacity: 1,
+    transition: { type: "tween", duration: 1 },
+  },
+};
+
 export const SidePicture = () => (
   <m.div
-    initial={{ x: -30, opacity: 0 }}
-    whileInView={{ x: 0, opacity: 1 }}
-    transition={{ type: "tween", duration: 1 }}
+    variants={slide}
+    initial="hide"
+    whileInView="show"
     className="hidden xl:block"
   >
     <Image

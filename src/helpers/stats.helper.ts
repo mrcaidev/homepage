@@ -1,5 +1,7 @@
 import repoNames from "src/data/repositories.json";
-import { defaultStats, Repo, Stats, TopLang } from "src/models/stats.model";
+import { type ILanguage } from "src/models/language.model";
+import { type IRepository } from "src/models/repository.model";
+import { defaultStats, type IStats } from "src/models/stats.model";
 
 // Constants.
 const API_URL = "https://api.github.com/graphql";
@@ -59,29 +61,28 @@ interface GithubResponse {
   };
 }
 
-async function queryGithub() {
-  const res = await fetch(API_URL, {
-    method: "POST",
-    body: JSON.stringify({ query }),
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: OAUTH_TOKEN,
-    },
-  });
-  const json = await res.json();
-  return json as GithubResponse;
-}
+export const getStats = async () => {
+  if (process.env.NODE_ENV !== "production") {
+    return defaultStats;
+  }
 
-export async function getStats() {
   try {
     // Query GitHub API.
+    const res = await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify({ query }),
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: OAUTH_TOKEN,
+      },
+    });
     const {
       data: {
         user: {
           repositories: { totalCount, nodes: repositories },
         },
       },
-    } = await queryGithub();
+    }: GithubResponse = await res.json();
 
     // Data vectors.
     let totalStars = 0;
@@ -89,7 +90,7 @@ export async function getStats() {
     let totalLangSize = 0;
     const langColorMap: Record<string, string> = {};
     const langSizeMap: Record<string, number> = {};
-    const repos: Repo[] = Array(repoNames.length);
+    const repos: IRepository[] = Array(repoNames.length);
 
     // Traverse all repositories.
     repositories.forEach(
@@ -128,7 +129,7 @@ export async function getStats() {
     );
 
     // Convert language size record to array and sort it by size.
-    const topLangs: TopLang[] = Object.entries(langSizeMap)
+    const topLangs: ILanguage[] = Object.entries(langSizeMap)
       .sort((a, b) => b[1] - a[1])
       .map((lang) => ({
         name: lang[0],
@@ -138,7 +139,7 @@ export async function getStats() {
       .slice(0, LANG_NUM);
 
     // Format it as final data model.
-    const stats: Stats = {
+    const stats: IStats = {
       profile: {
         count: totalCount,
         stars: totalStars,
@@ -149,6 +150,6 @@ export async function getStats() {
     };
     return stats;
   } catch (e) {
-    return defaultStats as Stats;
+    return defaultStats as IStats;
   }
-}
+};

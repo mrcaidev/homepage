@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 
-export function useLocale() {
+export const useLocale = () => {
   const router = useRouter();
   const { pathname, asPath, query, locale } = router;
 
@@ -14,10 +14,10 @@ export function useLocale() {
   };
 
   return { locale, toggle };
-}
+};
 
-export function useLocaleValue<T>(en: T, zh: T) {
+export const useLocaleValue = <T>(en: T, zh: T) => {
   const { locale } = useLocale();
 
   return locale === "en-US" ? en : zh;
-}
+};

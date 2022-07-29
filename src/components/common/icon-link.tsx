@@ -1,4 +1,4 @@
-import { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
+import { type AnchorHTMLAttributes, type DetailedHTMLProps } from "react";
 import { Link } from "./link";
 
 interface IProps
@@ -13,8 +13,8 @@ interface IProps
 export const IconLink = ({ href, ariaLabel, children, ...rest }: IProps) => (
   <Link
     href={href}
-    className="w-fit h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
     aria-label={ariaLabel}
+    className="w-fit h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
     {...rest}
   >
     {children}

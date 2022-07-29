@@ -1,0 +1,30 @@
+{
+  "en": {
+    "count": {
+      "top": "Built",
+      "bottom": "projects"
+    },
+    "stars": {
+      "top": "Received",
+      "bottom": "stars"
+    },
+    "forks": {
+      "top": "Got",
+      "bottom": "forks"
+    }
+  },
+  "zh": {
+    "count": {
+      "top": "开源了",
+      "bottom": "个项目"
+    },
+    "stars": {
+      "top": "收到了",
+      "bottom": "个 star"
+    },
+    "forks": {
+      "top": "至今被",
+      "bottom": "次 fork"
+    }
+  }
+}

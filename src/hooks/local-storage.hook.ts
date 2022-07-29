@@ -1,6 +1,6 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-export function useLocalStorage<T>(key: string, defaultValue: T) {
+export const useLocalStorage = <T>(key: string, defaultValue: T) => {
   const [value, setValue] = useState(defaultValue);
 
   useEffect(() => {
@@ -8,16 +8,16 @@ export function useLocalStorage<T>(key: string, defaultValue: T) {
     setValue(currentValue);
   }, [key, defaultValue]);
 
-  const setValueWrapper: Dispatch<SetStateAction<T>> = (action) => {
+  const setValueWrapper: typeof setValue = (action) => {
     const newValue = action instanceof Function ? action(value) : action;
     setValue(newValue);
     setStorage(key, newValue);
   };
 
   return { value, set: setValueWrapper };
-}
+};
 
-function getStorage<T>(key: string, defaultValue: T) {
+const getStorage = <T>(key: string, defaultValue: T) => {
   try {
     const value = localStorage.getItem(key);
     return value === null ? defaultValue : (JSON.parse(value) as T);
@@ -25,12 +25,12 @@ function getStorage<T>(key: string, defaultValue: T) {
     console.error(err);
     return defaultValue;
   }
-}
+};
 
-function setStorage(key: string, value: any) {
+const setStorage = (key: string, value: any) => {
   try {
     localStorage.setItem(key, JSON.stringify(value));
   } catch (err) {
     console.error(err);
   }
-}
+};

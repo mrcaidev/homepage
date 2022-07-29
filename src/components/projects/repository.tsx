@@ -1,5 +1,6 @@
 import { m } from "framer-motion";
 import { FiBook, FiGitBranch, FiStar } from "react-icons/fi";
+import { type IRepository } from "src/models/repository.model";
 import { Link } from "../common/link";
 
 const fadeIn = {
@@ -13,21 +14,11 @@ const fadeIn = {
 };
 
 interface IProps {
-  name: string;
-  description: string;
-  language: string;
-  color: string;
-  stars: number;
-  forks: number;
+  repo: IRepository;
 }
 
-export const Repo = ({
-  name,
-  description,
-  language,
-  color,
-  stars,
-  forks,
+export const Repository = ({
+  repo: { name, description, stars, forks, language, color },
 }: IProps) => (
   <m.li
     variants={fadeIn}

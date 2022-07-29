@@ -1,5 +1,5 @@
 import NextLink from "next/link";
-import { AnchorHTMLAttributes, DetailedHTMLProps } from "react";
+import { type AnchorHTMLAttributes, type DetailedHTMLProps } from "react";
 
 interface IProps
   extends DetailedHTMLProps<
@@ -9,10 +9,8 @@ interface IProps
   href: string;
 }
 
-export const Link = ({ href, children, ...rest }: IProps) => {
-  const isInternalLink = href.startsWith("/") || href.startsWith("#");
-
-  return isInternalLink ? (
+export const Link = ({ href, children, ...rest }: IProps) =>
+  href.startsWith("/") || href.startsWith("#") ? (
     <NextLink href={href}>
       <a {...rest}>{children}</a>
     </NextLink>
@@ -21,4 +19,3 @@ export const Link = ({ href, children, ...rest }: IProps) => {
       {children}
     </a>
   );
-};

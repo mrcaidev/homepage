@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useBoolean(defaultValue = false) {
+export const useBoolean = (defaultValue = false) => {
   const [value, setValue] = useState(defaultValue);
 
   const toggle = () => setValue((value) => !value);
@@ -8,4 +8,4 @@ export function useBoolean(defaultValue = false) {
   const off = () => setValue(false);
 
   return { value, toggle, on, off };
-}
+};
