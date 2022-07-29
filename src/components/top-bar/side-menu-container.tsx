@@ -1,5 +1,5 @@
 import { AnimatePresence, m, type Variants } from "framer-motion";
-import { type PropsWithChildren } from "react";
+import { type DetailedHTMLProps, type HTMLAttributes } from "react";
 import { Backdrop } from "../common/backdrop";
 
 const slide: Variants = {
@@ -15,11 +15,12 @@ const slide: Variants = {
   },
 };
 
-interface IProps extends PropsWithChildren {
+interface IProps
+  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   show: boolean;
 }
 
-export const SideMenuContainer = ({ show, children }: IProps) => (
+export const SideMenuContainer = ({ show, children, ...rest }: IProps) => (
   <>
     <Backdrop show={show} />
     <AnimatePresence>
@@ -30,6 +31,7 @@ export const SideMenuContainer = ({ show, children }: IProps) => (
           animate="show"
           exit="exit"
           className="flex flex-col items-center fixed top-0 right-0 bottom-0 h-screen px-8 py-4 rounded-l-2xl bg-slate-100 dark:bg-slate-900 shadow-2xl transition-bg z-30"
+          {...(rest as any)}
         >
           {children}
         </m.div>

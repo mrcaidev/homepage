@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { KeyboardEventHandler, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useBoolean } from "src/hooks/boolean.hook";
 import { useLocaleValue } from "src/hooks/locale.hook";
@@ -20,8 +20,27 @@ export const SideMenu = () => {
   const closeLabel = useLocaleValue("Close sidebar menu", "关闭侧边菜单栏");
   const belowMd = useMediaQuery("(max-width: 768px)");
 
+  const firstRef = useRef<HTMLButtonElement>(null);
+  const lastRef = useRef<HTMLButtonElement>(null);
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.code !== "Escape") return;
+    e.preventDefault();
+    hideModal();
+  };
+  const handleTab: KeyboardEventHandler = (e) => {
+    if (e.code !== "Tab") return;
+    if (e.shiftKey && document.activeElement === firstRef.current) {
+      e.preventDefault();
+      lastRef.current?.focus();
+    } else if (!e.shiftKey && document.activeElement === lastRef.current) {
+      e.preventDefault();
+      firstRef.current?.focus();
+    }
+  };
+
   useEffect(() => {
-    // const handleKey
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
   return (
@@ -29,9 +48,9 @@ export const SideMenu = () => {
       <IconButton onClick={showModal} ariaLabel={openLabel}>
         <FiMenu size="24px" />
       </IconButton>
-      <SideMenuContainer show={shouldShow && belowMd}>
+      <SideMenuContainer show={shouldShow && belowMd} onKeyDown={handleTab}>
         <div className="self-end">
-          <IconButton onClick={hideModal} ariaLabel={closeLabel}>
+          <IconButton ref={firstRef} onClick={hideModal} ariaLabel={closeLabel}>
             <FiX size="28px" />
           </IconButton>
         </div>
@@ -41,7 +60,7 @@ export const SideMenu = () => {
         <div className="flex gap-x-4 px-4">
           <LocaleToggler />
           <GithubLink />
-          <ThemeToggler />
+          <ThemeToggler ref={lastRef} />
         </div>
       </SideMenuContainer>
     </>
