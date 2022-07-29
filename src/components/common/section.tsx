@@ -2,6 +2,7 @@ import { m, type Variants } from "framer-motion";
 import { type PropsWithChildren } from "react";
 import { useLocaleValue } from "src/hooks/locale.hook";
 import sectionsI18n from "src/i18n/sections.json";
+import { Link } from "./link";
 
 const slide: Variants = {
   hide: {
@@ -40,7 +41,7 @@ export const Section = ({ id, children }: IProps) => {
           {text[id]}
         </p>
         <h2 className="text-5xl font-bold transition-colors -translate-y-6">
-          {text[id]}
+          <Link href={"#" + id}>{text[id]}</Link>
         </h2>
         <hr className="border-sky-700 dark:border-sky-300 bg-sky-700 dark:bg-sky-300 border-2 transition-colors -translate-y-4 scale-x-50" />
       </m.div>
