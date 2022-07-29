@@ -24,7 +24,7 @@ export const Backdrop = ({ show = true }: IProps) => (
         initial="hide"
         animate="show"
         exit="exit"
-        className="fixed top-0 left-0 right-0 bottom-0 bg-slate-800 z-20"
+        className="fixed top-0 left-0 w-screen h-screen bg-slate-800 z-20"
       />
     )}
   </AnimatePresence>
