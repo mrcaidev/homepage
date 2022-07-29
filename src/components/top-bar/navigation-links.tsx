@@ -11,7 +11,7 @@ export const NavigationLinks = () => {
         <Link
           key={id}
           href={"#" + id}
-          className="px-4 py-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 text-lg text-center font-semibold transition-colors"
+          className="px-4 py-2 rounded-md text-slate-600 dark:text-slate-400 hover:text-sky-800 hover:dark:text-sky-200 active:text-sky-700 active:dark:text-sky-300 text-lg text-center font-semibold transition-colors"
         >
           {text}
         </Link>

@@ -17,7 +17,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IProps>(
     <button
       ref={ref}
       aria-label={ariaLabel}
-      className="w-fit h-fit p-2 rounded-md hover:bg-slate-200 hover:dark:bg-slate-800 active:bg-slate-300 active:dark:bg-slate-700 transition-colors"
+      className="w-fit h-fit p-2 rounded-md hover:text-sky-800 hover:dark:text-sky-200 active:text-sky-700 active:dark:text-sky-300 transition-colors"
       {...rest}
     >
       {children}
