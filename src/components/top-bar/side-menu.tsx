@@ -1,6 +1,6 @@
+import { useBoolean } from "@mrcaidev/hooks";
 import { KeyboardEventHandler, useEffect, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { useBoolean } from "src/hooks/boolean.hook";
 import { useLocaleValue } from "src/hooks/locale.hook";
 import { IconButton } from "../common/icon-button";
 import { GithubLink } from "./github-link";
@@ -10,11 +10,7 @@ import { SideMenuContainer } from "./side-menu-container";
 import { ThemeToggler } from "./theme-toggler";
 
 export const SideMenu = () => {
-  const {
-    value: shouldShow,
-    on: showModal,
-    off: hideModal,
-  } = useBoolean(false);
+  const { value: shouldShow, on: showModal, off: hideModal } = useBoolean();
   const openLabel = useLocaleValue("Open sidebar menu", "打开侧边菜单栏");
   const closeLabel = useLocaleValue("Close sidebar menu", "关闭侧边菜单栏");
 

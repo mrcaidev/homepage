@@ -1,4 +1,4 @@
-import { useMediaQuery } from "src/hooks/media-query.hook";
+import { useMediaQuery } from "@mrcaidev/hooks";
 import { GithubLink } from "./github-link";
 import { LocaleToggler } from "./locale-toggler";
 import { Logo } from "./logo";

@@ -1,7 +1,7 @@
+import { useBoolean } from "@mrcaidev/hooks";
 import { m } from "framer-motion";
 import { useEffect, useRef, type KeyboardEventHandler } from "react";
 import { FiX } from "react-icons/fi";
-import { useBoolean } from "src/hooks/boolean.hook";
 import { useLocaleValue } from "src/hooks/locale.hook";
 import { Bold } from "../common/bold";
 import { IconButton } from "../common/icon-button";
