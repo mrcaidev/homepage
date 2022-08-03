@@ -4,6 +4,7 @@ specifiers:
   '@commitlint/cli': ^17.0.3
   '@commitlint/config-conventional': ^17.0.3
   '@fontsource/inter': ^4.5.11
+  '@mrcaidev/hooks': ^0.2.1
   '@types/node': ^18.6.3
   '@types/react': ^18.0.15
   '@types/react-dom': ^18.0.6
@@ -25,6 +26,7 @@ specifiers:
 
 dependencies:
   '@fontsource/inter': 4.5.11
+  '@mrcaidev/hooks': 0.2.1_biqbaboplfbrettd7655fr4n2y
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
   next: 12.2.3_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
@@ -367,6 +369,16 @@ packages:
       '@motionone/types': 10.13.0
       hey-listen: 1.0.8
       tslib: 2.4.0
+    dev: false
+
+  /@mrcaidev/hooks/0.2.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-UjDtkdixxPJzCvDz1fDqKlOq1z1BK/PelvtI96c7GF4K5RJrleOzPhiO7008E1UpNUanPt+0oOcEVgrwn/NDVw==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@next/env/12.2.3:
