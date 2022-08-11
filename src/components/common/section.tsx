@@ -1,7 +1,6 @@
 import { m, type Variants } from "framer-motion";
 import { type PropsWithChildren } from "react";
-import { useLocaleValue } from "src/hooks/locale.hook";
-import sectionsI18n from "src/i18n/sections.json";
+import navLinks from "src/data/nav-links.json";
 import { Link } from "./link";
 
 const slide: Variants = {
@@ -17,11 +16,11 @@ const slide: Variants = {
 };
 
 interface IProps extends PropsWithChildren {
-  id: keyof typeof sectionsI18n[keyof typeof sectionsI18n];
+  id: string;
 }
 
 export const Section = ({ id, children }: IProps) => {
-  const text = useLocaleValue(sectionsI18n.en, sectionsI18n.zh);
+  const { name, href } = navLinks.find((link) => link.id === id)!;
 
   return (
     <section
@@ -32,18 +31,18 @@ export const Section = ({ id, children }: IProps) => {
         variants={slide}
         initial="hide"
         whileInView="show"
-        className="py-10 mx-auto text-center"
+        className="my-10 mx-auto text-center"
       >
         <p
           aria-hidden
-          className="text-7xl text-slate-200 dark:text-slate-800 font-bold select-none transition-colors"
+          className="text-7xl text-slate-200 dark:text-slate-800 font-bold select-none"
         >
-          {text[id]}
+          {name}
         </p>
-        <h2 className="text-5xl font-bold transition-colors -translate-y-6">
-          <Link href={"#" + id}>{text[id]}</Link>
+        <h2 className="peer text-5xl font-bold -translate-y-6">
+          <Link href={href}>{name}</Link>
         </h2>
-        <hr className="border-sky-700 dark:border-sky-300 bg-sky-700 dark:bg-sky-300 border-2 transition-colors -translate-y-4 scale-x-50" />
+        <hr className="border-sky-700 dark:border-sky-300 bg-sky-700 dark:bg-sky-300 border-2 -translate-y-4 scale-x-50 peer-hover:scale-x-90 transition-transform" />
       </m.div>
       {children}
     </section>
