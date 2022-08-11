@@ -14,7 +14,7 @@ const Home = ({ profile, topLangs, repos }: IStats) => (
     <Head>
       <title>Home - MrCai</title>
     </Head>
-    <main>
+    <main className="w-full">
       <Cover />
       <About profile={profile} />
       <Skills />

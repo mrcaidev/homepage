@@ -3,17 +3,28 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
+  *::-webkit-scrollbar {
+    @apply w-2 h-2 bg-slate-300 dark:bg-slate-700;
   }
-  html::-webkit-scrollbar {
-    @apply w-2 h-2 bg-slate-600;
+  *::-webkit-scrollbar-thumb {
+    @apply w-2 h-2 rounded-md bg-slate-500;
   }
-  html::-webkit-scrollbar-thumb {
-    @apply w-2 h-2 rounded-md bg-slate-400;
+}
+
+@layer components {
+  .bg-normal {
+    @apply bg-slate-100 dark:bg-slate-900;
   }
-  body {
-    @apply bg-slate-100 text-slate-700 transition-bg dark:bg-slate-900 dark:text-slate-300;
+  .bg-dim {
+    @apply bg-slate-200 dark:bg-slate-800;
+  }
+  .text-normal {
+    @apply text-slate-700 dark:text-slate-300;
+  }
+  .text-dim {
+    @apply text-slate-600 dark:text-slate-400;
+  }
+  .text-highlight {
+    @apply text-sky-800 dark:text-sky-200;
   }
 }

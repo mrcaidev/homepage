@@ -10,6 +10,16 @@ module.exports = {
       transitionProperty: {
         bg: "background",
       },
+      keyframes: {
+        sidemenu: {
+          from: {
+            transform: "translateX(300px)",
+          },
+          to: {
+            transform: "translateX(0)",
+          },
+        },
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,14 @@
-{
-  "github": "https://github.com/mrcaidev",
-  "mail": "mailto:mrcaidev@qq.com",
-  "devto": "https://dev.to/mrcaidev"
-}
+[
+  {
+    "name": "GitHub",
+    "href": "https://github.com/mrcaidev"
+  },
+  {
+    "name": "E-mail",
+    "href": "mailto:mrcaidev@qq.com"
+  },
+  {
+    "name": "DEV.TO",
+    "href": "https://dev.to/mrcaidev"
+  }
+]

@@ -1,18 +1,20 @@
 import { forwardRef, useContext } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { ThemeContext } from "src/contexts/theme.context";
-import { useLocaleValue } from "src/hooks/locale.hook";
-import { IconButton } from "../common/icon-button";
 
 export const ThemeToggler = forwardRef<HTMLButtonElement, {}>((_, ref) => {
   const { theme, toggle } = useContext(ThemeContext);
-  const Icon = theme === "light" ? FiMoon : FiSun;
-  const label = useLocaleValue("Toggle theme", "切换主题");
+  const ThemeIcon = theme === "light" ? FiMoon : FiSun;
 
   return (
-    <IconButton ref={ref} onClick={toggle} ariaLabel={label}>
-      <Icon size="24px" />
-    </IconButton>
+    <button
+      ref={ref}
+      onClick={toggle}
+      aria-label="Toggle theme"
+      className="p-2 rounded-md hover:bg-dim hover:text-highlight"
+    >
+      <ThemeIcon size="24px" />
+    </button>
   );
 });
 

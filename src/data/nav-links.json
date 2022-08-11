@@ -1,0 +1,17 @@
+[
+  {
+    "id": "about",
+    "name": "About",
+    "href": "#about"
+  },
+  {
+    "id": "skills",
+    "name": "Skills",
+    "href": "#skills"
+  },
+  {
+    "id": "projects",
+    "name": "Projects",
+    "href": "#projects"
+  }
+]
