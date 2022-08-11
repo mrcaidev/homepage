@@ -1,5 +1,5 @@
 {
-  "name": "homepage",
+  "name": "mrcai.space",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "analyze": "ANALYZE=true pnpm build",
     "prepare": "husky install"
   },
   "dependencies": {
     "@fontsource/inter": "^4.5.12",
     "@mrcaidev/hooks": "^0.4.1",
+    "@next/bundle-analyzer": "^12.2.4",
     "framer-motion": "^7.0.1",
     "next": "^12.2.4",
     "react": "^18.2.0",
