@@ -1,7 +1,7 @@
 import { type GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import Cover from "src/components/cover";
+import { Cover } from "src/components/cover";
 import { getStats } from "src/helpers/stats.helper";
 import { type IStats } from "src/models/stats.model";
 
