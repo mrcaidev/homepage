@@ -10,7 +10,11 @@ export const useLocale = () => {
       locale: nextLocale,
       scroll: false,
     });
-    document.cookie = "NEXT_LOCALE=" + nextLocale;
+    try {
+      document.cookie = "NEXT_LOCALE=" + nextLocale;
+    } catch (err) {
+      return;
+    }
   };
 
   return { locale, toggle };
