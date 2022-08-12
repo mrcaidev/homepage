@@ -39,8 +39,10 @@ export const Section = ({ id, children }: IProps) => {
         >
           {name}
         </p>
-        <h2 className="peer text-5xl font-bold -translate-y-6">
-          <Link href={href}>{name}</Link>
+        <h2 className="peer -translate-y-6">
+          <Link href={href} className="px-3 py-1 text-5xl font-bold">
+            {name}
+          </Link>
         </h2>
         <hr className="border-sky-700 dark:border-sky-300 bg-sky-700 dark:bg-sky-300 border-2 -translate-y-4 scale-x-50 peer-hover:scale-x-90 transition-transform" />
       </m.div>
