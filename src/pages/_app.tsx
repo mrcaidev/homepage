@@ -17,6 +17,10 @@ const App = ({ Component, pageProps }: AppProps) => (
   <ThemeProvider>
     <LazyMotion features={features} strict>
       <div className="flex flex-col min-h-screen">
+        <p className="sr-only">
+          Press C to go to Cover page. Press A to go to About page. Press S to
+          go to Skills page. Press P to go to Projects page.
+        </p>
         <TopBar />
         <div className="grow flex">
           <Component {...pageProps} />

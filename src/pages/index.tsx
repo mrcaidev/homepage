@@ -1,6 +1,8 @@
+import { useKeydown } from "@mrcaidev/hooks";
 import { type GetStaticProps } from "next";
 import dynamic from "next/dynamic";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { Cover } from "src/components/cover";
 import { type IStats } from "src/models/stats.model";
 import { getStats } from "src/utils/stat";
@@ -9,19 +11,27 @@ const About = dynamic(() => import("src/components/about"));
 const Projects = dynamic(() => import("src/components/projects"));
 const Skills = dynamic(() => import("src/components/skills"));
 
-const Home = ({ profile, topLangs, repos }: IStats) => (
-  <>
-    <Head>
-      <title>Home - MrCai</title>
-    </Head>
-    <main className="w-full">
-      <Cover />
-      <About profile={profile} />
-      <Skills />
-      <Projects topLangs={topLangs} repos={repos} />
-    </main>
-  </>
-);
+const Home = ({ profile, topLangs, repos }: IStats) => {
+  const router = useRouter();
+  useKeydown("KeyC", () => router.replace("/"));
+  useKeydown("KeyA", () => router.replace("#about"));
+  useKeydown("KeyS", () => router.replace("#skills"));
+  useKeydown("KeyP", () => router.replace("#projects"));
+
+  return (
+    <>
+      <Head>
+        <title>Home - MrCai</title>
+      </Head>
+      <main className="w-full">
+        <Cover />
+        <About profile={profile} />
+        <Skills />
+        <Projects topLangs={topLangs} repos={repos} />
+      </main>
+    </>
+  );
+};
 
 export default Home;
 

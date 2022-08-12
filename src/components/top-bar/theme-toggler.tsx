@@ -1,3 +1,4 @@
+import { useKeydown } from "@mrcaidev/hooks";
 import { forwardRef, useContext } from "react";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { ThemeContext } from "src/contexts/theme.context";
@@ -5,6 +6,7 @@ import { ThemeContext } from "src/contexts/theme.context";
 export const ThemeToggler = forwardRef<HTMLButtonElement, {}>((_, ref) => {
   const { theme, toggle } = useContext(ThemeContext);
   const ThemeIcon = theme === "light" ? FiMoon : FiSun;
+  useKeydown("KeyT", toggle);
 
   return (
     <button
