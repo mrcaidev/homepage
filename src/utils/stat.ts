@@ -149,7 +149,7 @@ export const getStats = async () => {
       repos,
     };
     return stats;
-  } catch (e) {
+  } catch {
     return defaultStats as IStats;
   }
 };
