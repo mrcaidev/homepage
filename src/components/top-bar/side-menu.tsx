@@ -1,5 +1,10 @@
-import { useBoolean, useFocusTrap, useKeydown } from "@mrcaidev/hooks";
-import { useEffect, useRef } from "react";
+import {
+  useBoolean,
+  useFocusTrap,
+  useKeydown,
+  useUpdate,
+} from "@mrcaidev/hooks";
+import { useRef } from "react";
 import { createPortal } from "react-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import { GithubLink } from "./github-link";
@@ -15,7 +20,7 @@ export const SideMenu = () => {
 
   useFocusTrap(firstRef, lastRef);
   useKeydown("Escape", hideModal);
-  useEffect(() => {
+  useUpdate(() => {
     if (shouldShow) {
       firstRef.current?.focus();
     } else {

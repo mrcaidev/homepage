@@ -1,6 +1,11 @@
-import { useBoolean, useFocusTrap, useKeydown } from "@mrcaidev/hooks";
+import {
+  useBoolean,
+  useFocusTrap,
+  useKeydown,
+  useUpdate,
+} from "@mrcaidev/hooks";
 import { m } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { FiX } from "react-icons/fi";
 import { CardFace } from "./card-face";
 
@@ -45,7 +50,7 @@ export const Card = ({ img, title, content }: IProps) => {
 
   useFocusTrap(closeRef, closeRef);
   useKeydown("Escape", hideModal);
-  useEffect(() => {
+  useUpdate(() => {
     if (shouldShow) {
       closeRef.current?.focus();
     } else {
