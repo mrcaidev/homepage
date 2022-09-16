@@ -1,32 +1,6 @@
 {
+  "extends": "astro/tsconfigs/strictest",
   "compilerOptions": {
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "exactOptionalPropertyTypes": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": false,
-    "noUncheckedIndexedAccess": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strict": true,
-    "baseUrl": ".",
-    "module": "ESNext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "allowJs": true,
-    "forceConsistentCasingInFileNames": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "target": "ES6",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "incremental": true,
-    "skipLibCheck": true,
-    "typeRoots": ["node_modules/@types", "src/types"]
-  },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+    "baseUrl": "src"
+  }
 }
