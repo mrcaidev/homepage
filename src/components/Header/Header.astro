@@ -1,0 +1,38 @@
+---
+import logo from "assets/logo.svg";
+import navLinks from "data/navLinks.json";
+import { GitHub } from "react-feather";
+import GithubLink from "./GithubLink.astro";
+import NavLink from "./NavLink.astro";
+import NavMenu from "./NavMenu";
+import ThemeToggler from "./ThemeToggler";
+---
+
+<header class="flex justify-between items-center gap-8 px-8 py-4">
+  <a href="/" aria-label="Home">
+    <img src={logo} alt="Logo" width="30" class="p-1" />
+  </a>
+  <nav class="hidden md:flex gap-4">
+    {navLinks.map((link) => <NavLink {...link} />)}
+  </nav>
+  <div class="hidden md:flex gap-3">
+    <a
+      href="https://github.com/mrcaidev/homepage"
+      target="_blank"
+      rel="noreferrer"
+      aria-label="View source code on GitHub"
+      class="button-vivid"
+    >
+      <GitHub size="24" />
+    </a>
+    <ThemeToggler client:idle />
+  </div>
+  <div class="md:hidden">
+    <NavMenu client:idle>
+      <nav slot="nav" class="flex flex-col gap-4">
+        {navLinks.map((link) => <NavLink {...link} />)}
+      </nav>
+      <GithubLink slot="github" />
+    </NavMenu>
+  </div>
+</header>
