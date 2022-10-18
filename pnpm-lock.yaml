@@ -22,6 +22,7 @@ specifiers:
   husky: ^8.0.1
   lint-staged: ^13.0.3
   preact: ^10.11.2
+  preact-feather: ^4.2.1
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.6.0
   tailwindcss: ^3.1.8
@@ -34,6 +35,7 @@ dependencies:
   '@fontsource/inter': 4.5.14
   astro: 1.5.0_ts-node@10.9.1
   preact: 10.11.2
+  preact-feather: 4.2.1_preact@10.11.2
   tailwindcss: 3.1.8_neo3lunb2qpadwxplzw7r2isgm
 
 devDependencies:
@@ -4801,6 +4803,14 @@ packages:
       nanoid: 3.3.4
       picocolors: 1.0.0
       source-map-js: 1.0.2
+
+  /preact-feather/4.2.1_preact@10.11.2:
+    resolution: {integrity: sha512-yK5kYW64AoOkm+xTtUjwcFx0zNrqVTbwmtww8G2AmAB6f8wyQgwZgc6oRXllSYeg7q1I8VbkUpErJuKJ6Vq2eA==}
+    peerDependencies:
+      preact: ^10.0.0
+    dependencies:
+      preact: 10.11.2
+    dev: false
 
   /preact-render-to-string/5.2.5_preact@10.11.2:
     resolution: {integrity: sha512-rEBn42C3Wh+AjPxXUbDkb6xw0cTJQgxdYlp6ytUR1uBZF647Wn6ykkopMeQlRl7ggX+qnYYjZ4Hs1abZENl7ww==}

@@ -47,8 +47,10 @@
         "plugin:react/recommended",
         "plugin:react/jsx-runtime",
         "plugin:jsx-a11y/recommended"
-      ]
+      ],
+      "rules": {
+        "react/no-unknown-property": "off"
+      }
     }
-  ],
-  "rules": {}
+  ]
 }

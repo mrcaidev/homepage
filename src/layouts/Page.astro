@@ -1,0 +1,26 @@
+---
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/900.css";
+import Head from "components/Head.astro";
+import Header from "components/Header.astro";
+import "styles/global.css";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <Head title={title} description={description} />
+  <body class="max-w-7xl px-8 mx-auto bg-normal text-normal">
+    <Header />
+    <main class="mt-20">
+      <slot />
+    </main>
+  </body>
+</html>

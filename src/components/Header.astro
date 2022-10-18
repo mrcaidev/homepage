@@ -1,0 +1,28 @@
+---
+import logo from "assets/logo.svg";
+import navLinks from "data/navLinks.json";
+import Menu from "./Menu";
+import NavLink from "./NavLink.astro";
+import ThemeToggler from "./ThemeToggler";
+---
+
+<header class="fixed top-0 left-0 right-0 backdrop-blur z-10">
+  <div
+    class="flex justify-between items-center gap-8 max-w-7xl px-8 py-4 mx-auto"
+  >
+    <a href="/" aria-label="Homepage">
+      <img src={logo} alt="" width="30" class="p-1" />
+    </a>
+    <nav class="hidden md:flex gap-4">
+      {navLinks.map((link) => <NavLink {...link} />)}
+    </nav>
+    <div class="hidden md:block">
+      <ThemeToggler client:visible />
+    </div>
+    <div class="block md:hidden relative">
+      <Menu client:visible>
+        {navLinks.map((link) => <NavLink {...link} />)}
+      </Menu>
+    </div>
+  </div>
+</header>

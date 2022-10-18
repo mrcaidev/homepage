@@ -4,10 +4,10 @@
 
 @layer base {
   *::-webkit-scrollbar {
-    @apply w-2 h-2 bg-slate-300 dark:bg-slate-700;
+    @apply w-2 h-2 bg-normal;
   }
   *::-webkit-scrollbar-thumb {
-    @apply w-2 h-2 rounded-md bg-slate-500;
+    @apply w-2 h-2 rounded-md bg-slate-300 dark:bg-slate-700;
   }
 }
 
@@ -22,15 +22,15 @@
     @apply bg-sky-200 dark:bg-sky-800;
   }
   .text-normal {
-    @apply text-slate-700 dark:text-slate-300;
+    @apply text-slate-800 dark:text-slate-200;
   }
   .text-dim {
     @apply text-slate-600 dark:text-slate-400;
   }
   .text-highlight {
-    @apply text-sky-700 dark:text-sky-300;
+    @apply text-sky-800 dark:text-sky-200;
   }
-  .button-vivid {
-    @apply p-2 hover:scale-110 active:scale-90 transition-transform;
+  .click-vivid {
+    @apply hover:scale-110 active:scale-90 transition-transform;
   }
 }

@@ -7,6 +7,16 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "system-ui"],
       },
+      keyframes: {
+        menu: {
+          from: {
+            transform: "translateY(-100vh)",
+          },
+          to: {
+            transform: "translateY(0)",
+          },
+        },
+      },
     },
   },
   plugins: [],
