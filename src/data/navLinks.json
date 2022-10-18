@@ -12,7 +12,15 @@
     "href": "/projects"
   },
   {
+    "name": "Contact",
+    "href": "/contact"
+  },
+  {
+    "name": "Friends",
+    "href": "/friends"
+  },
+  {
     "name": "Blog",
-    "href": "/blog"
+    "href": "https://blog.mrcai.dev"
   }
 ]
