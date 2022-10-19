@@ -18,7 +18,7 @@ import ThemeToggler from "./ThemeToggler";
     <div class="hidden md:block">
       <ThemeToggler client:visible />
     </div>
-    <div class="block md:hidden relative">
+    <div class="block md:hidden">
       <Menu client:visible>
         {navLinks.map((link) => <NavLink {...link} />)}
       </Menu>

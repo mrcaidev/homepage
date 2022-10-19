@@ -1,7 +1,7 @@
 ---
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/600.css";
-import "@fontsource/inter/900.css";
+import "@fontsource/inter/800.css";
 import Footer from "components/Footer.astro";
 import Head from "components/Head.astro";
 import Header from "components/Header.astro";
@@ -18,10 +18,10 @@ const { title, description } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <Head title={title} description={description} />
-  <body class="flex flex-col min-h-screen bg-normal text-normal">
+  <body class="bg-normal text-normal">
     <Header />
     <main
-      class="grow flex flex-col justify-center items-center w-full max-w-7xl px-8 pt-20 mx-auto"
+      class="flex flex-col justify-center items-center min-h-screen max-w-7xl p-8 pt-20 mx-auto"
     >
       <slot />
     </main>
