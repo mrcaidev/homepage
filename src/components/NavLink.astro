@@ -14,7 +14,7 @@ const isInternal = href.startsWith("/") || href.startsWith("#");
   href={href}
   aria-current={isCurrent ? "page" : "false"}
   class:list={[
-    "px-2 py-1 font-semibold text-lg hover:text-highlight text-center",
+    "px-2 py-1 font-medium text-lg hover:text-highlight text-center",
     isCurrent ? "text-highlight" : "text-dim",
   ]}
   >{name}
