@@ -1,0 +1,18 @@
+---
+import Page from "./Page.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Page title={title} description={description}>
+  <main
+    class="flex flex-col justify-center items-center min-h-screen max-w-5xl p-8 pt-20 mx-auto"
+  >
+    <slot />
+  </main>
+</Page>
