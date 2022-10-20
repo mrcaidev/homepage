@@ -34,7 +34,7 @@ const data = [
 ---
 
 <DetailPage title="About" description="A brief introduction about myself.">
-  <div class="divide-y divide-slate-300 dark:divide-slate-700">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {data.map((item) => <AboutCard {...item} />)}
   </div>
 </DetailPage>
