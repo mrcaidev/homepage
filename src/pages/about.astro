@@ -4,8 +4,8 @@ import about from "data/about.json";
 import DetailPage from "layouts/DetailPage.astro";
 ---
 
-<DetailPage title="About" description="A brief introduction of myself.">
-  <div class="divide-y divide-slate-200 dark:divide-slate-800">
+<DetailPage title="About" description="A brief introduction about myself.">
+  <div class="divide-y divide-slate-300 dark:divide-slate-700">
     {about.map((item) => <AboutCard {...item} />)}
   </div>
 </DetailPage>

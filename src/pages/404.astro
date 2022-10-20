@@ -3,9 +3,9 @@ import HeroPage from "layouts/HeroPage.astro";
 ---
 
 <HeroPage title="Not Found" description="This page does not exist.">
-  <h1 class="font-semibold text-3xl leading-loose">Page Not Found</h1>
-  <p class="text-dim leading-loose">Path: {Astro.url.pathname}</p>
-  <a href="/" class="leading-loose underline underline-offset-4"
-    >Back to homepage</a
-  >
+  <section class="space-y-3 text-center">
+    <h1 class="font-bold text-3xl">Page Not Found</h1>
+    <p class="text-dim">Path: {Astro.url.pathname}</p>
+    <a href="/" class="block underline underline-offset-4">Back to homepage</a>
+  </section>
 </HeroPage>
