@@ -1,0 +1,25 @@
+---
+export interface Props {
+  title: string;
+  content: string | string[];
+}
+
+const { title, content } = Astro.props;
+---
+
+<section class="py-6">
+  <h2 class="mb-3 font-bold text-lg sm:text-xl">
+    {title}
+  </h2>
+  {
+    Array.isArray(content) ? (
+      <ul class="marker:text-sky-500 list-disc pl-6 space-y-2">
+        {content.map((line) => (
+          <li>{line}</li>
+        ))}
+      </ul>
+    ) : (
+      <p class="leading-relaxed">{content}</p>
+    )
+  }
+</section>
