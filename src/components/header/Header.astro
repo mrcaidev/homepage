@@ -6,10 +6,8 @@ import NavLink from "./NavLink.astro";
 import ThemeToggler from "./ThemeToggler";
 ---
 
-<header class="fixed top-0 left-0 right-0 backdrop-blur z-10">
-  <div
-    class="flex justify-between items-center gap-8 max-w-7xl px-8 py-4 mx-auto"
-  >
+<header class="fixed top-0 left-0 right-0 backdrop-blur">
+  <div class="flex justify-between items-center max-w-7xl px-8 py-4 mx-auto">
     <Logo />
     <nav class="hidden md:flex gap-4">
       {navLinks.map((link) => <NavLink {...link} />)}

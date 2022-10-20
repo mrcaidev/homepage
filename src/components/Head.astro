@@ -25,10 +25,7 @@ const { title, description } = Astro.props;
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta
-    property="og:image:alt"
-    content="Logo on the left, mrcai.dev on the right."
-  />
+  <meta property="og:image:alt" content="Logo of mrcai.dev" />
   <meta property="og:url" content={Astro.url.href} />
   <meta property="og:description" content={description} />
   <meta property="og:locale" content="en_US" />
@@ -40,19 +37,23 @@ const { title, description } = Astro.props;
 
   <!-- Prevent FOUC -->
   <script is:inline>
-    try {
-      const userTheme = localStorage.getItem("theme");
-      const isDarkOs = matchMedia("(prefers-color-scheme: dark)").matches;
-      const isDark = userTheme === "dark" || (!userTheme && isDarkOs);
-
-      const html = document.documentElement;
-      if (isDark) {
-        html.classList.add("dark");
-      } else {
-        html.classList.remove("dark");
+    function getUserTheme() {
+      try {
+        return localStorage.getItem("theme");
+      } catch {
+        return null;
       }
-    } catch {
-      // Do nothing.
+    }
+
+    const userTheme = getUserTheme();
+    const isDarkOs = matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = userTheme === "dark" || (!userTheme && isDarkOs);
+
+    const html = document.documentElement;
+    if (isDark) {
+      html.classList.add("dark");
+    } else {
+      html.classList.remove("dark");
     }
   </script>
 </head>
