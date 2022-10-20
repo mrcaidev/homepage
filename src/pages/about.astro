@@ -1,0 +1,26 @@
+---
+import Card from "components/about/Card.astro";
+import List from "components/about/List.astro";
+import about from "data/about.json";
+import DetailPage from "layouts/DetailPage.astro";
+---
+
+<DetailPage title="About" description="A brief introduction of myself.">
+  <div class="divide-y divide-slate-200 dark:divide-slate-800">
+    {
+      about.map(({ title, content }) => (
+        <Card title={title}>
+          {Array.isArray(content) ? (
+            <List>
+              {content.map((line) => (
+                <li>{line}</li>
+              ))}
+            </List>
+          ) : (
+            content
+          )}
+        </Card>
+      ))
+    }
+  </div>
+</DetailPage>
