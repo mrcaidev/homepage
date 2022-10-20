@@ -7,13 +7,10 @@ export interface Props {
 const { title, content } = Astro.props;
 ---
 
-<section class="p-4 rounded-lg space-y-3 hover:bg-dim">
+<section class="py-6 space-y-4">
   <h2 class="font-bold text-lg sm:text-xl">
     {title}
   </h2>
-  <hr
-    class="rounded-full border border-sky-700 dark:border-sky-300 bg-sky-700 dark:bg-sky-300"
-  />
   {
     Array.isArray(content) ? (
       <ul class="marker:text-sky-700 dark:marker:text-sky-300 list-disc pl-5 space-y-2">
