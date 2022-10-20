@@ -1,8 +1,34 @@
 ---
-import navLinks from "data/navLinks.json";
 import Menu from "./Menu";
 import NavLink from "./NavLink.astro";
 import ThemeToggler from "./ThemeToggler";
+
+const navLinks = [
+  {
+    name: "About",
+    href: "/about",
+  },
+  {
+    name: "Skills",
+    href: "/skills",
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
+  {
+    name: "Friends",
+    href: "/friends",
+  },
+  {
+    name: "Blog",
+    href: "https://blog.mrcai.dev",
+  },
+];
 ---
 
 <header class="fixed top-0 left-0 right-0 backdrop-blur">
