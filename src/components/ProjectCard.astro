@@ -1,0 +1,30 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  coverImage: string;
+  url: string;
+}
+
+const { title, description, coverImage, url } = Astro.props;
+---
+
+<section
+  class="flex flex-col relative rounded-xl shadow-md hover:shadow-xl bg-slate-200 dark:bg-slate-800 overflow-hidden hover:-translate-y-2 transition-[box-shadow,transform]"
+>
+  <img src={coverImage} alt={`Cover of project ${title}`} loading="lazy" />
+  <div class="grow flex flex-col px-6 py-4 space-y-2">
+    <h1 class="font-bold text-xl">{title}</h1>
+    <p>{description}</p>
+    <div class="grow"></div>
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer"
+      hreflang="en"
+      class="font-medium hover:text-sky-800 dark:hover:text-sky-200"
+      >Visit
+      <span class="absolute top-0 left-0 right-0 bottom-0"></span>
+    </a>
+  </div>
+</section>
