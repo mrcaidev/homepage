@@ -5,7 +5,7 @@ import BackToTop from "./BackToTop";
 const thisYear = new Date().getFullYear();
 ---
 
-<footer class="border-t-2 border-t-slate-200 dark:border-t-slate-800">
+<footer class="border-t border-t-slate-200 dark:border-t-slate-800">
   <div
     class="flex flex-col md:flex-row justify-between items-center gap-x-8 gap-y-2 max-w-7xl px-8 py-2 mx-auto"
   >
@@ -13,19 +13,19 @@ const thisYear = new Date().getFullYear();
       <img src="/logo.svg" alt="" width="20" />
       <p class="font-medium text-lg">mrcai.dev</p>
     </a>
-
-    <div class="order-3 md:order-2 space-y-1 leading-loose text-xs text-dim">
+    <div
+      class="order-3 md:order-2 space-y-1 leading-loose text-xs text-slate-600 dark:text-slate-400"
+    >
       <p>©2022-{thisYear} Yuwang Cai. All Rights Reserved.</p>
     </div>
-
     <div class="flex items-center gap-2 order-1 md:order-3">
       <a
-        href="https://github.com/mrcaidev/mrcai.dev"
+        href="https://github.com/mrcaidev/home"
         target="_blank"
         rel="noreferrer"
         hreflang="en"
         aria-label="View source code on GitHub"
-        class="p-2 click-vivid"
+        class="p-2 hover:scale-110 active:scale-90 transition-transform"
       >
         <Code size={24} />
       </a>

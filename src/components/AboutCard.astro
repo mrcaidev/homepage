@@ -7,19 +7,19 @@ export interface Props {
 const { title, content } = Astro.props;
 ---
 
-<section class="py-6 space-y-4">
+<section class="py-6 space-y-3 sm:space-y-4">
   <h2 class="font-bold text-lg sm:text-xl">
     {title}
   </h2>
   {
     Array.isArray(content) ? (
-      <ul class="marker:text-sky-700 dark:marker:text-sky-300 list-disc pl-5 space-y-2">
+      <ul class="pl-6 space-y-2 list-disc marker:text-sky-800 dark:marker:text-sky-200">
         {content.map((line) => (
           <li class="leading-relaxed">{line}</li>
         ))}
       </ul>
     ) : (
-      <p class="leading-relaxed">{content}</p>
+      <p class="pl-1 leading-relaxed">{content}</p>
     )
   }
 </section>

@@ -10,7 +10,7 @@ const ThemeToggler = () => {
       type="button"
       onClick={toggle}
       aria-label="Toggle theme"
-      className="p-2 click-vivid"
+      className="p-2 hover:scale-110 active:scale-90 transition-transform"
     >
       <Icon size={24} />
     </button>

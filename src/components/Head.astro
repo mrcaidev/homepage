@@ -14,7 +14,6 @@ const { title, description } = Astro.props;
   <meta name="description" content={description} />
   <link rel="icon" href="/logo.svg" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content={title} />
   <meta property="og:type" content="profile" />
   <meta property="profile:first_name" content="Yuwang" />
@@ -30,12 +29,10 @@ const { title, description } = Astro.props;
   <meta property="og:description" content={description} />
   <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mrcaidev" />
   <meta name="twitter:creator" content="@mrcaidev" />
 
-  <!-- Prevent FOUC -->
   <script is:inline>
     function getUserTheme() {
       try {
