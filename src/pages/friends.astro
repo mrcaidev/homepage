@@ -1,0 +1,29 @@
+---
+import sake from "assets/sake.webp";
+import FriendCard from "components/FriendCard.astro";
+import DetailPage from "layouts/DetailPage.astro";
+
+const data = [
+  {
+    title: "Sake",
+    description: "Pythonist. Machine Learning. Computer Vision.",
+    avatar: sake,
+    url: "https://fullstack-sake.github.io/",
+  },
+];
+---
+
+<DetailPage
+  title="Friends"
+  description="Some of my friends' fantastic works. Check them out!"
+>
+  <ul class="mt-6 space-y-2">
+    {
+      data.map((item) => (
+        <li>
+          <FriendCard {...item} />
+        </li>
+      ))
+    }
+  </ul>
+</DetailPage>
