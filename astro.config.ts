@@ -5,5 +5,12 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://mrcai.dev",
-  integrations: [preact(), tailwind()],
+  integrations: [
+    preact(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
+  ],
 });
