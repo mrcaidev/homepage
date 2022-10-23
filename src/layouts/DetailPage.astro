@@ -11,12 +11,10 @@ const { title, description } = Astro.props;
 
 <Page title={title} description={description}>
   <main class="max-w-5xl min-h-screen px-8 py-20 mx-auto">
-    <div class="my-4 space-y-4">
-      <h1 class="font-bold text-4xl sm:text-5xl">{title}</h1>
-      <p class="font-medium text-lg text-slate-600 dark:text-slate-400">
-        {description}
-      </p>
-    </div>
+    <h1 class="py-4 font-bold text-4xl sm:text-5xl">{title}</h1>
+    <p class="font-medium text-lg text-slate-600 dark:text-slate-400">
+      {description}
+    </p>
     <slot />
   </main>
 </Page>

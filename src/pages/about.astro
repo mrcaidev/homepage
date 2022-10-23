@@ -2,7 +2,7 @@
 import AboutCard from "components/AboutCard.astro";
 import DetailPage from "layouts/DetailPage.astro";
 
-const data = [
+const infos = [
   {
     title: "📚 Education",
     content: [
@@ -34,7 +34,7 @@ const data = [
 ---
 
 <DetailPage title="About" description="A brief introduction about myself.">
-  <div class="divide-y divide-slate-300 dark:divide-slate-700">
-    {data.map((item) => <AboutCard {...item} />)}
+  <div class="pt-4 divide-y divide-slate-300 dark:divide-slate-700">
+    {infos.map((info) => <AboutCard {...info} />)}
   </div>
 </DetailPage>

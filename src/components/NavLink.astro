@@ -13,6 +13,8 @@ const isInternal = href.startsWith("/") || href.startsWith("#");
 
 <a
   href={href}
+  target={isInternal ? "_self" : "_blank"}
+  rel={isInternal ? "" : "noreferrer"}
   aria-current={isCurrent ? "page" : "false"}
   class:list={[
     "px-2 py-1 font-medium text-lg hover:text-sky-800 dark:hover:text-sky-200 text-center",

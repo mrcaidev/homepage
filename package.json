@@ -1,5 +1,5 @@
 {
-  "name": "mrcai.dev",
+  "name": "home",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,6 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "@tailwindcss/forms": "^0.5.3",
     "@types/node": "^18.11.3",
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",

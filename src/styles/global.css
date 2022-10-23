@@ -7,6 +7,6 @@
     @apply w-2 h-2 bg-slate-100 dark:bg-slate-900;
   }
   *::-webkit-scrollbar-thumb {
-    @apply w-2 h-2 rounded-md bg-slate-300 dark:bg-slate-700;
+    @apply w-2 h-2 rounded bg-slate-300 dark:bg-slate-700;
   }
 }

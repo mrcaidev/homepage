@@ -3,7 +3,7 @@ import sake from "assets/sake.webp";
 import FriendCard from "components/FriendCard.astro";
 import DetailPage from "layouts/DetailPage.astro";
 
-const data = [
+const friends = [
   {
     title: "Sake",
     description: "Pythonist. Machine Learning. Computer Vision.",
@@ -17,11 +17,11 @@ const data = [
   title="Friends"
   description="Some of my friends' fantastic works. Check them out!"
 >
-  <ul class="mt-6 space-y-2">
+  <ul class="pt-6 space-y-2">
     {
-      data.map((item) => (
+      friends.map((friend) => (
         <li>
-          <FriendCard {...item} />
+          <FriendCard {...friend} />
         </li>
       ))
     }

@@ -13,6 +13,8 @@ const { title, description } = Astro.props;
   <title>{title} - Yuwang Cai</title>
   <meta name="description" content={description} />
   <link rel="icon" href="/logo.svg" />
+  <link rel="canonical" href={Astro.url.href} />
+  <meta name="robots" content="index, follow" />
 
   <meta property="og:title" content={title} />
   <meta property="og:type" content="profile" />
