@@ -33,6 +33,10 @@ const { title, description } = Astro.props;
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@mrcaidev" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content="https://og.mrcai.dev/api/home" />
+  <meta name="twitter:image:alt" content="Logo of mrcai.dev" />
   <meta name="twitter:creator" content="@mrcaidev" />
 
   <script is:inline>
