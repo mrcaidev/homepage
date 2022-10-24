@@ -18,9 +18,11 @@ const { host } = new URL(url);
   <img
     src={avatar}
     alt={`Avatar of ${title}`}
+    width="96"
+    height="96"
     decoding="async"
     loading="lazy"
-    class="w-24"
+    class="w-24 h-24"
   />
   <div class="flex flex-col items-center sm:items-start gap-y-2 text-center">
     <h2 class="font-bold text-xl">{title}</h2>
