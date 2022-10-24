@@ -1,15 +1,15 @@
 <div align="center">
   <a href="https://mrcai.dev" target="_blank" rel="noreferrer" hrefLang="en">
-    <img src="public/logo.svg" alt="Logo" width="60"/>
+    <img src="public/logo.svg" alt="Logo" width="60" height="82"/>
   </a>
-  <h1>mrcai.dev</h1>
-  <p>Yuwang Cai's homepage</p>
+  <h1>Portfolio</h1>
+  <p>Yuwang Cai's portfolio</p>
   <a href="https://mrcai.dev" target="_blank" rel="noreferrer" hrefLang="en"><strong></strong></a>
 </div>
 
 ## ✨ Introduction
 
-This is my homepage. Made with love. 💕
+This is my portfolio. Made with love. 💕
 
 ## 🧰 Built with
 
