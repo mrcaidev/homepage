@@ -10,6 +10,7 @@
     "lint": "eslint . --fix --cache --cache-location node_modules/.cache/eslint/.eslintcache"
   },
   "dependencies": {
+    "@astrojs/partytown": "^1.0.1",
     "@astrojs/preact": "^1.2.0",
     "@astrojs/tailwind": "^2.1.1",
     "@fontsource/inter": "^4.5.14",

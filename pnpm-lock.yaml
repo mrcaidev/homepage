@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@astrojs/partytown': ^1.0.1
   '@astrojs/preact': ^1.2.0
   '@astrojs/tailwind': ^2.1.1
   '@commitlint/cli': ^17.1.2
@@ -28,6 +29,7 @@ specifiers:
   typescript: ^4.8.4
 
 dependencies:
+  '@astrojs/partytown': 1.0.1
   '@astrojs/preact': 1.2.0_preact@10.11.2
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.0
   '@fontsource/inter': 4.5.14
@@ -134,6 +136,13 @@ packages:
       micromark-util-types: 1.0.2
       uvu: 0.5.6
       vfile-message: 3.1.2
+    dev: false
+
+  /@astrojs/partytown/1.0.1:
+    resolution: {integrity: sha512-JVmKwQa2aWMAmz3tkNHtg5hw7gOTI6ROyFIYcUQtN6j8aysEiWKnt4xzz67RvDWId1h7sIde87UeH+4YoEyGug==}
+    dependencies:
+      '@builder.io/partytown': 0.7.1
+      mrmime: 1.0.1
     dev: false
 
   /@astrojs/preact/1.2.0_preact@10.11.2:
@@ -432,6 +441,11 @@ packages:
       '@babel/helper-string-parser': 7.19.4
       '@babel/helper-validator-identifier': 7.19.1
       to-fast-properties: 2.0.0
+    dev: false
+
+  /@builder.io/partytown/0.7.1:
+    resolution: {integrity: sha512-hvu2gG9NDtCa5aoL4JkvDe3E5SegXlHAkhtA+Az96uTtFA0PYuEPjDYGiayGTkZuRKUmxetebWjIFgSDNdlBOw==}
+    hasBin: true
     dev: false
 
   /@commitlint/cli/17.1.2:
