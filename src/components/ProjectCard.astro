@@ -6,9 +6,10 @@ export interface Props {
   description: string;
   coverImage: string;
   url: string;
+  lazyLoading?: boolean;
 }
 
-const { title, description, coverImage, url } = Astro.props;
+const { title, description, coverImage, url, lazyLoading = true } = Astro.props;
 ---
 
 <section
@@ -18,7 +19,8 @@ const { title, description, coverImage, url } = Astro.props;
     src={coverImage}
     alt={`Cover of project ${title}`}
     decoding="async"
-    loading="lazy"
+    loading={lazyLoading ? "lazy" : "eager"}
+    class="w-full"
   />
   <div class="grow flex flex-col px-5 py-4 space-y-2">
     <h1 class="font-bold text-xl">{title}</h1>
