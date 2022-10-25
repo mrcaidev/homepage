@@ -7,7 +7,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier . --write --cache --plugin-search-dir=.",
-    "lint": "eslint . --fix --cache --cache-location node_modules/.cache/eslint/.eslintcache"
+    "lint": "eslint . --fix --cache --cache-location node_modules/.cache/eslint/.eslintcache",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@astrojs/preact": "^1.2.0",

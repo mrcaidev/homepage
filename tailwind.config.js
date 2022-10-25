@@ -5,7 +5,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui"],
+        sans: ["Inter"],
       },
       keyframes: {
         menu: {
