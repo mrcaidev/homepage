@@ -1,15 +1,8 @@
-<div align="center">
-  <a href="https://mrcai.dev" target="_blank" rel="noreferrer" hrefLang="en">
-    <img src="public/logo.svg" alt="Logo" width="60" height="82"/>
-  </a>
-  <h1>Portfolio</h1>
-  <p>Yuwang Cai's portfolio</p>
-  <a href="https://mrcai.dev" target="_blank" rel="noreferrer" hrefLang="en"><strong></strong></a>
-</div>
+![Banner](public/banner.png)
 
 ## ✨ Introduction
 
-This is my portfolio. Made with love. 💕
+Yuwang Cai's portfolio. Made with love. 💕
 
 ## 🧰 Built with
 
