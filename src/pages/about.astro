@@ -34,7 +34,16 @@ const infos = [
 ---
 
 <DetailPage title="About" description="A brief introduction about myself.">
-  <div class="pt-4 divide-y divide-slate-300 dark:divide-slate-700">
-    {infos.map((info) => <AboutCard {...info} />)}
-  </div>
+  <ul class="pt-4 divide-y divide-slate-300 dark:divide-slate-700">
+    {
+      infos.map((info, index) => (
+        <li
+          class="animate-leftslide"
+          style={`animation-delay: ${index * 0.2}s;`}
+        >
+          <AboutCard {...info} />
+        </li>
+      ))
+    }
+  </ul>
 </DetailPage>

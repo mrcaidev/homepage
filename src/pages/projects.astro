@@ -43,8 +43,8 @@ const projects = [
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-stretch gap-8 pt-12"
   >
     {
-      projects.map((project) => (
-        <li>
+      projects.map((project, index) => (
+        <li class="animate-pop" style={`animation-delay: ${index * 0.2}s;`}>
           <ProjectCard {...project} />
         </li>
       ))

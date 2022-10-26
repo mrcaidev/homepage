@@ -19,8 +19,8 @@ const friends = [
 >
   <ul class="pt-6 space-y-2">
     {
-      friends.map((friend) => (
-        <li>
+      friends.map((friend, index) => (
+        <li class="animate-lift" style={`animation-delay: ${index * 0.2}s;`}>
           <FriendCard {...friend} />
         </li>
       ))

@@ -7,7 +7,7 @@ export interface Props {
 const { title, content } = Astro.props;
 ---
 
-<section class="py-6">
+<div class="py-6">
   <h2 class="mb-3 font-bold text-xl">
     {title}
   </h2>
@@ -22,4 +22,4 @@ const { title, content } = Astro.props;
       <p class="pl-1 leading-relaxed">{content}</p>
     )
   }
-</section>
+</div>
