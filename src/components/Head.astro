@@ -1,6 +1,4 @@
 ---
-import Analytics from "./Analytics.astro";
-
 export interface Props {
   title: string;
   description: string;
@@ -61,6 +59,4 @@ const { title, description } = Astro.props;
       html.classList.remove("dark");
     }
   </script>
-
-  <Analytics />
 </head>
