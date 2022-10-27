@@ -2,7 +2,7 @@
 
 ## ✨ Introduction
 
-Yuwang Cai's portfolio. Made with love. 💕
+Yuwang Cai's portfolio and blog. Made with love. 💕
 
 ## 🧰 Built with
 
