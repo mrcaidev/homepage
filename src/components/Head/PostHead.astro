@@ -1,0 +1,18 @@
+---
+import type { Frontmatter } from "utils/post";
+import BaseHead from "./BaseHead.astro";
+
+export type Props = Frontmatter;
+
+const { title, description, publishedAt, tags } = Astro.props;
+const ogImage = "https://og.mrcai.dev/api/blog?title=" + title;
+const publishedTime = new Date(publishedAt).toISOString();
+---
+
+<BaseHead title={title} description={description} image={ogImage}>
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content={publishedTime} />
+  <meta property="article:author" content={Astro.site} />
+  <meta property="article:section" content="Programming" />
+  {tags.map((tag) => <meta property="article:tags" content={tag} />)}
+</BaseHead>
