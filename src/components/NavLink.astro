@@ -1,6 +1,4 @@
 ---
-import { ExternalLink } from "preact-feather";
-
 export interface Props {
   href: string;
   name: string;
@@ -8,13 +6,10 @@ export interface Props {
 
 const { href, name } = Astro.props;
 const isCurrent = Astro.url.pathname.startsWith(href);
-const isInternal = href.startsWith("/") || href.startsWith("#");
 ---
 
 <a
   href={href}
-  target={isInternal ? "_self" : "_blank"}
-  rel={isInternal ? "" : "noreferrer"}
   aria-current={isCurrent ? "page" : "false"}
   class:list={[
     "px-2 py-1 font-medium text-lg hover:text-sky-800 dark:hover:text-sky-200 text-center",
@@ -23,5 +18,4 @@ const isInternal = href.startsWith("/") || href.startsWith("#");
       : "text-slate-600 dark:text-slate-400",
   ]}
   >{name}
-  {!isInternal && <ExternalLink size={18} class="inline" />}
 </a>
