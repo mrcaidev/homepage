@@ -4,7 +4,7 @@ import cue from "assets/cue.webp";
 import hooks from "assets/hooks.webp";
 import paste from "assets/paste.webp";
 import ProjectCard from "components/ProjectCard.astro";
-import DetailPage from "layouts/DetailPage.astro";
+import FeaturePage from "layouts/FeaturePage.astro";
 
 const projects = [
   {
@@ -35,7 +35,7 @@ const projects = [
 ];
 ---
 
-<DetailPage
+<FeaturePage
   title="Projects"
   description="I've built many open source projects, and actively contribute to the community."
 >
@@ -50,4 +50,4 @@ const projects = [
       ))
     }
   </ul>
-</DetailPage>
+</FeaturePage>

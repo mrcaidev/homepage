@@ -1,6 +1,6 @@
 ---
 import AboutCard from "components/AboutCard.astro";
-import DetailPage from "layouts/DetailPage.astro";
+import FeaturePage from "layouts/FeaturePage.astro";
 
 const infos = [
   {
@@ -33,7 +33,7 @@ const infos = [
 ];
 ---
 
-<DetailPage title="About" description="A brief introduction about myself.">
+<FeaturePage title="About" description="A brief introduction about myself.">
   <ul class="pt-4 divide-y divide-slate-300 dark:divide-slate-700">
     {
       infos.map((info, index) => (
@@ -46,4 +46,4 @@ const infos = [
       ))
     }
   </ul>
-</DetailPage>
+</FeaturePage>

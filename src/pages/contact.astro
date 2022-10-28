@@ -1,7 +1,7 @@
 ---
 import ContactForm from "components/ContactForm";
 import PlatformCard from "components/PlatformCard.astro";
-import DetailPage from "layouts/DetailPage.astro";
+import FeaturePage from "layouts/FeaturePage.astro";
 import { Github, Mail, Music, Tv, Twitter } from "preact-feather";
 
 const platforms = [
@@ -33,7 +33,7 @@ const platforms = [
 ];
 ---
 
-<DetailPage
+<FeaturePage
   title="Contact"
   description="Reach me in various ways. Let's connect!"
 >
@@ -57,4 +57,4 @@ const platforms = [
       </ul>
     </section>
   </div>
-</DetailPage>
+</FeaturePage>

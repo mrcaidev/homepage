@@ -1,7 +1,7 @@
 ---
 import sake from "assets/sake.webp";
 import FriendCard from "components/FriendCard.astro";
-import DetailPage from "layouts/DetailPage.astro";
+import FeaturePage from "layouts/FeaturePage.astro";
 
 const friends = [
   {
@@ -13,7 +13,7 @@ const friends = [
 ];
 ---
 
-<DetailPage
+<FeaturePage
   title="Friends"
   description="Some of my friends' fantastic works. Check them out!"
 >
@@ -26,4 +26,4 @@ const friends = [
       ))
     }
   </ul>
-</DetailPage>
+</FeaturePage>

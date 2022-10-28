@@ -1,11 +1,21 @@
 ---
-import HeroPage from "layouts/HeroPage.astro";
+import BaseHead from "components/Head/BaseHead.astro";
+import Page from "layouts/Page.astro";
 ---
 
-<HeroPage title="Not Found" description="This page does not exist.">
-  <h1 class="font-bold text-3xl">Page Not Found</h1>
-  <p class="py-3 text-slate-600 dark:text-slate-400">
-    Path: {Astro.url.pathname}
-  </p>
-  <a href="/" class="underline underline-offset-4">Back to homepage</a>
-</HeroPage>
+<Page>
+  <BaseHead
+    slot="head"
+    title="Not Found"
+    description="This page does not exist."
+  />
+  <main
+    class="flex flex-col justify-center items-center gap-3 max-w-5xl min-h-screen px-8 py-20 mx-auto"
+  >
+    <h1 class="font-bold text-3xl">Page Not Found</h1>
+    <p class="text-slate-600 dark:text-slate-400">
+      Path: {Astro.url.pathname}
+    </p>
+    <a href="/" class="underline underline-offset-4">Back to homepage</a>
+  </main>
+</Page>
