@@ -1,15 +1,11 @@
 ---
 export interface Props {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
   image?: string;
 }
 
-const {
-  title = "Home",
-  description = "Yuwang Cai's portfolio and blog.",
-  image = "/banner.png",
-} = Astro.props;
+const { title, description, image = "/banner.png" } = Astro.props;
 ---
 
 <head>
