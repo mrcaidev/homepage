@@ -7,6 +7,7 @@ specifiers:
   '@commitlint/cli': ^17.1.2
   '@commitlint/config-conventional': ^17.1.0
   '@fontsource/inter': ^4.5.14
+  '@tailwindcss/line-clamp': ^0.4.2
   '@types/node': ^18.11.7
   '@typescript-eslint/eslint-plugin': ^5.41.0
   '@typescript-eslint/parser': ^5.41.0
@@ -33,6 +34,7 @@ dependencies:
   '@astrojs/sitemap': 1.0.0
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
   '@fontsource/inter': 4.5.14
+  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.1
   astro: 1.6.0
   preact: 10.11.2
   preact-feather: 4.2.1_preact@10.11.2
@@ -812,6 +814,14 @@ packages:
     dependencies:
       '@proload/core': 0.3.3
       tsm: 2.2.2
+    dev: false
+
+  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.1:
+    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.1
     dev: false
 
   /@tsconfig/node10/1.0.9:

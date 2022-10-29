@@ -1,0 +1,24 @@
+---
+import PostCard from "components/PostCard.astro";
+import FeaturePage from "layouts/FeaturePage.astro";
+import { mockPosts } from "utils/post";
+
+const posts = mockPosts;
+---
+
+<FeaturePage
+  title="Blog"
+  description="Show my insights. Share my experience. Record my growth."
+>
+  <ul
+    class="mt-6 sm:mt-12 sm:pl-4 divide-y divide-slate-300 dark:divide-slate-700 sm:divide-none sm:border-l-2 border-sky-800 dark:border-sky-200 sm:space-y-2"
+  >
+    {
+      posts.map((post, index) => (
+        <li class="animate-drop" style={`animation-delay: ${index * 0.2}s`}>
+          <PostCard {...post} />
+        </li>
+      ))
+    }
+  </ul>
+</FeaturePage>

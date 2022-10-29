@@ -12,6 +12,7 @@ module.exports = {
         rightslide: "rightslide ease 0.5s backwards",
         lift: "lift ease 0.5s backwards",
         pop: "pop ease 0.5s backwards",
+        drop: "drop ease 0.5s backwards",
       },
       keyframes: {
         menu: {
@@ -62,6 +63,16 @@ module.exports = {
             opacity: 1,
           },
         },
+        drop: {
+          from: {
+            transform: "translateY(-30px)",
+            opacity: 0,
+          },
+          to: {
+            transform: "translateY(0)",
+            opacity: 1,
+          },
+        },
         pop: {
           from: {
             transform: "scale(0.8)",
@@ -75,5 +86,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };

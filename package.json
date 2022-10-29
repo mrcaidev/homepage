@@ -15,6 +15,7 @@
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^2.1.1",
     "@fontsource/inter": "^4.5.14",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "astro": "^1.6.0",
     "preact": "^10.11.2",
     "preact-feather": "^4.2.1",
