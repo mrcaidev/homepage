@@ -8,7 +8,16 @@ export default defineConfig({
   site: "https://mrcai.dev",
   integrations: [
     preact(),
-    tailwind({ config: { applyBaseStyles: false } }),
     sitemap(),
+    tailwind({
+      config: {
+        applyBaseStyles: false,
+      },
+    }),
   ],
+  vite: {
+    build: {
+      assetsInlineLimit: 0,
+    },
+  },
 });
