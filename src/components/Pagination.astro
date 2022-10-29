@@ -1,0 +1,80 @@
+---
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronsLeft,
+  ChevronsRight,
+} from "preact-feather";
+import type { Post } from "utils/post";
+
+// eslint-disable-next-line no-undef
+export type Props = Page<Post>;
+
+const {
+  currentPage,
+  lastPage,
+  url: { next = "#", prev = "#" },
+} = Astro.props;
+---
+
+<nav class="flex justify-center items-center" aria-label="Blog page navigation">
+  <a
+    href="/blog/1"
+    aria-label="Go to first page"
+    aria-disabled={currentPage === 1 ? "true" : "false"}
+    class:list={[
+      "p-2 hover:scale-110 active:scale-90 transition-transform",
+      {
+        "text-slate-600 dark:text-slate-400 pointer-events-none":
+          currentPage === 1,
+      },
+    ]}
+  >
+    <ChevronsLeft size={20} />
+  </a>
+  <a
+    href={prev}
+    aria-label="Go to previous page"
+    aria-disabled={currentPage === 1 ? "true" : "false"}
+    class:list={[
+      "p-2 hover:scale-110 active:scale-90 transition-transform",
+      {
+        "text-slate-600 dark:text-slate-400 pointer-events-none":
+          currentPage === 1,
+      },
+    ]}
+  >
+    <ChevronLeft size={20} />
+  </a>
+  <p aria-current="page" class="px-4 py-2 translate-y-[1px]">
+    {currentPage} / {lastPage}
+  </p>
+  <a
+    href={next}
+    aria-label="Go to next page"
+    aria-disabled={currentPage === lastPage ? "true" : "false"}
+    class:list={[
+      "p-2 hover:scale-110 active:scale-90 transition-transform",
+      {
+        "text-slate-600 dark:text-slate-400 pointer-events-none":
+          currentPage === lastPage,
+      },
+    ]}
+  >
+    <ChevronRight size={20} />
+  </a>
+  <a
+    href={`/blog/${lastPage}`}
+    aria-label="Go to last page"
+    aria-disabled={currentPage === lastPage ? "true" : "false"}
+    class:list={[
+      "p-2 hover:scale-110 active:scale-90 transition-transform",
+      {
+        "text-slate-600 dark:text-slate-400 pointer-events-none":
+          currentPage === lastPage,
+      },
+    ]}
+  >
+    <ChevronsRight size={20} />
+  </a>
+</nav>
