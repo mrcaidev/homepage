@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://mrcai.dev/sitemap-index.xml
