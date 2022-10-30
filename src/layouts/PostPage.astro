@@ -14,7 +14,7 @@ const publishedTime = new Date(publishedAt).toISOString();
   <PostHead slot="head" {...frontmatter} />
   <main class="max-w-5xl min-h-screen px-8 py-20 mx-auto">
     <p
-      class="px-3 border-l-2 border-slate-500 text-slate-600 dark:text-slate-400"
+      class="px-3 mt-4 border-l-2 border-slate-500 text-slate-600 dark:text-slate-400"
     >
       <time datetime={publishedTime}>{publishedAt}</time>, {readingTime}
     </p>
