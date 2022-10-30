@@ -91,4 +91,4 @@ The constructor `Websocket()` has already done all the work for us, including:
 
 ---
 
-_Originally posted on [mrcai.dev](https://mrcai.dev/blog/http-status-codes-1xx)._
+_Originally posted on [mrcai.dev](http://localhost:3000/blog/posts/do-you-really-know-these-http-status-codes-1xx)._

@@ -89,4 +89,4 @@ Content-Range: bytes 4590-7999/8000
 
 ---
 
-_Originally posted on [mrcai.dev](https://mrcai.dev/blog/http-status-codes-2xx)._
+_Originally posted on [mrcai.dev](http://localhost:3000/blog/posts/do-you-really-know-these-http-status-codes-2xx)._
