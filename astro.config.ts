@@ -2,6 +2,7 @@ import preact from "@astrojs/preact";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
+import { injectFrontmatter } from "./src/utils/remark";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,6 +16,14 @@ export default defineConfig({
       },
     }),
   ],
+  markdown: {
+    extendDefaultPlugins: true,
+    remarkPlugins: [injectFrontmatter],
+    shikiConfig: {
+      theme: "one-dark-pro",
+      wrap: true,
+    },
+  },
   vite: {
     build: {
       assetsInlineLimit: 0,

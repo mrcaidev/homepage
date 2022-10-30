@@ -1,0 +1,14 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import PostHead from "components/Head/PostHead.astro";
+import Page from "./Page.astro";
+
+export type Props = MarkdownLayoutProps<Frontmatter>;
+
+const { frontmatter } = Astro.props;
+---
+
+<Page>
+  <PostHead slot="head" {...frontmatter} />
+  <slot />
+</Page>

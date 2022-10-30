@@ -34,7 +34,10 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:import/typescript",
         "plugin:react-hooks/recommended"
-      ]
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off"
+      }
     },
     {
       "files": ["*.tsx"],
@@ -47,5 +50,8 @@
         "react/no-unknown-property": "off"
       }
     }
-  ]
+  ],
+  "rules": {
+    "no-undef": "off"
+  }
 }

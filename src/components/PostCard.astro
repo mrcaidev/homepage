@@ -2,15 +2,14 @@
 import { ChevronRight } from "preact-feather";
 
 export interface Props {
-  slug: string;
+  url: string;
   title: string;
   description: string;
   publishedAt: string;
   readingTime: string;
 }
 
-const { slug, title, description, publishedAt, readingTime } = Astro.props;
-const url = "/blog/" + slug;
+const { url, title, description, publishedAt, readingTime } = Astro.props;
 const publishedTime = new Date(publishedAt).toISOString();
 ---
 

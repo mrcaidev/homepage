@@ -1,8 +1,11 @@
 ---
-import type { Frontmatter } from "utils/post";
 import BaseHead from "./BaseHead.astro";
 
-export type Props = Frontmatter;
+export interface Props {
+  title: string;
+  description: string;
+  publishedAt: string;
+}
 
 const { title, description, publishedAt } = Astro.props;
 const ogImage = "https://og.mrcai.dev/api/blog?title=" + title;
