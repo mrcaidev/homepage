@@ -12,7 +12,7 @@ The most common status code. Successful and delightful. The server understands t
 
 Cacheable by default.
 
-Used for GET, HEAD and TRACE.
+Used for **GET, HEAD and TRACE**.
 
 ![200 OK](https://s2.loli.net/2022/10/30/SacmH2jMKq3oDsC.png)
 
@@ -20,7 +20,7 @@ Used for GET, HEAD and TRACE.
 
 The server has successfully created a new resource. The response body will carry the resource's url, or the resource itself, or a `Location` field in headers pointing to the resource's url.
 
-Used for POST.
+Used for **POST**.
 
 ![201 Created](https://s2.loli.net/2022/10/30/XKaBUFDJqr7AOEf.png)
 
@@ -51,7 +51,7 @@ The request succeeds with no response body.
 
 Cacheable by default.
 
-Used for PUT, PATCH and DELETE, or the client only wants the headers.
+Used for **PUT, PATCH and DELETE, or the client only wants the headers.**
 
 ![204 No Content](https://s2.loli.net/2022/10/30/y7tA96rkHZCqQBG.png)
 
@@ -59,7 +59,7 @@ Used for PUT, PATCH and DELETE, or the client only wants the headers.
 
 The server instructs the client to reset the document view, e.g. clear the form, reset the canvas, or refresh the whole page.
 
-No response body allowed.
+**No response body allowed.**
 
 ![205 Reset Content](https://s2.loli.net/2022/10/30/A1OCpXmceVg3RJf.png)
 
@@ -69,9 +69,9 @@ The response body carries the partial data specified in the `Range` field of the
 
 Cacheable by default.
 
-If a single part is being transferred, the response headers must contain `Content-Type` field to specify the MIME type of the content, and `Content-Range` field to specify the content range being transferred.
+If a single part is being transferred, the response headers **must** contain `Content-Type` field to specify the MIME type of the content, and `Content-Range` field to specify the content range being transferred.
 
-If multiple parts are being transferred, the response headers must contain `Content-Type: multipart/byteranges; boundary=SEP`, where "SEP" is the seperator of different ranges. Then the body goes like:
+If multiple parts are being transferred, the response headers **must** contain `Content-Type: multipart/byteranges; boundary=SEP`, where "SEP" is the seperator of different ranges. Then the body goes like:
 
 ```
 --SEP
