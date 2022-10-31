@@ -1,6 +1,6 @@
 ---
-import blog from "assets/blog.webp";
 import cue from "assets/cue.webp";
+import designPatterns from "assets/design-patterns.webp";
 import hooks from "assets/hooks.webp";
 import paste from "assets/paste.webp";
 import ProjectCard from "components/ProjectCard.astro";
@@ -21,16 +21,16 @@ const projects = [
     url: "https://stackblitz.com/edit/vitejs-vite-d8bl4y?file=index.html",
   },
   {
-    title: "blog",
-    description: "Yuwang Cai's blog.",
-    coverImage: blog,
-    url: "https://blog.mrcai.dev",
-  },
-  {
     title: "paste",
     description: "Simple markdown pastebin.",
     coverImage: paste,
     url: "https://paste.mrcai.dev",
+  },
+  {
+    title: "Design Patterns",
+    description: "Design patterns implemented in TypeScript, with FP and OOP.",
+    coverImage: designPatterns,
+    url: "https://github.com/mrcaidev/design-patterns",
   },
 ];
 ---
