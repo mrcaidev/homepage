@@ -34,7 +34,7 @@ The client can hold the entity for a while, and send the headers first, carrying
 
 ![no-100-continue.png](https://s2.loli.net/2022/10/31/csFAeiqNnIUVQrB.png)
 
-Now we've already had a rough idea of how "100 Continue" works, let's take a closer look, from server, client and proxy's perspective respectively.
+Now that we've already had a rough idea of how "100 Continue" works, let's take a closer look, from the server, the client and the proxy's perspective respectively.
 
 ## 🔍 Client Behaviors
 
@@ -65,7 +65,7 @@ Now we've already had a rough idea of how "100 Continue" works, let's take a clo
 
 ## 🛠️ Compatibility Issues
 
-All 1xx status codes share some compatibility issues, since they were not introduced until HTTP/1.1. As such, server, client and proxy should adhere to a set of principles:
+All 1xx status codes share some compatibility issues, since they were not introduced until HTTP/1.1. As such, the server, the client and the proxy should adhere to a set of principles:
 
 - Server: **Must not** send 1xx responses to HTTP/1.0 clients.
 - Client: **Must** be able to parse 1xx responses before the final response, even if they are unexpected.
