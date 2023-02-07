@@ -1,47 +1,30 @@
 {
-  "name": "mrcai.dev",
+  "name": "portfolio",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "format": "prettier . --write --cache --plugin-search-dir=.",
-    "lint": "eslint . --fix --cache --cache-location node_modules/.cache/eslint/.eslintcache",
-    "prepare": "husky install"
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/preact": "^1.2.0",
-    "@astrojs/sitemap": "^1.0.0",
-    "@astrojs/tailwind": "^2.1.1",
-    "@fontsource/inter": "^4.5.14",
-    "@tailwindcss/line-clamp": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.7",
-    "astro": "^1.6.1",
-    "mdast-util-to-string": "^3.1.0",
-    "preact": "^10.11.2",
-    "preact-feather": "^4.2.1",
-    "reading-time": "^1.5.0",
-    "tailwindcss": "^3.2.1"
+    "@astrojs/tailwind": "^3.0.1",
+    "@fontsource/inter": "^4.5.15",
+    "astro": "^2.0.6",
+    "tailwindcss": "^3.2.4",
+    "tailwindcss-radix-colors": "^0.3.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.1.2",
-    "@commitlint/config-conventional": "^17.1.0",
-    "@types/node": "^18.11.7",
-    "@typescript-eslint/eslint-plugin": "^5.41.0",
-    "@typescript-eslint/parser": "^5.41.0",
-    "eslint": "^8.26.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^3.5.2",
-    "eslint-plugin-astro": "^0.20.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-react": "^7.31.10",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "husky": "^8.0.1",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.6.0",
-    "typescript": "^4.8.4"
+    "@types/node": "^18.13.0",
+    "@typescript-eslint/eslint-plugin": "^5.51.0",
+    "@typescript-eslint/parser": "^5.51.0",
+    "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-astro": "^0.23.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.8.0",
+    "typescript": "^4.9.5"
   }
 }

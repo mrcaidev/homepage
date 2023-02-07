@@ -1,11 +1,11 @@
 /** @type {import("tailwindcss").Config} */
 module.exports = {
-  content: ["src/{components,layouts,pages}/**/*.{astro,tsx}"],
+  content: ["src/{components,layouts,pages}/**/*.astro"],
   darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Inter"],
+        sans: ["Inter", "sans-serif"],
       },
       animation: {
         leftslide: "leftslide ease 0.5s backwards",
@@ -86,8 +86,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require("@tailwindcss/line-clamp"),
-    require("@tailwindcss/typography"),
-  ],
+  plugins: [require("tailwindcss-radix-colors")],
 };
