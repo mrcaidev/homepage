@@ -1,7 +1,6 @@
 /** @type {import("tailwindcss").Config} */
 module.exports = {
-  content: ["src/{components,layouts,pages}/**/*.astro"],
-  darkMode: "class",
+  content: ["src/{components,layouts,icons,pages}/**/*.astro"],
   theme: {
     extend: {
       fontFamily: {
@@ -15,14 +14,6 @@ module.exports = {
         drop: "drop ease 0.5s backwards",
       },
       keyframes: {
-        menu: {
-          from: {
-            transform: "translateY(-100vh)",
-          },
-          to: {
-            transform: "translateY(0)",
-          },
-        },
         avatarring: {
           from: {
             transform: "translateX(-50%) translateY(-50%) scale(1)",

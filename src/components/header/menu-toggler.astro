@@ -1,0 +1,31 @@
+---
+import Menu from "icons/menu.astro";
+---
+
+<button
+  type="button"
+  aria-controls="menu"
+  aria-expanded="false"
+  id="menu-toggler"
+  class="p-1 hover:text-cyan-dim transition-colors"
+>
+  <Menu size={24} />
+  <span class="sr-only">Toggle menu</span>
+</button>
+
+<script>
+  const menu = document.querySelector("#menu");
+  const menuIcon = document.querySelector("#menu-icon");
+  const toggler = document.querySelector("#menu-toggler");
+
+  let isExpanded = false;
+
+  toggler?.addEventListener("click", () => {
+    isExpanded = !isExpanded;
+
+    document.body.classList.toggle("overflow-hidden");
+    menu?.classList.toggle("-translate-y-full");
+    menuIcon?.classList.toggle("open");
+    toggler?.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+  });
+</script>

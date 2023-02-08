@@ -1,0 +1,54 @@
+---
+import type { IconProps } from "./utils";
+
+export type Props = IconProps;
+const { size = 24, ...rest } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  id="menu-icon"
+  {...rest}
+>
+  <g
+    class="[.open_&]:rotate-45 [.open_&]:delay-150 origin-center transition-transform"
+  >
+    <line
+      x1="3"
+      y1="6"
+      x2="21"
+      y2="6"
+      class="[.open_&]:translate-y-[6px] delay-150 [.open_&]:delay-[0s] transition-transform"
+    >
+    </line>
+  </g>
+  <line
+    x1="3"
+    y1="12"
+    x2="21"
+    y2="12"
+    class="[.open_&]:opacity-0 delay-150 [.open_&]:delay-[0s] transition-opacity"
+  >
+  </line>
+  <g
+    class="[.open_&]:-rotate-45 [.open_&]:delay-150 origin-center transition-transform"
+  >
+    <line
+      x1="3"
+      y1="18"
+      x2="21"
+      y2="18"
+      class="[.open_&]:-translate-y-[6px] delay-150 [.open_&]:delay-[0s] transition-transform"
+    >
+    </line>
+  </g>
+</svg>

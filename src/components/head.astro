@@ -45,25 +45,4 @@ const bannerUrl = new URL("/banner.png", Astro.site);
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={bannerUrl} />
-
-  <script is:inline>
-    function getUserTheme() {
-      try {
-        return localStorage.getItem("theme");
-      } catch {
-        return null;
-      }
-    }
-
-    const userTheme = getUserTheme();
-    const isDarkDevice = matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = userTheme === "dark" || (!userTheme && isDarkDevice);
-
-    const root = document.documentElement;
-    if (isDark) {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  </script>
 </head>
