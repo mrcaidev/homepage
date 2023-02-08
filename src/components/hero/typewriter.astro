@@ -1,0 +1,61 @@
+<span aria-hidden="true" id="typing-text" class="text-cyan-dim"></span>
+<span id="typing-cursor" class="border-l-2 ml-px"></span>
+<span class="sr-only">
+  Chinese undergraduate, web developer and tech enthusiast.
+</span>
+
+<script>
+  const text = document.querySelector("#typing-text") as HTMLSpanElement;
+  const cursor = document.querySelector("#typing-cursor") as HTMLSpanElement;
+  const words = [
+    "Chinese undergraduate.",
+    "web developer.",
+    "tech enthusiast.",
+  ];
+
+  let wordIndex = 0;
+  let characterIndex = 0;
+
+  function type() {
+    const word = words[wordIndex] ?? "";
+
+    if (characterIndex <= 0) {
+      cursor?.classList.remove("animate-cursor");
+    }
+
+    text.textContent += word[characterIndex] ?? "";
+    characterIndex++;
+
+    if (characterIndex >= word.length) {
+      cursor?.classList.add("animate-cursor");
+      window.setTimeout(erase, 2300);
+      return;
+    }
+
+    window.setTimeout(type, 100);
+  }
+
+  function erase() {
+    const word = words[wordIndex] ?? "";
+
+    if (characterIndex >= word.length) {
+      cursor?.classList.remove("animate-cursor");
+    }
+
+    text.textContent = text.textContent?.slice(0, -1) ?? "";
+    characterIndex--;
+
+    if (characterIndex <= 0) {
+      cursor?.classList.add("animate-cursor");
+      wordIndex = (wordIndex + 1) % words.length;
+      window.setTimeout(type, 1300);
+      return;
+    }
+
+    window.setTimeout(erase, 50);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    window.setTimeout(type, 400);
+  });
+</script>

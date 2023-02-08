@@ -7,6 +7,7 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       animation: {
+        cursor: "cursor ease 1s infinite",
         leftslide: "leftslide ease 0.5s backwards",
         rightslide: "rightslide ease 0.5s backwards",
         lift: "lift ease 0.5s backwards",
@@ -14,6 +15,23 @@ module.exports = {
         drop: "drop ease 0.5s backwards",
       },
       keyframes: {
+        cursor: {
+          "0%": {
+            opacity: 1,
+          },
+          "49%": {
+            opacity: 1,
+          },
+          "50%": {
+            opacity: 0,
+          },
+          "99%": {
+            opacity: 0,
+          },
+          "100%": {
+            opacity: 1,
+          },
+        },
         avatarring: {
           from: {
             transform: "translateX(-50%) translateY(-50%) scale(1)",
