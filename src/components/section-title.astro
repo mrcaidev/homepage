@@ -1,0 +1,23 @@
+---
+export type Props = {
+  title: string;
+  description: string;
+};
+const { title, description } = Astro.props;
+---
+
+<div class="py-4 text-center">
+  <h1
+    id="about"
+    class="relative mb-4 font-bold text-4xl sm:text-5xl scroll-mt-24"
+  >
+    <span
+      aria-hidden="true"
+      class="absolute bottom-4 left-0 right-0 bg-clip-text bg-gradient-to-t from-gray-2 to-gray-6 dark:from-graydark-2 dark:to-graydark-6 font-bold text-5xl sm:text-6xl text-transparent -z-10"
+    >
+      {title}
+    </span>
+    {title}
+  </h1>
+  <span class="font-medium text-lg text-gray-dim">{description}</span>
+</div>
