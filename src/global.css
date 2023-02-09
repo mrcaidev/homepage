@@ -4,10 +4,10 @@
 
 @layer base {
   *::-webkit-scrollbar {
-    @apply w-2 h-1 bg-gray-app;
+    @apply w-2 h-1 bg-graydark-1;
   }
   *::-webkit-scrollbar-thumb {
-    @apply w-2 h-1 rounded bg-gray-7 dark:bg-graydark-7 hover:bg-gray-8 dark:hover:bg-graydark-8;
+    @apply w-2 h-1 rounded bg-graydark-7 hover:bg-graydark-8;
   }
   *::-webkit-scrollbar-corner {
     @apply hidden;
