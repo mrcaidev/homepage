@@ -4,13 +4,12 @@ export type Props = {
   description: string;
 };
 const { title, description } = Astro.props;
+
+const id = title.toLowerCase().replace(/\s+/g, "-");
 ---
 
 <div class="mb-10 text-center">
-  <h1
-    id="about"
-    class="relative mb-4 font-bold text-4xl sm:text-5xl scroll-mt-24"
-  >
+  <h1 id={id} class="relative mb-4 font-bold text-4xl sm:text-5xl scroll-mt-24">
     <span
       aria-hidden="true"
       class="absolute bottom-4 left-0 right-0 bg-clip-text bg-gradient-to-t from-gray-2 to-gray-6 dark:from-graydark-2 dark:to-graydark-6 font-bold text-5xl sm:text-6xl text-transparent -z-10"
