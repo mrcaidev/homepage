@@ -7,7 +7,7 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       animation: {
-        cursor: "cursor ease 1s infinite",
+        cursor: "cursor 1s infinite",
       },
       keyframes: {
         cursor: {
