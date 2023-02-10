@@ -6,7 +6,7 @@ import Project from "./project.astro";
 
 <section class="py-20">
   <SectionTitle title="Projects" description="My open source projects" />
-  <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+  <ul class="grid grid-cols-[repeat(auto-fill,minmax(280px,1fr))] gap-4">
     {
       projects.map((project) => (
         <li>

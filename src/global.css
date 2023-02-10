@@ -7,7 +7,7 @@
     @apply w-2 h-1 bg-graydark-1;
   }
   *::-webkit-scrollbar-thumb {
-    @apply w-2 h-1 rounded bg-graydark-7 hover:bg-graydark-8;
+    @apply w-2 h-1 rounded bg-graydark-9 hover:bg-graydark-10;
   }
   *::-webkit-scrollbar-corner {
     @apply hidden;
