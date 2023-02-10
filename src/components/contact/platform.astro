@@ -1,0 +1,26 @@
+---
+import type { Icon } from "icons/utils";
+
+export type Props = {
+  title: string;
+  description: string;
+  icon: Icon;
+  href: string;
+};
+const { title, description, icon: IconComponent, href } = Astro.props;
+---
+
+<div
+  class="flex items-center gap-4 relative px-5 py-3 rounded hover:bg-graydark-4 active:bg-graydark-5 transition-colors"
+>
+  <IconComponent size={24} />
+  <div>
+    <a href={href} target="_blank" class="block font-medium">
+      {title}
+      <span class="absolute top-0 bottom-0 left-0 right-0"></span>
+    </a>
+    <span class="block text-sm text-graydark-11">
+      {description}
+    </span>
+  </div>
+</div>

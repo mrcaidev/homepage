@@ -1,0 +1,44 @@
+<form
+  id="contact-form"
+  class="grow self-stretch grid grid-cols-1 sm:grid-cols-2 gap-3"
+>
+  <input
+    type="text"
+    name="name"
+    placeholder="Your name"
+    required
+    aria-label="Your name"
+    class="col-span-1 min-w-0 px-4 py-2 rounded bg-graydark-4 outline-none outline-offset-0 focus:outline-cyandark-8 placeholder:text-graydark-11"
+  />
+  <input
+    type="email"
+    name="email"
+    placeholder="you@example.com"
+    required
+    aria-label="Your E-mail address"
+    class="col-span-1 min-w-0 px-4 py-2 rounded bg-graydark-4 outline-none outline-offset-0 focus:outline-cyandark-8 placeholder:text-graydark-11"
+  />
+  <textarea
+    name="message"
+    rows="8"
+    placeholder="Your message"
+    aria-label="Your message"
+    class="col-span-full min-w-0 px-4 py-3 rounded bg-graydark-4 focus:bg-graydark-5 outline-none outline-offset-0 focus:outline-cyandark-8 placeholder:text-graydark-11 resize-none"
+  ></textarea>
+  <button
+    type="submit"
+    class="col-span-full px-4 py-2 rounded bg-cyandark-9 hover:bg-cyandark-10 transition-colors"
+  >
+    Submit
+  </button>
+</form>
+
+<script>
+  const form = document.querySelector("#contact-form") as HTMLFormElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    console.log(Object.fromEntries(formData));
+  });
+</script>
