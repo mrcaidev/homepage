@@ -27,16 +27,6 @@ module.exports = {
             opacity: 1,
           },
         },
-        avatarring: {
-          from: {
-            transform: "translateX(-50%) translateY(-50%) scale(1)",
-            opacity: 1,
-          },
-          to: {
-            transform: "translateX(-50%) translateY(-50%) scale(1.1)",
-            opacity: 0,
-          },
-        },
       },
     },
   },
