@@ -1,0 +1,18 @@
+---
+import SectionTitle from "components/section-title.astro";
+import { friends } from "./data";
+import Friend from "./friend.astro";
+---
+
+<section class="py-20">
+  <SectionTitle title="Friends" description="Worth checking out" />
+  <ul class="space-y-1 max-w-3xl mx-auto">
+    {
+      friends.map((friend) => (
+        <li>
+          <Friend {...friend} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
