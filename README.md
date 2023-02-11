@@ -1,14 +1,11 @@
 ![Banner](public/banner.png)
 
-## ✨ Introduction
-
-Yuwang Cai's portfolio and blog. Made with love. 💕
+My homepage.
 
 ## 🧰 Built with
 
 [![TypeScript](https://shields.io/badge/typescript-fff?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Astro](https://shields.io/badge/astro-7e22ce?style=for-the-badge&logo=astro)](https://astro.build/)
-[![Preact](https://shields.io/badge/preact-673ab8?style=for-the-badge&logo=preact)](https://preactjs.com/)
 [![Tailwind CSS](https://shields.io/badge/tailwind-fff?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
 
 [![Pnpm](https://shields.io/badge/pnpm-242526?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
@@ -17,5 +14,3 @@ Yuwang Cai's portfolio and blog. Made with love. 💕
 
 [![Commitlint](https://shields.io/badge/commitlint-121212?style=for-the-badge&logo=commitlint)](https://commitlint.js.org/#/)
 [![EditorConfig](https://shields.io/badge/editorconfig-000?style=for-the-badge&logo=editorconfig)](https://editorconfig.org/)
-[![Husky](https://shields.io/badge/husky-fff?style=for-the-badge&logo=git)](https://typicode.github.io/husky/#/)
-[![Lint-staged](https://shields.io/badge/lintstaged-fff?style=for-the-badge&logo=git)](https://github.com/okonet/lint-staged#readme)
