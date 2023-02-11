@@ -1,7 +1,17 @@
 ---
+import Favicon from "icons/favicon.astro";
 import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <h1>Not Found</h1>
+  <main class="flex flex-col justify-center items-center min-h-screen">
+    <Favicon size={50} />
+    <h1 class="mt-4 mb-2 font-bold text-3xl">Not Found</h1>
+    <a
+      href="/"
+      class="font-medium text-graydark-11 hover:text-cyandark-11 transition-colors underline underline-offset-4"
+    >
+      Back to homepage
+    </a>
+  </main>
 </Layout>
