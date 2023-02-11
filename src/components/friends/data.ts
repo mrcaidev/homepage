@@ -2,6 +2,7 @@ import mrThanlon from "assets/mr-thanlon.webp";
 import qyInvoLing from "assets/qy-invo-ling.webp";
 import sake from "assets/sake.webp";
 import sumijie from "assets/sumijie.webp";
+import yaoSsg from "assets/yao-ssg.webp";
 
 export type Friend = {
   title: string;
@@ -34,5 +35,11 @@ export const friends: Friend[] = [
     description: "Sell code for living. Impl Bug for Code.",
     url: "https://blog.ch34k.xyz",
     image: mrThanlon,
+  },
+  {
+    title: "Yaossg",
+    description: "C++ programmer. Hardcore Minecraft player.",
+    url: "https://yaossg.com",
+    image: yaoSsg,
   },
 ];
