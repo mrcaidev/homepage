@@ -1,3 +1,10 @@
+---
+import Checked from "icons/checked.astro";
+import Loader from "icons/loader.astro";
+import RotateCcw from "icons/rotate-ccw.astro";
+import Send from "icons/send.astro";
+---
+
 <form
   id="contact-form"
   class="grow self-stretch grid grid-cols-1 sm:grid-cols-2 gap-3"
@@ -5,40 +12,140 @@
   <input
     type="text"
     name="name"
-    placeholder="Your name"
+    value="Cai"
+    placeholder="Name"
     required
     aria-label="Your name"
-    class="col-span-1 min-w-0 px-4 py-2 rounded bg-graydark-4 outline-none outline-offset-0 focus:outline-cyandark-8 placeholder:text-graydark-11"
+    class="col-span-1 min-w-0 px-4 py-2 rounded outline-none outline-offset-0 focus:outline-cyandark-8 bg-graydark-3 disabled:bg-graydark-2 text-sm sm:text-base disabled:text-graydark-11 placeholder:text-graydark-11"
   />
   <input
     type="email"
     name="email"
+    value="mrcaidev@gmail.com"
     placeholder="you@example.com"
     required
     aria-label="Your E-mail address"
-    class="col-span-1 min-w-0 px-4 py-2 rounded bg-graydark-4 outline-none outline-offset-0 focus:outline-cyandark-8 placeholder:text-graydark-11"
+    class="col-span-1 min-w-0 px-4 py-2 rounded outline-none outline-offset-0 focus:outline-cyandark-8 bg-graydark-3 disabled:bg-graydark-2 text-sm sm:text-base disabled:text-graydark-11 placeholder:text-graydark-11"
   />
   <textarea
     name="message"
     rows="8"
-    placeholder="Your message"
+    placeholder="Message"
+    required
     aria-label="Your message"
-    class="col-span-full min-w-0 px-4 py-3 rounded bg-graydark-4 focus:bg-graydark-5 outline-none outline-offset-0 focus:outline-cyandark-8 placeholder:text-graydark-11 resize-none"
+    class="col-span-full min-w-0 px-4 py-3 rounded outline-none outline-offset-0 focus:outline-cyandark-8 bg-graydark-3 disabled:bg-graydark-2 text-sm sm:text-base disabled:text-graydark-11 placeholder:text-graydark-11 resize-none"
   ></textarea>
   <button
     type="submit"
-    class="col-span-full px-4 py-2 rounded bg-cyandark-9 hover:bg-cyandark-10 transition-colors"
+    id="contact-button"
+    class="col-span-full px-4 py-2 rounded outline-2 outline-greendark-6 bg-cyandark-9 hover:bg-cyandark-10 font-medium text-sm sm:text-base transition-colors"
   >
-    Submit
+    <span id="state-normal" class="flex justify-center items-center gap-1">
+      Send
+      <Send size={14} />
+    </span>
+    <span id="state-loading" class="hidden justify-center items-center gap-1">
+      Loading
+      <Loader size={14} class="animate-spin" />
+    </span>
+    <span id="state-success" class="hidden justify-center items-center gap-1">
+      Success
+      <Checked size={14} />
+    </span>
+    <span id="state-error" class="hidden justify-center items-center gap-1">
+      Retry
+      <RotateCcw size={14} />
+    </span>
   </button>
 </form>
 
 <script>
   const form = document.querySelector("#contact-form") as HTMLFormElement;
+  const controls = form.querySelectorAll("input, textarea, button");
+  const button = form.querySelector("#contact-button") as HTMLButtonElement;
 
-  form?.addEventListener("submit", (e) => {
+  const stateMap = {
+    normal: {
+      element: button.querySelector("#state-normal") as HTMLSpanElement,
+      colors: ["bg-cyandark-9", "hover:bg-cyandark-10"],
+    },
+    loading: {
+      element: button.querySelector("#state-loading") as HTMLSpanElement,
+      colors: ["bg-graydark-9"],
+    },
+    success: {
+      element: button.querySelector("#state-success") as HTMLSpanElement,
+      colors: ["outline", "text-greendark-11"],
+    },
+    error: {
+      element: button.querySelector("#state-error") as HTMLSpanElement,
+      colors: ["bg-reddark-9", "hover:bg-reddark-10"],
+    },
+  };
+
+  let currentState: keyof typeof stateMap = "normal";
+
+  function setState(state: keyof typeof stateMap) {
+    const { element: oldElement, colors: oldColors } = stateMap[currentState];
+    oldElement.classList.add("hidden");
+    oldElement.classList.remove("flex");
+    button.classList.remove(...oldColors);
+
+    currentState = state;
+
+    const { element, colors } = stateMap[state];
+    element.classList.remove("hidden");
+    element.classList.add("flex");
+    button.classList.add(...colors);
+
+    const shouldDisable = state === "loading" || state === "success";
+    controls.forEach((control) => {
+      (control as HTMLInputElement).disabled = shouldDisable;
+    });
+  }
+
+  interface Body {
+    name: string;
+    email: string;
+    message: string;
+  }
+
+  interface ResponseJson {
+    data?: {
+      success?: boolean;
+    };
+  }
+
+  async function request(data: Body) {
+    try {
+      const response = await fetch(
+        "https://api.val.town/eval/@mrcaidev.mailMyself",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
+
+      if (!response.ok) {
+        return false;
+      }
+
+      const json: ResponseJson = await response.json();
+      return json?.data?.success ?? false;
+    } catch {
+      return false;
+    }
+  }
+
+  form?.addEventListener("submit", async (e) => {
     e.preventDefault();
+
     const formData = new FormData(form);
-    console.log(Object.fromEntries(formData));
+    const body = Object.fromEntries(formData) as unknown as Body;
+
+    setState("loading");
+    const isSuccess = await request(body);
+    setState(isSuccess ? "success" : "error");
   });
 </script>
