@@ -9,8 +9,8 @@ const { title, description, icon: IconComponent, href } = Astro.props;
   class="flex items-center gap-4 relative px-5 py-3 rounded hover:bg-graydark-4 active:bg-graydark-5 transition-colors"
 >
   <IconComponent size={24} class="shrink-0" />
-  <div>
-    <a href={href} target="_blank" class="block font-medium">
+  <div class="grow">
+    <a href={href} target="_blank" class="font-medium">
       {title}
       <span class="absolute top-0 bottom-0 left-0 right-0"></span>
     </a>
