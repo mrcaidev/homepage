@@ -2,8 +2,16 @@ import Github from "icons/github.astro";
 import Mail from "icons/mail.astro";
 import Tv from "icons/tv.astro";
 import Twitter from "icons/twitter.astro";
+import type { Icon } from "icons/utils";
 
-export const platforms = [
+export type Platform = {
+  title: string;
+  description: string;
+  icon: Icon;
+  href: string;
+};
+
+export const platforms: Platform[] = [
   {
     title: "GitHub",
     description: "mrcaidev",

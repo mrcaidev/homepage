@@ -1,10 +1,8 @@
 ---
 import ExternalLink from "icons/external-link.astro";
+import type { Link } from "./data";
 
-export type Props = {
-  text: string;
-  href: string;
-};
+export type Props = Link;
 const { text, href } = Astro.props;
 
 const isExternal = href.startsWith("http");

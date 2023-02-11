@@ -1,10 +1,7 @@
 ---
-export type Props = {
-  title: string;
-  description: string;
-  href: string;
-  image: string;
-};
+import type { Project } from "./data";
+
+export type Props = Project;
 const { title, description, href, image } = Astro.props;
 ---
 

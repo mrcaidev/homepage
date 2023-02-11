@@ -1,12 +1,7 @@
 ---
-import type { Icon } from "icons/utils";
+import type { Platform } from "./data";
 
-export type Props = {
-  title: string;
-  description: string;
-  icon: Icon;
-  href: string;
-};
+export type Props = Platform;
 const { title, description, icon: IconComponent, href } = Astro.props;
 ---
 

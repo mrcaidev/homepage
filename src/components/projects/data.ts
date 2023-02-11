@@ -5,7 +5,14 @@ import kgqa from "assets/kgqa.webp";
 import paste from "assets/paste.webp";
 import tailwindcssRadixColors from "assets/tailwindcss-radix-colors.webp";
 
-export const projects = [
+export type Project = {
+  title: string;
+  description: string;
+  href: string;
+  image: string;
+};
+
+export const projects: Project[] = [
   {
     title: "hooks",
     description: "A collection of React utility hooks.",
