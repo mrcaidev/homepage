@@ -1,0 +1,29 @@
+---
+import ExternalLink from "icons/external-link.astro";
+import type { Link } from "./data";
+
+export type Props = Link;
+const { text, href } = Astro.props;
+
+const isExternal = href.startsWith("http");
+---
+
+{
+  isExternal ? (
+    <a
+      href={href}
+      target="_blank"
+      class="flex items-center gap-1 px-2 py-1 font-medium text-graydark-11 hover:text-cyandark-11 transition-colors"
+    >
+      {text}
+      <ExternalLink size={16} />
+    </a>
+  ) : (
+    <a
+      href={href}
+      class="px-2 py-1 font-medium text-graydark-11 hover:text-cyandark-11 transition-colors"
+    >
+      {text}
+    </a>
+  )
+}

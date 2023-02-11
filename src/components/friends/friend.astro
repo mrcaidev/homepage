@@ -1,0 +1,37 @@
+---
+import Link from "icons/link.astro";
+import type { Friend } from "./data";
+
+export type Props = Friend;
+const { title, description, url, image } = Astro.props;
+
+const domain = new URL(url).hostname;
+---
+
+<div
+  class="flex flex-col sm:flex-row md:flex-col lg:flex-row items-center gap-x-6 gap-y-4 relative h-full px-6 py-5 rounded-lg bg-graydark-3 hover:bg-graydark-4 active:bg-graydark-5 transition-colors"
+>
+  <img
+    src={image}
+    alt={"Avatar of " + title}
+    width="80"
+    height="80"
+    loading="lazy"
+    class="w-20 h-20 rounded-full"
+  />
+  <div
+    class="flex flex-col items-center sm:items-start md:items-center lg:items-start gap-1 text-center"
+  >
+    <h3 class="font-medium text-lg">{title}</h3>
+    <p class="text-sm">{description}</p>
+    <a
+      href={url}
+      target="_blank"
+      class="flex items-center gap-1 text-sm text-graydark-11 hover:text-cyandark-11 transition-colors"
+    >
+      <Link size={12} class="shrink-0" />
+      {domain}
+      <span class="absolute top-0 bottom-0 left-0 right-0"></span>
+    </a>
+  </div>
+</div>

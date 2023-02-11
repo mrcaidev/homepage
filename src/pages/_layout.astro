@@ -1,0 +1,23 @@
+---
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/700.css";
+import Footer from "components/footer.astro";
+import Head from "components/head.astro";
+import Header from "components/header";
+import Menu from "components/menu.astro";
+import "global.css";
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <Head />
+  <body
+    class="bg-graydark-1 text-graydark-12 [-webkit-tap-highlight-color:transparent]"
+  >
+    <Header />
+    <Menu />
+    <slot />
+    <Footer />
+  </body>
+</html>
