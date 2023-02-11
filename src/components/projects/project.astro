@@ -8,11 +8,24 @@ const { title, description, href, image } = Astro.props;
 <div
   class="group relative h-full rounded-md hover:outline outline-2 outline-transparent hover:outline-graydark-8 bg-graydark-3 hover:bg-graydark-4 active:bg-graydark-5 overflow-hidden transition-colors"
 >
-  <img src={image} alt="" loading="lazy" />
-  <div class="space-y-1 px-5 py-4">
-    <a href={href} target="_blank" class="font-medium">
+  <img
+    src={image}
+    alt=""
+    width="300"
+    height="160"
+    loading="lazy"
+    class="w-full"
+  />
+  <div class="px-5 py-4">
+    <h3 class="font-medium mb-1">
       {title}
-      <span class="absolute top-0 bottom-0 left-0 right-0"></span>
+    </h3>
+    <a
+      href={href}
+      target="_blank"
+      class="absolute top-0 bottom-0 left-0 right-0"
+    >
+      <span class="sr-only">Visit its homepage</span>
     </a>
     <p
       class="text-sm text-graydark-11 group-hover:text-graydark-12 transition-colors"
