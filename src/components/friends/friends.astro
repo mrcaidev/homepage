@@ -6,7 +6,7 @@ import Friend from "./friend.astro";
 
 <section class="py-20">
   <SectionTitle title="Friends" description="Worth checking out" />
-  <ul class="space-y-1 max-w-3xl mx-auto">
+  <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
     {
       friends.map((friend) => (
         <li>
