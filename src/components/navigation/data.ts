@@ -13,10 +13,6 @@ export const links: Link[] = [
     href: "#projects",
   },
   {
-    text: "Contact",
-    href: "#contact",
-  },
-  {
     text: "Friends",
     href: "#friends",
   },

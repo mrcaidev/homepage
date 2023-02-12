@@ -1,5 +1,7 @@
 ---
 import Avatar from "./avatar.astro";
+import { platforms } from "./data";
+import Platform from "./platform.astro";
 import Typewriter from "./typewriter.astro";
 ---
 
@@ -10,15 +12,18 @@ import Typewriter from "./typewriter.astro";
     class="order-2 md:order-1 flex flex-col items-center md:items-start gap-6"
   >
     <h1 class="font-bold text-4xl sm:text-5xl">Yuwang Cai</h1>
-    <p class="md:ml-1 font-medium sm:text-lg text-graydark-11">
+    <p class="md:ml-1 font-medium sm:text-lg text-center text-graydark-11">
       I am a&nbsp;<Typewriter />
     </p>
-    <a
-      href="#contact"
-      class="px-4 py-2 rounded md:ml-1 bg-cyandark-9 hover:bg-cyandark-10 font-medium text-sm sm:text-base transition-colors"
-    >
-      Contact me
-    </a>
+    <ul class="flex items-center gap-4">
+      {
+        platforms.map((platform) => (
+          <li>
+            <Platform {...platform} />
+          </li>
+        ))
+      }
+    </ul>
   </div>
   <Avatar />
 </section>

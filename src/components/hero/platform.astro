@@ -1,0 +1,18 @@
+---
+import type { Platform } from "./data";
+
+export type Props = Platform;
+const { name, icon: Icon, url } = Astro.props;
+---
+
+<a
+  href={url}
+  target="_blank"
+  class="group block relative p-3 rounded-full outline outline-1 focus-visible:outline-2 outline-graydark-7 focus-visible:outline-graydark-8 hover:outline-transparent text-graydark-11 hover:text-gray-12 overflow-hidden transition-colors duration-300"
+>
+  <Icon size={20} />
+  <span class="sr-only">{name}</span>
+  <span
+    class="absolute top-0 bottom-0 left-0 right-0 rounded-full bg-gray-4 opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 origin-center transition duration-300 -z-10"
+  ></span>
+</a>
