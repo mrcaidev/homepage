@@ -1,10 +1,8 @@
 ---
-import Favicon from "icons/favicon.astro";
-
-const url = Astro.url.pathname === "/" ? "#top" : "/";
+import { Image } from "astro:assets";
 ---
 
-<a href={url} class="p-1 hover:opacity-75 transition-opacity">
-  <Favicon size={28} />
-  <span class="sr-only">Top of page</span>
+<a href="/" class="flex gap-3 py-5 font-600">
+  <Image src="/favicon.svg" alt="" width={18} height={24} class="h-6" />
+   Yuwang Cai
 </a>

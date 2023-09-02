@@ -1,17 +1,14 @@
 ---
-import Navigation from "components/navigation";
 import Logo from "./logo.astro";
-import MenuToggler from "./menu-toggler.astro";
+import Nav from "./nav.astro";
 ---
 
-<header class="fixed top-0 left-0 right-0 bg-graydark-1 z-30">
-  <div class="flex justify-between items-center max-w-6xl px-8 py-4 mx-auto">
+<header
+  class="fixed left-0 right-0 top-0 z-30 bg-slate-50/70 backdrop-blur dark:bg-slate-950/70"
+>
+  <div class="mx-auto max-w-7xl flex px-8">
     <Logo />
-    <div class="hidden sm:block">
-      <Navigation />
-    </div>
-    <div class="sm:hidden">
-      <MenuToggler />
-    </div>
+    <div class="grow"></div>
+    <Nav />
   </div>
 </header>

@@ -1,8 +1,13 @@
-<html lang="en">
-  <head>
-    <title>Test</title>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
-</html>
+---
+import CommonMeta from "components/meta/common-meta.astro";
+import ProfileMeta from "components/meta/profile-meta.astro";
+import RootLayout from "layouts/root-layout.astro";
+---
+
+<RootLayout>
+  <Fragment slot="meta">
+    <CommonMeta title="Home" description="A full stack developer." />
+    <ProfileMeta />
+  </Fragment>
+  <h1>Hello, World!</h1>
+</RootLayout>

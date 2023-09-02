@@ -18,5 +18,8 @@
     "sourceType": "module",
     "project": true,
     "tsconfigRootDir": "."
+  },
+  "rules": {
+    "@typescript-eslint/no-unsafe-return": "off"
   }
 }

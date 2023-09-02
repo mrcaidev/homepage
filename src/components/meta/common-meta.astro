@@ -1,0 +1,42 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+
+const fullTitle = `${title} - Yuwang Cai`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("opengraph-image.png", Astro.site);
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>{fullTitle}</title>
+
+<link rel="shortcut icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href={canonicalUrl} />
+
+<meta name="application-name" content="Yuwang Cai" />
+<meta name="author" content="Yuwang Cai" />
+<meta name="description" content={description} />
+<meta name="generator" content="Astro" />
+<meta name="theme-color" content="#020617" />
+<meta name="color-scheme" content="dark" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:title" content={fullTitle} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:description" content={description} />
+
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:site" content="@mrcaidev" />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />

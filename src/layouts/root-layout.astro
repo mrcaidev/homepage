@@ -1,0 +1,19 @@
+---
+import "@fontsource-variable/inter";
+import Header from "components/header";
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <slot name="meta" />
+  </head>
+  <body
+    class="bg-slate-50 font-sans text-slate-800 dark:bg-slate-950 dark:text-slate-200"
+  >
+    <Header />
+    <main class="min-h-screen px-8 py-20 space-y-8">
+      <slot />
+    </main>
+  </body>
+</html>
