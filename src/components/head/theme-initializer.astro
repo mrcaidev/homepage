@@ -1,0 +1,7 @@
+<script is:inline>
+  const userTheme = localStorage.getItem("theme");
+  const isDarkOs = matchMedia("(prefers-color-scheme: dark)").matches;
+  if (userTheme === "dark" || (!userTheme && isDarkOs)) {
+    document.documentElement.classList.add("dark");
+  }
+</script>

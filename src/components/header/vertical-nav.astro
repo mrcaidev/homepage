@@ -1,0 +1,10 @@
+---
+import NavLink from "./nav-link.astro";
+import navLinks from "./nav-links.json";
+---
+
+<nav
+  class="flex flex-col [&>a]:border-b [&>a]:border-slate-200 dark:[&>a]:border-slate-800"
+>
+  {navLinks.map(({ href, text }) => <NavLink href={href}>{text}</NavLink>)}
+</nav>

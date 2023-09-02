@@ -11,7 +11,7 @@ const isActive = Astro.url.pathname.startsWith(href);
 <a
   href={href}
   class:list={[
-    "px-3 py-5 text-sm font-500",
+    "md:px-4 py-4 md:py-6 font-500",
     isActive
       ? "text-sky-700 dark:text-sky-300"
       : "hover:text-sky-700 dark:hover:text-sky-300 transition-colors",

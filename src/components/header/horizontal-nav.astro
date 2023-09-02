@@ -1,12 +1,8 @@
 ---
 import NavLink from "./nav-link.astro";
-
-const navLinks = [
-  { href: "/projects", text: "Projects" },
-  { href: "/blog", text: "Blog" },
-];
+import navLinks from "./nav-links.json";
 ---
 
-<nav class="flex">
+<nav class="flex items-center">
   {navLinks.map(({ href, text }) => <NavLink href={href}>{text}</NavLink>)}
 </nav>

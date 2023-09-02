@@ -1,12 +1,14 @@
 ---
 import "@fontsource-variable/inter";
+import ThemeInitializer from "components/head/theme-initializer.astro";
 import Header from "components/header";
 ---
 
 <!doctype html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en" class="scroll-smooth">
   <head>
     <slot name="meta" />
+    <ThemeInitializer />
   </head>
   <body
     class="bg-slate-50 font-sans text-slate-800 dark:bg-slate-950 dark:text-slate-200"

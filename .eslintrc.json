@@ -1,8 +1,7 @@
 {
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/strict-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
     "plugin:astro/jsx-a11y-recommended",
     "@unocss",
@@ -15,11 +14,6 @@
   },
   "parserOptions": {
     "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": true,
-    "tsconfigRootDir": "."
-  },
-  "rules": {
-    "@typescript-eslint/no-unsafe-return": "off"
+    "sourceType": "module"
   }
 }

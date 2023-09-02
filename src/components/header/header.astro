@@ -1,14 +1,55 @@
 ---
+import Fence from "./fence.astro";
+import HorizontalNav from "./horizontal-nav.astro";
 import Logo from "./logo.astro";
-import Nav from "./nav.astro";
+import Menu from "./menu.astro";
+import ThemeToggle from "./theme-toggle.astro";
 ---
 
 <header
-  class="fixed left-0 right-0 top-0 z-30 bg-slate-50/70 backdrop-blur dark:bg-slate-950/70"
+  class="fixed left-0 right-0 top-0 z-10 bg-slate-50/70 px-8 backdrop-blur dark:bg-slate-950/70"
 >
-  <div class="mx-auto max-w-7xl flex px-8">
+  <div class="mx-auto max-w-7xl flex items-center justify-between">
     <Logo />
-    <div class="grow"></div>
-    <Nav />
+    <div class="md:hidden">
+      <Menu />
+    </div>
+    <div class="hidden items-center md:flex">
+      <HorizontalNav />
+      <Fence />
+      <ThemeToggle />
+    </div>
   </div>
 </header>
+
+<script>
+  const toggles = [
+    ...document.querySelectorAll(".theme-toggle"),
+  ] as HTMLButtonElement[];
+  let isDark = document.documentElement.classList.contains("dark");
+
+  function syncButtons() {
+    const ariaChecked = isDark ? "true" : "false";
+    const ariaLabel = isDark ? "Use light mode" : "Use dark mode";
+    toggles.forEach((button) => {
+      button.setAttribute("aria-checked", ariaChecked);
+      button.setAttribute("aria-label", ariaLabel);
+    });
+  }
+
+  function syncLocalStorage() {
+    const theme = isDark ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  }
+
+  syncButtons();
+
+  toggles.forEach((button) => {
+    button.addEventListener("click", () => {
+      isDark = !isDark;
+      document.documentElement.classList.toggle("dark");
+      syncButtons();
+      syncLocalStorage();
+    });
+  });
+</script>

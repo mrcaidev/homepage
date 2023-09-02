@@ -1,0 +1,21 @@
+---
+const jsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yuwang Cai",
+  gender: "male",
+  nationality: "China",
+  email: "mrcaidev@gmail.com",
+  jobTitle: "Student",
+  url: Astro.site,
+});
+---
+
+<meta property="og:type" content="profile" />
+
+<meta property="profile:first_name" content="Yuwang" />
+<meta property="profile:last_name" content="Cai" />
+<meta property="profile:username" content="mrcaidev" />
+<meta property="profile:gender" content="male" />
+
+<script type="application/ld+json" set:html={jsonLd} />
