@@ -1,0 +1,34 @@
+<button
+  type="button"
+  aria-label="open menu"
+  aria-controls="menu"
+  aria-expanded="false"
+  id="menu-control"
+  class="px-3 py-6 transition-opacity hover:opacity-75"
+>
+  <span class="i-carbon-menu block text-2xl"></span>
+</button>
+
+<script>
+  const control = document.querySelector("#menu-control") as HTMLButtonElement;
+  const menu = document.querySelector("#menu") as HTMLDivElement;
+
+  let isOpen = false;
+
+  control.addEventListener("click", () => {
+    isOpen = !isOpen;
+
+    menu.classList.toggle("opacity-0");
+    document.body.classList.toggle("overflow-hidden");
+
+    if (isOpen) {
+      control.setAttribute("aria-label", "close menu");
+      control.setAttribute("aria-expanded", "true");
+      menu.setAttribute("aria-hidden", "false");
+    } else {
+      control.setAttribute("aria-label", "open menu");
+      control.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+    }
+  });
+</script>

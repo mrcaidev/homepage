@@ -1,8 +1,8 @@
 <button
   type="button"
   role="switch"
-  aria-checked="false"
   aria-label="use dark mode"
+  aria-checked="false"
   class="theme-toggle h-6 w-11 border border-slate-300 rounded-full bg-slate-200 dark:border-slate-700 dark:bg-slate-800"
 >
   <span
@@ -11,3 +11,36 @@
     <span class="i-carbon-sun dark:i-carbon-moon text-xs"></span>
   </span>
 </button>
+
+<script>
+  const toggles = [
+    ...document.querySelectorAll(".theme-toggle"),
+  ] as HTMLButtonElement[];
+
+  let isDark = document.documentElement.classList.contains("dark");
+
+  function syncToggles() {
+    const ariaChecked = isDark ? "true" : "false";
+    const ariaLabel = isDark ? "Use light mode" : "Use dark mode";
+    toggles.forEach((button) => {
+      button.setAttribute("aria-label", ariaLabel);
+      button.setAttribute("aria-checked", ariaChecked);
+    });
+  }
+
+  function syncLocalStorage() {
+    const theme = isDark ? "dark" : "light";
+    localStorage.setItem("theme", theme);
+  }
+
+  syncToggles();
+
+  toggles.forEach((button) => {
+    button.addEventListener("click", () => {
+      isDark = !isDark;
+      document.documentElement.classList.toggle("dark");
+      syncToggles();
+      syncLocalStorage();
+    });
+  });
+</script>

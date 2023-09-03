@@ -3,20 +3,10 @@ import ThemeToggle from "./theme-toggle.astro";
 import VerticalNav from "./vertical-nav.astro";
 ---
 
-<button
-  type="button"
-  aria-label="mobile navigation"
-  aria-expanded="false"
-  aria-controls="mobile-nav"
-  id="mobile-nav-controller"
-  class="px-3 py-6 transition-opacity hover:opacity-75"
->
-  <span class="i-carbon-menu block text-2xl"></span>
-</button>
-
 <div
-  id="mobile-nav"
-  class="fixed left-0 top-20 h-[calc(100vh-5rem)] w-screen bg-slate-50 opacity-0 transition-opacity dark:bg-slate-950"
+  aria-hidden="true"
+  id="menu"
+  class="fixed bottom-0 left-0 right-0 top-0 z-10 bg-slate-50 pt-20 opacity-0 transition-opacity dark:bg-slate-950"
 >
   <div class="mx-auto max-w-sm py-4">
     <VerticalNav />
@@ -28,15 +18,3 @@ import VerticalNav from "./vertical-nav.astro";
     </div>
   </div>
 </div>
-
-<script>
-  const button = document.querySelector(
-    "#mobile-nav-controller",
-  ) as HTMLButtonElement;
-  const nav = document.querySelector("#mobile-nav") as HTMLDivElement;
-
-  button.addEventListener("click", () => {
-    nav.classList.toggle("opacity-0");
-    document.body.classList.toggle("overflow-hidden");
-  });
-</script>
