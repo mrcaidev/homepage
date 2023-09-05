@@ -1,11 +1,11 @@
 ---
-export interface Props {
+export type Props = {
   title: string;
   description: string;
   publishedAtIso: string;
   modifiedAtIso: string;
   tags: string[];
-}
+};
 
 const { title, description, publishedAtIso, modifiedAtIso, tags } = Astro.props;
 

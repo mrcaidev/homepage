@@ -17,6 +17,7 @@
     "noEmit": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "jsx": "preserve",
     "target": "ESNext",
     "skipLibCheck": true
   }

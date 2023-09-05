@@ -20,8 +20,8 @@
   let isDark = document.documentElement.classList.contains("dark");
 
   function syncToggles() {
-    const ariaChecked = isDark ? "true" : "false";
     const ariaLabel = isDark ? "Use light mode" : "Use dark mode";
+    const ariaChecked = isDark ? "true" : "false";
     toggles.forEach((button) => {
       button.setAttribute("aria-label", ariaLabel);
       button.setAttribute("aria-checked", ariaChecked);

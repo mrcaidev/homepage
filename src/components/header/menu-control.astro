@@ -1,10 +1,10 @@
 <button
   type="button"
-  aria-label="open menu"
   aria-controls="menu"
+  aria-label="open menu"
   aria-expanded="false"
   id="menu-control"
-  class="px-3 py-6 transition-opacity hover:opacity-75"
+  class="p-4 transition-opacity hover:opacity-75"
 >
   <span class="i-carbon-menu block text-2xl"></span>
 </button>
@@ -18,17 +18,15 @@
   control.addEventListener("click", () => {
     isOpen = !isOpen;
 
-    menu.classList.toggle("opacity-0");
+    menu.classList.toggle("hidden");
     document.body.classList.toggle("overflow-hidden");
 
     if (isOpen) {
       control.setAttribute("aria-label", "close menu");
       control.setAttribute("aria-expanded", "true");
-      menu.setAttribute("aria-hidden", "false");
     } else {
       control.setAttribute("aria-label", "open menu");
       control.setAttribute("aria-expanded", "false");
-      menu.setAttribute("aria-hidden", "true");
     }
   });
 </script>

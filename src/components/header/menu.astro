@@ -4,11 +4,10 @@ import VerticalNav from "./vertical-nav.astro";
 ---
 
 <div
-  aria-hidden="true"
   id="menu"
-  class="fixed bottom-0 left-0 right-0 top-0 z-10 bg-slate-50 pt-20 opacity-0 transition-opacity dark:bg-slate-950"
+  class="fixed bottom-0 left-0 right-0 top-0 z-10 hidden bg-slate-50 pt-20 dark:bg-slate-950"
 >
-  <div class="mx-auto max-w-sm py-4">
+  <div class="mx-auto max-w-sm px-8 py-4">
     <VerticalNav />
     <div
       class="mt-8 flex items-center justify-between rounded-lg bg-slate-100 px-5 py-4 dark:bg-slate-900"
