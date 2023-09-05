@@ -16,7 +16,9 @@ import Header from "components/header";
   >
     <Header />
     <main class="min-h-screen px-8 py-20">
-      <slot />
+      <div class="mx-auto max-w-7xl">
+        <slot />
+      </div>
     </main>
     <Footer />
   </body>
