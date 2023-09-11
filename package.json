@@ -10,16 +10,16 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.8",
-    "astro": "^3.0.8"
+    "astro": "^3.0.12"
   },
   "devDependencies": {
-    "@iconify-json/tabler": "^1.1.90",
-    "@types/node": "^20.5.9",
+    "@iconify-json/tabler": "^1.1.91",
+    "@types/node": "^20.6.0",
     "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^6.6.0",
     "@unocss/eslint-config": "^0.55.7",
     "@unocss/reset": "^0.55.7",
-    "eslint": "^8.48.0",
+    "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-astro": "^0.29.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
