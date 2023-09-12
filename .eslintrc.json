@@ -4,7 +4,6 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:astro/recommended",
     "plugin:astro/jsx-a11y-recommended",
-    "@unocss",
     "prettier"
   ],
   "env": {
