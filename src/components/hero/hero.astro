@@ -1,15 +1,15 @@
 ---
 import Greeting from "./greeting.astro";
 import Logo from "./logo.astro";
+import SocialLinks from "./social-links.astro";
 ---
 
 <section
   class="flex flex-col lg:flex-row justify-center lg:justify-around items-center min-h-screen"
 >
-  <div
-    class="order-2 lg:order-1 space-y-4 md:space-y-6 text-center lg:text-left"
-  >
+  <div class="order-2 lg:order-1 space-y-6">
     <Greeting />
+    <SocialLinks />
   </div>
   <div class="order-1 lg:order-2">
     <Logo />
