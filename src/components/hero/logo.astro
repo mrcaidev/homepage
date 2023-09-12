@@ -1,0 +1,20 @@
+---
+import favicon from "assets/favicon.svg";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="relative grid aspect-square w-60 place-items-center md:w-80 xl:w-100"
+>
+  <div
+    class="absolute left-1/2 top-1/2 h-3/4 w-3/4 rounded-full from-blue-300 to-cyan-300 bg-gradient-to-tr blur-3xl -z-10 -translate-1/2 dark:from-blue-700 dark:to-cyan-700"
+  >
+  </div>
+  <Image
+    src={favicon}
+    alt="Logo"
+    width={176}
+    height={240}
+    class="aspect-ratio-[3/4] w-22 md:w-33 xl:w-44"
+  />
+</div>

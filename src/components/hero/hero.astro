@@ -1,0 +1,17 @@
+---
+import Greeting from "./greeting.astro";
+import Logo from "./logo.astro";
+---
+
+<section
+  class="min-h-screen flex flex-col items-center justify-center lg:flex-row lg:justify-around"
+>
+  <div
+    class="order-2 text-center lg:order-1 space-y-4 lg:text-left md:space-y-6"
+  >
+    <Greeting />
+  </div>
+  <div class="order-1 lg:order-2">
+    <Logo />
+  </div>
+</section>
