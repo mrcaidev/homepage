@@ -1,0 +1,32 @@
+[
+  {
+    "name": "UESTC",
+    "description": "Collection of my course projects at UESTC.",
+    "link": "https://github.com/mrcaidev/uestc#readme"
+  },
+  {
+    "name": "iWallpaper",
+    "description": "AI-powered wallpaper recommendation system.",
+    "link": "https://iwallpaper.mrcai.dev"
+  },
+  {
+    "name": "Hooks",
+    "description": "A collection of React utility hooks.",
+    "link": "https://hooks.mrcai.dev"
+  },
+  {
+    "name": "Intelligent Logistics",
+    "description": "A visual logistics management system.",
+    "link": "https://intelligent-logistics.mrcai.dev"
+  },
+  {
+    "name": "Cue",
+    "description": "A minimal MVVM framework inspired by Vue.",
+    "link": "https://github.com/mrcaidev/cue/wiki"
+  },
+  {
+    "name": "KGQA",
+    "description": "A knowledge graph movie QA chatbot.",
+    "link": "https://kgqa.mrcai.dev"
+  }
+]
