@@ -24,6 +24,7 @@
     "prettier-plugin-astro": "^0.13.0",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.10.0",
-    "unocss": "^0.60.3"
+    "unocss": "^0.60.3",
+    "vercel": "^34.2.2"
   }
 }
