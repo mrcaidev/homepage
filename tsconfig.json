@@ -26,7 +26,6 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "allowJs": true,
-    "checkJs": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
@@ -35,7 +34,6 @@
     "jsx": "preserve",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "target": "ESNext",
-    "incremental": true,
     "skipLibCheck": true
   }
 }
