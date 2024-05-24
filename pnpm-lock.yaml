@@ -24,6 +24,9 @@ importers:
       '@types/node':
         specifier: ^20.12.12
         version: 20.12.12
+      '@unocss/eslint-config':
+        specifier: ^0.60.3
+        version: 0.60.3(eslint@9.3.0)(typescript@5.4.5)
       '@unocss/reset':
         specifier: ^0.60.3
         version: 0.60.3
@@ -1010,6 +1013,14 @@ packages:
 
   '@unocss/core@0.60.3':
     resolution: {integrity: sha512-4bBX1pavDl2DSCozEII7bxYGT0IkyO7kKlUuCtooTePWyLjf2F7essdzHkJ00EpNR64kkebR9V0lqBMBo07VPw==}
+
+  '@unocss/eslint-config@0.60.3':
+    resolution: {integrity: sha512-amK7i9F45s10kQx6WXw1fJw5Z9thlsmGj1x3sJsoKa2hD6NkjqCTLKypfisgxljzbBiwkkYJ6Dv8qaJ0bRV2Mg==}
+    engines: {node: '>=14'}
+
+  '@unocss/eslint-plugin@0.60.3':
+    resolution: {integrity: sha512-bLQtUMfzRf/IGZVYvwoiVRMGxYbxnTW8xyRIuLl6Jn5fwi2S4fonzfZL+DQixMJgjidsEzoV7QDnwBVM2c+DpA==}
+    engines: {node: '>=14'}
 
   '@unocss/extractor-arbitrary-variants@0.60.3':
     resolution: {integrity: sha512-PnwNwkeAHmbJbrf5XN0xQG1KT1VQEye8neYn5yz1MHnT8Cj2nqjrqoCRGLCLhpOUg3/MNj+bpiA7hGnFbXWaCQ==}
@@ -4610,6 +4621,26 @@ snapshots:
       unconfig: 0.3.13
 
   '@unocss/core@0.60.3': {}
+
+  '@unocss/eslint-config@0.60.3(eslint@9.3.0)(typescript@5.4.5)':
+    dependencies:
+      '@unocss/eslint-plugin': 0.60.3(eslint@9.3.0)(typescript@5.4.5)
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - typescript
+
+  '@unocss/eslint-plugin@0.60.3(eslint@9.3.0)(typescript@5.4.5)':
+    dependencies:
+      '@typescript-eslint/utils': 7.10.0(eslint@9.3.0)(typescript@5.4.5)
+      '@unocss/config': 0.60.3
+      '@unocss/core': 0.60.3
+      magic-string: 0.30.10
+      synckit: 0.9.0
+    transitivePeerDependencies:
+      - eslint
+      - supports-color
+      - typescript
 
   '@unocss/extractor-arbitrary-variants@0.60.3':
     dependencies:
