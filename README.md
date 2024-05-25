@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/icon.svg" alt="mrcai.dev Logo" height="100" />
+  <img src="public/favicon.svg" alt="mrcai.dev Logo" height="100" />
   <h1>Homepage</h1>
   <p>Yuwang Cai's personal website</p>
   <a href="https://mrcai.dev" target="_blank" rel="noreferrer">Visit now →</a>
