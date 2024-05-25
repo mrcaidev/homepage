@@ -8,21 +8,11 @@ import TimelineToggle from "./timeline-toggle.astro";
 <section>
   <div>
     {
-      timeline.map(({ type, name, description, shouldShowByDefault, time }) =>
+      timeline.map(({ type, ...props }) =>
         type === "experience" ? (
-          <TimelineExperience
-            name={name}
-            description={description}
-            time={time}
-            shouldShowByDefault={shouldShowByDefault}
-          />
+          <TimelineExperience {...props} />
         ) : (
-          <TimelineEvent
-            name={name}
-            description={description}
-            time={time}
-            shouldShowByDefault={shouldShowByDefault}
-          />
+          <TimelineEvent {...props} />
         ),
       )
     }
