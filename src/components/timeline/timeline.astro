@@ -1,0 +1,32 @@
+---
+import { timeline } from "./timeline";
+import TimelineEvent from "./timeline-event.astro";
+import TimelineExperience from "./timeline-experience.astro";
+import TimelineToggle from "./timeline-toggle.astro";
+---
+
+<section>
+  <div>
+    {
+      timeline.map(({ type, name, description, shouldShowByDefault, time }) =>
+        type === "experience" ? (
+          <TimelineExperience
+            name={name}
+            description={description}
+            time={time}
+            shouldShowByDefault={shouldShowByDefault}
+          />
+        ) : (
+          <TimelineEvent
+            name={name}
+            description={description}
+            time={time}
+            shouldShowByDefault={shouldShowByDefault}
+          />
+        ),
+      )
+    }
+  </div>
+
+  <TimelineToggle />
+</section>

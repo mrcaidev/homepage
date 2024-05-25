@@ -1,0 +1,33 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  time: string;
+  shouldShowByDefault: boolean;
+}
+
+const { name, description, time, shouldShowByDefault } = Astro.props;
+---
+
+<div
+  class:list={[
+    "timeline-node relative ml-4 pb-8 md:ml-0 md:mr-1/2 sm:ml-8",
+    shouldShowByDefault || "hidden",
+  ]}
+>
+  <div
+    class="absolute left-0 top-0 h-full w-0.5 bg-slate-700 md:left-auto md:right-0 -translate-x-1/2 md:translate-x-1/2"
+  >
+  </div>
+  <div
+    class="absolute left-0 top-1.25 aspect-square w-3 border-2 border-cyan-400 rounded-full bg-slate-950 md:left-auto md:right-0 sm:w-4 -translate-x-1/2 md:translate-x-1/2"
+  >
+  </div>
+  <div class="pl-6 md:pl-0 md:pr-8 sm:pl-8 md:text-right">
+    <p class="mb-1 text-balance font-medium sm:text-lg">{name}</p>
+    <p class="text-balance text-sm text-slate-400 sm:text-base">
+      {description}
+    </p>
+    <p class="text-sm text-slate-400 sm:text-base">{time}</p>
+  </div>
+</div>
