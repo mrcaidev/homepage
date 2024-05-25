@@ -1,0 +1,38 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  description: string;
+  link: string;
+  avatar: ImageMetadata;
+}
+
+const { name, description, link, avatar } = Astro.props;
+---
+
+<div
+  class="relative h-full flex flex-col items-center gap-x-6 gap-y-4 rounded-lg px-6 py-5 transition-colors lg:flex-row sm:flex-row md:flex-col hover:bg-slate-800"
+>
+  <Image
+    src={avatar}
+    alt={"Avatar of " + name}
+    class="h-20 w-20 rounded-full"
+  />
+  <div
+    class="flex flex-col items-center gap-1 text-center lg:items-start sm:items-start md:items-center"
+  >
+    <p class="text-lg font-medium">{name}</p>
+    <p class="text-balance text-sm">{description}</p>
+    <a
+      href={link}
+      target="_blank"
+      class="flex items-center gap-1 text-sm text-slate-400 transition-colors hover:text-blue-300"
+    >
+      <span class="i-lucide-link"></span>
+      {new URL(link).hostname}
+      <span class="absolute bottom-0 left-0 right-0 top-0"></span>
+    </a>
+  </div>
+</div>

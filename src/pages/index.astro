@@ -1,15 +1,15 @@
 ---
-import About from "components/about";
-import Friends from "components/friends";
-import Hero from "components/hero";
-import Projects from "components/projects";
+import Friends from "@/components/friends";
+import Hero from "@/components/hero.astro";
+import Projects from "@/components/projects";
+import Timeline from "@/components/timeline";
 import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <main class="max-w-5xl px-8 mx-auto mb-36">
+  <main class="mx-auto mb-36 max-w-6xl px-8 container">
     <Hero />
-    <About />
+    <Timeline />
     <Projects />
     <Friends />
   </main>

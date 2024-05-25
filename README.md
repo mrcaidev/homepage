@@ -1,16 +1,16 @@
-![Banner](public/banner.png)
-
-My homepage.
+<div align="center">
+  <img src="public/favicon.svg" alt="mrcai.dev Logo" height="100" />
+  <h1>Homepage</h1>
+  <p>Yuwang Cai's personal website</p>
+  <a href="https://mrcai.dev" target="_blank" rel="noreferrer">Visit now →</a>
+</div>
 
 ## 🧰 Built with
 
-[![TypeScript](https://shields.io/badge/typescript-fff?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![Astro](https://shields.io/badge/astro-7e22ce?style=for-the-badge&logo=astro)](https://astro.build/)
-[![Tailwind CSS](https://shields.io/badge/tailwind-fff?style=for-the-badge&logo=tailwindcss)](https://tailwindcss.com/)
-
-[![Pnpm](https://shields.io/badge/pnpm-242526?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
-[![ESLint](https://shields.io/badge/eslint-4b32c3?style=for-the-badge&logo=eslint)](https://eslint.org/)
-[![Prettier](https://shields.io/badge/prettier-24292e?style=for-the-badge&logo=prettier)](https://prettier.io/)
-
-[![Commitlint](https://shields.io/badge/commitlint-121212?style=for-the-badge&logo=commitlint)](https://commitlint.js.org/#/)
-[![EditorConfig](https://shields.io/badge/editorconfig-000?style=for-the-badge&logo=editorconfig)](https://editorconfig.org/)
+[![Astro](https://img.shields.io/badge/astro-bc52ee?style=for-the-badge&logo=astro&logoColor=fff)](https://astro.build/)
+[![TypeScript](https://img.shields.io/badge/typescript-3178c6?style=for-the-badge&logo=typescript&logoColor=fff)](https://www.typescriptlang.org/)
+[![UnoCSS](https://img.shields.io/badge/unocss-333333?style=for-the-badge&logo=unocss&logoColor=fff)](https://unocss.dev/)
+[![Pnpm](https://img.shields.io/badge/pnpm-f69220?style=for-the-badge&logo=pnpm&logoColor=fff)](https://pnpm.io/)
+[![EditorConfig](https://img.shields.io/badge/editorconfig-fefefe?style=for-the-badge&logo=editorconfig&logoColor=000)](https://editorconfig.org/)
+[![ESLint](https://img.shields.io/badge/eslint-4b32c3?style=for-the-badge&logo=eslint&logoColor=fff)](https://eslint.org/)
+[![Prettier](https://img.shields.io/badge/prettier-f7b93e?style=for-the-badge&logo=prettier&logoColor=000)](https://prettier.io/)

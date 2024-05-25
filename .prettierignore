@@ -1,2 +1,5 @@
+.astro
+.vercel
 dist
+node_modules
 pnpm-lock.yaml

@@ -1,16 +1,14 @@
 ---
-import SectionTitle from "components/section-title.astro";
-import { friends } from "./data";
-import Friend from "./friend.astro";
+import FriendCard from "./friend-card.astro";
+import { friends } from "./friends";
 ---
 
-<section class="py-20">
-  <SectionTitle title="Friends" description="Worth checking out" />
-  <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<section class="py-12">
+  <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
     {
       friends.map((friend) => (
         <li>
-          <Friend {...friend} />
+          <FriendCard {...friend} />
         </li>
       ))
     }

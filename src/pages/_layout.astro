@@ -2,22 +2,52 @@
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/700.css";
-import Footer from "components/footer.astro";
-import Head from "components/head.astro";
-import Header from "components/header";
-import Menu from "components/menu.astro";
-import "global.css";
+
+const title = "Yuwang Cai";
+const description =
+  "Chinese student. Full-stack developer. Tech enthusiast. He/him.";
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-  <Head />
-  <body
-    class="bg-graydark-1 text-graydark-12 [-webkit-tap-highlight-color:transparent]"
-  >
-    <Header />
-    <Menu />
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="author" content="Yuwang Cai" />
+    <meta name="description" content={description} />
+    <meta name="generator" content="Astro" />
+    <meta name="keywords" content="yuwang cai, homepage, full-stack" />
+    <meta name="theme-color" content="#020617" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="creator" content="Yuwang Cai" />
+    <meta name="publisher" content="Yuwang Cai" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Yuwang" />
+    <meta property="profile:last_name" content="Cai" />
+    <meta property="profile:username" content="mrcaidev" />
+    <meta property="profile:gender" content="male" />
+    <meta property="og:image" content={new URL("/og-image.png", Astro.site)} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo and mrcai.dev literal" />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:description" content={description} />
+
+    <meta name="twitter:site" content="@mrcaidev" />
+    <meta name="twitter:creator" content="@mrcaidev" />
+  </head>
+
+  <body class="bg-slate-950 text-slate-200 font-sans antialiased">
     <slot />
-    <Footer />
+    <footer class="border-t border-slate-800 px-8 py-4 text-center">
+      <p class="text-balance text-sm text-slate-400">
+        © 2022-present Yuwang Cai
+      </p>
+    </footer>
   </body>
 </html>

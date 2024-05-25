@@ -1,30 +1,33 @@
 {
   "name": "homepage",
-  "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/tailwind": "^3.0.1",
-    "@fontsource/inter": "^4.5.15",
-    "astro": "^2.0.10",
-    "tailwindcss": "^3.2.6",
-    "tailwindcss-radix-colors": "^0.3.1"
+    "@fontsource/inter": "^5.0.18",
+    "astro": "^4.9.1"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
-    "eslint": "^8.33.0",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-astro": "^0.23.0",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "prettier": "^2.8.4",
-    "prettier-plugin-astro": "^0.8.0",
-    "typescript": "^4.9.5"
+    "@iconify-json/lucide": "^1.1.188",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.12.12",
+    "@unocss/eslint-config": "^0.60.3",
+    "@unocss/reset": "^0.60.3",
+    "eslint": "^9.3.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.2.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "sharp": "^0.33.4",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.10.0",
+    "unocss": "^0.60.3",
+    "vercel": "^34.2.2"
   }
 }
