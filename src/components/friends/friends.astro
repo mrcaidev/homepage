@@ -1,0 +1,16 @@
+---
+import FriendCard from "./friend-card.astro";
+import { friends } from "./friends";
+---
+
+<section>
+  <ul class="grid grid-cols-1 gap-3 md:grid-cols-2">
+    {
+      friends.map((friend) => (
+        <li>
+          <FriendCard {...friend} />
+        </li>
+      ))
+    }
+  </ul>
+</section>
