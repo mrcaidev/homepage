@@ -3,7 +3,7 @@ import ProjectCard from "./project-card.astro";
 import { projects } from "./projects";
 ---
 
-<section class="grid grid-cols-1 gap-4 lg:grid-cols-3 sm:grid-cols-2">
+<section class="grid grid-cols-1 gap-4 py-12 lg:grid-cols-3 sm:grid-cols-2">
   {projects.map((project) => <ProjectCard {...project} />)}
   <a
     href="https://github.com/mrcaidev"
