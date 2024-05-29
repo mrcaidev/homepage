@@ -19,6 +19,6 @@ export default ts.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
-    ignores: [".astro", ".vercel", "dist", "node_modules"],
   },
+  { ignores: ["dist"] },
 );
