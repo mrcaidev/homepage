@@ -54,7 +54,7 @@ export const projects = [
       "Question answering chatbot about Chinese movies, based on knowledge graph.",
     logo: kgqa,
     sourceUrl: "https://github.com/mrcaidev/kgqa",
-    liveUrl: "https://kgqa.mrcai.dev",
+    liveUrl: null,
   },
   {
     name: "OAuth 2.1 zh-Hans",
