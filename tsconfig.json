@@ -32,7 +32,7 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "jsx": "preserve",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
     "skipLibCheck": true
   }
