@@ -20,5 +20,5 @@ export default ts.config(
       },
     },
   },
-  { ignores: ["dist"] },
+  { ignores: ["dist", ".astro", "src/env.d.ts"] },
 );
