@@ -22,8 +22,8 @@ export const timeline = [
   },
   {
     type: "experience",
-    name: "Chairman",
-    description: '"Internet+" Student Union, UESTC',
+    name: "President",
+    description: '"Internet+" Students\' Union, UESTC',
     time: "Sep 2022 - Sep 2023",
     shouldShowByDefault: false,
   },
