@@ -2,6 +2,7 @@
   "name": "homepage",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@9.9.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
