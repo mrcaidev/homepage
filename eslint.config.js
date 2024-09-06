@@ -8,7 +8,9 @@ export default ts.config(
   js.configs.recommended,
   ...ts.configs.strictTypeChecked,
   ...ts.configs.stylisticTypeChecked,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   ...astro.configs.recommended,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   ...astro.configs["jsx-a11y-recommended"],
   unocss,
   prettier,
