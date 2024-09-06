@@ -1,4 +1,6 @@
 ---
+import Footer from "@/components/footer.astro";
+import Header from "@/components/header";
 import "@fontsource-variable/inter";
 
 const title = "Yuwang Cai";
@@ -40,7 +42,9 @@ const description =
     <meta name="twitter:creator" content="@mrcaidev" />
   </head>
 
-  <body class="bg-slate-950 text-slate-200 font-sans antialiased">
+  <body class="bg-gray-950 text-gray-200 font-sans antialiased">
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>

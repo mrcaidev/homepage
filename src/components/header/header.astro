@@ -1,0 +1,21 @@
+---
+import Logo from "./logo.astro";
+import NavigationLink from "./navigation-link.astro";
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-10 flex items-center justify-between bg-gray-950/70 px-8 py-6 backdrop-blur-lg"
+>
+  <Logo />
+  <nav class="space-x-5">
+    <NavigationLink href="/projects" icon="i-lucide-box">
+      Projects
+    </NavigationLink>
+    <NavigationLink href="/blog" icon="i-lucide-file-text">
+      Blog
+    </NavigationLink>
+    <NavigationLink href="/friends" icon="i-lucide-users-round">
+      Friends
+    </NavigationLink>
+  </nav>
+</header>
