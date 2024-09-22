@@ -3,6 +3,7 @@ import qyInvoLing from "./avatars/qy-invo-ling.webp";
 import sake from "./avatars/sake.webp";
 import sumijie from "./avatars/sumijie.webp";
 import yaossg from "./avatars/yaossg.webp";
+import zbwer from "./avatars/zbwer.webp";
 
 export const friends = [
   {
@@ -10,6 +11,18 @@ export const friends = [
     description: "Pythonist. Machine Learning. Computer vision.",
     link: "https://fullstack-sake.github.io",
     avatar: sake,
+  },
+  {
+    name: "Bowen Zhang",
+    description: "Aspiring frontend dev. Charismatic actionist.",
+    link: "https://blog.zbwer.work",
+    avatar: zbwer,
+  },
+  {
+    name: "MrThanlon",
+    description: "Sell code for living. Impl Bug for Code.",
+    link: "https://blog.ch34k.xyz",
+    avatar: mrThanlon,
   },
   {
     name: "sumijie",
@@ -22,12 +35,6 @@ export const friends = [
     description: "Silly web developer. Modest self-describer.",
     link: "https://qyinvoling.tech",
     avatar: qyInvoLing,
-  },
-  {
-    name: "MrThanlon",
-    description: "Sell code for living. Impl Bug for Code.",
-    link: "https://blog.ch34k.xyz",
-    avatar: mrThanlon,
   },
   {
     name: "Yaossg",
