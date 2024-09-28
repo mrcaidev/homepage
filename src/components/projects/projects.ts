@@ -30,7 +30,7 @@ export const projects = [
       "Bring Radix UI's color system to Tailwind CSS, with opt-in smart semantic classes.",
     logo: tailwindcssRadixColors,
     sourceUrl: "https://github.com/mrcaidev/tailwindcss-radix-colors",
-    liveUrl: null,
+    liveUrl: "https://tailwindcss-radix-colors.mrcai.dev",
   },
   {
     name: "Intelligent Logistics",
