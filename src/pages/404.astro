@@ -3,20 +3,21 @@ import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <main
-    class="min-h-screen flex flex-col items-center justify-center p-4 text-center space-y-4"
+  <div
+    class="space-y-4 grid place-content-center place-items-center text-center"
   >
-    <h1 class="text-3xl font-bold sm:text-4xl">Page Not Found</h1>
+    <span class="i-lucide-map-pin-x-inside text-6xl"></span>
+    <h1 class="font-bold text-3xl">Page Not Found</h1>
     <p class="text-balance text-gray-400">
       Oops! The page you're looking for doesn't exist. Let's get you back on
       track!
     </p>
     <a
       href="/"
-      class="inline-flex items-center gap-2 rounded-md bg-gray-200 px-4 py-2 text-sm text-gray-800 font-medium transition-colors hover:bg-gray-200/90"
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-md bg-gray-200 hover:bg-gray-200/90 font-medium text-sm text-gray-800 transition-colors"
     >
       <span class="i-lucide-house text-base"></span>
       Take me home
     </a>
-  </main>
+  </div>
 </Layout>

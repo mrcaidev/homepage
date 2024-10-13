@@ -6,6 +6,7 @@ import "@fontsource-variable/inter";
 const title = "Yuwang Cai";
 const description =
   "Chinese student. Full-stack developer. Tech enthusiast. He/him.";
+const url = new URL(Astro.url.pathname, Astro.site);
 ---
 
 <html lang="en">
@@ -14,11 +15,12 @@ const description =
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={url} />
     <meta name="author" content="Yuwang Cai" />
     <meta name="description" content={description} />
     <meta name="generator" content="Astro" />
     <meta name="keywords" content="yuwang cai, homepage, full-stack" />
-    <meta name="theme-color" content="#020617" />
+    <meta name="theme-color" content="#030712" />
     <meta name="color-scheme" content="dark" />
     <meta name="creator" content="Yuwang Cai" />
     <meta name="publisher" content="Yuwang Cai" />
@@ -34,17 +36,21 @@ const description =
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Logo and mrcai.dev literal" />
-    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:image:alt" content="Logo" />
+    <meta property="og:url" content={url} />
     <meta property="og:description" content={description} />
 
     <meta name="twitter:site" content="@mrcaidev" />
     <meta name="twitter:creator" content="@mrcaidev" />
   </head>
 
-  <body class="bg-gray-950 text-gray-200 font-sans antialiased">
+  <body
+    class="bg-gray-950 font-sans text-gray-200 antialiased scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-gray-800"
+  >
     <Header />
-    <slot />
+    <main class="grid min-h-screen px-8 py-24">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

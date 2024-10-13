@@ -1,21 +1,25 @@
 ---
-interface Props {
-  href: string;
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {
+  to: string;
   icon: string;
-  text: string;
 }
 
-const { href, icon, text } = Astro.props;
+const { to, icon, title, class: classNames } = Astro.props;
 ---
 
 <a
-  href={href}
-  title={text}
+  href={to}
+  title={title}
   target="_blank"
-  class="rounded-md p-2 transition-colors hover:bg-gray-900"
+  class:list={[
+    "p-2 rounded-md hover:bg-gray-900 transition-colors",
+    classNames,
+  ]}
 >
-  <span class:list={[icon, "block size-6"]}></span>
+  <span class:list={[icon, "block size-5.5 sm:size-6"]}></span>
   <span class="sr-only">
-    {text}
+    <slot />
   </span>
 </a>

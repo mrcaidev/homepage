@@ -1,24 +1,24 @@
 ---
 interface Props {
-  href: string;
+  to: string;
   icon: string;
 }
 
-const { href, icon } = Astro.props;
+const { to, icon } = Astro.props;
 
-const isActive = Astro.url.pathname.startsWith(href);
+const isActive = Astro.url.pathname.startsWith(to);
 ---
 
 <a
-  href={href}
-  class:list={[
-    "transition-colors",
-    isActive || "text-gray-400 hover:text-gray-200",
-  ]}
+  href={to}
   aria-current={isActive ? "page" : "false"}
+  class:list={[
+    "font-medium",
+    isActive || "text-gray-400 hover:text-gray-200 transition-colors",
+  ]}
 >
-  <span class:list={[icon, "inline-block size-5 sm:hidden"]}></span>
-  <span class="hidden font-medium sm:inline">
+  <span class:list={[icon, "block sm:hidden size-5"]}></span>
+  <span class="hidden sm:inline">
     <slot />
   </span>
 </a>

@@ -4,18 +4,18 @@ import NavigationLink from "./navigation-link.astro";
 ---
 
 <header
-  class="fixed inset-x-0 top-0 z-10 flex items-center justify-between bg-gray-950/70 px-8 py-6 backdrop-blur-lg"
+  class="fixed inset-x-0 top-0 px-8 py-6 bg-gray-950/70 backdrop-blur-lg z-10"
 >
-  <Logo />
-  <nav class="space-x-5">
-    <NavigationLink href="/projects" icon="i-lucide-box">
-      Projects
-    </NavigationLink>
-    <NavigationLink href="/blog" icon="i-lucide-file-text">
-      Blog
-    </NavigationLink>
-    <NavigationLink href="/friends" icon="i-lucide-users-round">
-      Friends
-    </NavigationLink>
-  </nav>
+  <div class="flex justify-between items-center max-w-3xl mx-auto">
+    <Logo />
+    <nav aria-label="Website navigation" class="flex items-center gap-5">
+      <NavigationLink to="/projects" icon="i-lucide-box">
+        Projects
+      </NavigationLink>
+      <NavigationLink to="/blog" icon="i-lucide-file-text">Blog</NavigationLink>
+      <NavigationLink to="/friends" icon="i-lucide-users-round">
+        Friends
+      </NavigationLink>
+    </nav>
+  </div>
 </header>
