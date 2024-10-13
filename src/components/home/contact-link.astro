@@ -1,0 +1,21 @@
+---
+interface Props {
+  href: string;
+  icon: string;
+  text: string;
+}
+
+const { href, icon, text } = Astro.props;
+---
+
+<a
+  href={href}
+  title={text}
+  target="_blank"
+  class="rounded-md p-2 transition-colors hover:bg-gray-900"
+>
+  <span class:list={[icon, "block size-6"]}></span>
+  <span class="sr-only">
+    {text}
+  </span>
+</a>

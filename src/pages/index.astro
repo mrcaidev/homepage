@@ -1,16 +1,49 @@
 ---
-import Friends from "@/components/friends";
-import Hero from "@/components/hero.astro";
-import Projects from "@/components/projects";
-import Timeline from "@/components/timeline";
+import ContactLink from "@/components/home/contact-link.astro";
 import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <main class="mx-auto mb-36 max-w-6xl px-8 container">
-    <Hero />
-    <Timeline />
-    <Projects />
-    <Friends />
+  <main class="mx-auto max-w-4xl px-8 py-32">
+    <h1
+      class="mb-5 w-fit from-blue-400 to-cyan-400 bg-gradient-to-r bg-clip-text text-4xl text-transparent font-extrabold"
+    >
+      Yuwang Cai
+    </h1>
+    <p class="mb-4 text-gray-400">
+      Chinese student. Full-stack developer. Tech enthusiast. He/him.
+    </p>
+    <nav aria-label="Contact links" class="flex flex-wrap items-center gap-2">
+      <ContactLink
+        href="mailto:mrcaidev@gmail.com"
+        icon="i-simple-icons-gmail"
+        text="Email"
+      />
+      <ContactLink
+        href="https://github.com/mrcaidev"
+        icon="i-simple-icons-github"
+        text="GitHub"
+      />
+      <ContactLink
+        href="https://x.com/mrcaidev"
+        icon="i-simple-icons-x"
+        text="X"
+      />
+      <ContactLink
+        href="https://linkedin.com/in/mrcaidev"
+        icon="i-simple-icons-linkedin"
+        text="LinkedIn"
+      />
+      <ContactLink
+        href="https://space.bilibili.com/35364718"
+        icon="i-simple-icons-bilibili"
+        text="Bilibili"
+      />
+      <ContactLink
+        href="https://steamcommunity.com/id/mrcaidev"
+        icon="i-simple-icons-steam"
+        text="Steam"
+      />
+    </nav>
   </main>
 </Layout>
