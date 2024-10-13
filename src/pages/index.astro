@@ -1,10 +1,18 @@
 ---
+import csm from "@/assets/csm.svg";
+import nus from "@/assets/nus.svg";
+import president from "@/assets/president.svg";
+import rankFirst from "@/assets/rank-first.svg";
+import scholarship from "@/assets/scholarship.svg";
+import stars from "@/assets/stars.svg";
+import uestc from "@/assets/uestc.svg";
 import ContactLink from "@/components/home/contact-link.astro";
+import HighlightCard from "@/components/home/highlight-card.astro";
 import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <div class="w-full max-w-3xl mx-auto">
+  <div class="w-full max-w-3xl mx-auto overflow-hidden">
     <h1
       class="w-fit mb-4 sm:mb-5 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-extrabold text-3xl sm:text-4xl text-transparent"
     >
@@ -67,5 +75,71 @@ import Layout from "./_layout.astro";
       </ContactLink>
     </nav>
     <hr class="my-4 sm:my-5 border-1 border-gray-800" />
+    <section>
+      <h2 class="mb-4 font-bold text-xl sm:text-2xl">OVERVIEW</h2>
+      <div
+        class="flex sm:grid sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-3 md:gap-4 pb-2 sm:pb-0 overflow-auto snap-x snap-mandatory scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-gray-800"
+      >
+        <HighlightCard
+          title="Certified Scrum Master"
+          icon={csm}
+          class="sm:row-start-1 sm:row-end-2 sm:col-start-1 sm:col-end-2 md:row-start-1 md:row-end-2 md:col-start-1 md:col-end-4"
+        >
+          Sprinting towards a brighter future
+        </HighlightCard>
+        <HighlightCard
+          title="400+ Stars on GitHub"
+          icon={stars}
+          class="sm:row-start-2 sm:row-end-4 sm:col-start-2 sm:col-end-3 md:row-start-2 md:row-end-6 md:col-start-3 md:col-end-5"
+        >
+          Open source contributions
+        </HighlightCard>
+        <HighlightCard
+          title="Master of Technology @NUS"
+          icon={nus}
+          class="sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3 md:row-start-1 md:row-end-2 md:col-start-4 md:col-end-7"
+        >
+          Software Engineering, 2024 - current
+        </HighlightCard>
+        <HighlightCard
+          title="Bachelor of Engineering @UESTC"
+          icon={uestc}
+          class="sm:row-start-4 sm:row-end-5 sm:col-start-2 sm:col-end-3 md:row-start-2 md:row-end-4 md:col-start-5 md:col-end-7"
+        >
+          Computer Science and Technology, 2020 - 2024
+        </HighlightCard>
+        <HighlightCard
+          title="Bachelor of Science @UESTC"
+          icon={uestc}
+          class="sm:row-start-5 sm:row-end-6 sm:col-start-1 sm:col-end-2 md:row-start-4 md:row-end-6 md:col-start-5 md:col-end-7"
+        >
+          Data Science and Big Data Technology, 2020 - 2024
+        </HighlightCard>
+        <HighlightCard
+          title="Rank 1st"
+          icon={rankFirst}
+          class="sm:row-start-2 sm:row-end-5 sm:col-start-1 sm:col-end-2 md:row-start-2 md:row-end-5 md:col-start-1 md:col-end-3"
+        >
+          Among 2,767 students in Baidu Frontend Summer Workshop, 2022
+        </HighlightCard>
+        <HighlightCard
+          title="President of Student's Union"
+          icon={president}
+          class="sm:row-start-5 sm:row-end-7 sm:col-start-2 sm:col-end-3 md:row-start-6 md:row-end-7 md:col-start-3 md:col-end-7"
+        >
+          UESTC "Internet+" Student's Union, 2022 - 2023
+        </HighlightCard>
+        <HighlightCard
+          title="Outstanding Student Scholarship"
+          icon={scholarship}
+          class="sm:row-start-6 sm:row-end-7 sm:col-start-1 sm:col-end-2 md:row-start-5 md:row-end-7 md:col-start-1 md:col-end-3"
+        >
+          @UESTC, 2021 & 2022
+        </HighlightCard>
+      </div>
+      <p class="sm:hidden mt-2 text-xs text-gray-400 text-center">
+        Scroll to learn more →
+      </p>
+    </section>
   </div>
 </Layout>
