@@ -14,7 +14,7 @@ Salting is used during a user's registration and login process.
 
 ### Registration
 
-[Basic flow of registration](https://media.licdn.com/dms/image/v2/D4E12AQExexj_QO5I8w/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1726997531434?e=1734566400&v=beta&t=NpnsT3TdO8igkh2gghNM_ne6HeYiINAXMYhEgGvL4YQ)
+![Basic flow of registration](https://media.licdn.com/dms/image/v2/D4E12AQExexj_QO5I8w/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1726997531434?e=1734566400&v=beta&t=NpnsT3TdO8igkh2gghNM_ne6HeYiINAXMYhEgGvL4YQ)
 
 1. A new user registers his/her account with a username and a password.
 2. Frontend performs a basic validation on the username and the password, and sends them to backend.
@@ -24,7 +24,7 @@ Salting is used during a user's registration and login process.
 
 ### Login
 
-[Basic flow of login](https://media.licdn.com/dms/image/v2/D4E12AQGjRHZ0aRy6Ng/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1727012902197?e=1734566400&v=beta&t=eUNa8DeIp3D4yiC8i_Ag-HeNEao6IWbPxnQRlSBV1G8)
+![Basic flow of login](https://media.licdn.com/dms/image/v2/D4E12AQGjRHZ0aRy6Ng/article-inline_image-shrink_1000_1488/article-inline_image-shrink_1000_1488/0/1727012902197?e=1734566400&v=beta&t=eUNa8DeIp3D4yiC8i_Ag-HeNEao6IWbPxnQRlSBV1G8)
 
 1. A registered user logs in to his/her account with the username and a new password. When I say new, I actually mean unknown or suspicious, because this password might be incorrect and thus different from the previous real one.
 2. Frontend performs a basic validation on the username and the new password, and sends them to backend.
@@ -54,11 +54,11 @@ Hashing has already done a pretty good job at securing database information, bec
 
 But hackers have their siege cars. For example, with a rainbow table, the hacker already has a pre-computed map of different cleartexts to their corresponding hash values. If the hacker succeeds in finding a matched hash value, he/she can then deduce the cleartext password.
 
-[Hacker knows Bob's password is 123456](https://media.licdn.com/dms/image/v2/D4E12AQHYbDzB0UesOA/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1727001490965?e=1734566400&v=beta&t=rRBGE6OBDbIA7Kr8LmwuabF1-moN_SmrE-eiPZ6RNVI)
+![Hacker knows Bob's password is 123456](https://media.licdn.com/dms/image/v2/D4E12AQHYbDzB0UesOA/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1727001490965?e=1734566400&v=beta&t=rRBGE6OBDbIA7Kr8LmwuabF1-moN_SmrE-eiPZ6RNVI)
 
 But if we append a salt to the password, the hacker can no longer find a match.
 
-[Hacker can't find a match](https://media.licdn.com/dms/image/v2/D4E12AQEk-bqA3Ea8TQ/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1727009958571?e=1734566400&v=beta&t=4-H2Zfco3HsVjJ80EsFJZCkqB74UelDLOBuXFcLgS6M)
+![Hacker can't find a match](https://media.licdn.com/dms/image/v2/D4E12AQEk-bqA3Ea8TQ/article-inline_image-shrink_400_744/article-inline_image-shrink_400_744/0/1727009958571?e=1734566400&v=beta&t=4-H2Zfco3HsVjJ80EsFJZCkqB74UelDLOBuXFcLgS6M)
 
 ### 😡 There Is Really Not Much Difference!
 
