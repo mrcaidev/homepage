@@ -4,16 +4,35 @@ import RootLayout from "./root-layout.astro";
 interface Props {
   title: string;
   description: string;
+  createdAt: Date;
 }
 
-const { title, description } = Astro.props;
+const { title, description, createdAt } = Astro.props;
 ---
 
 <RootLayout title={title} description={description}>
   <Fragment slot="og-type">
     <meta property="og:type" content="article" />
+    <meta property="article:published_time" content={createdAt.toISOString()} />
     <meta property="article:author" content="Yuwang Cai" />
     <meta property="article:section" content="Technology" />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        headline: title,
+        description: description,
+        datePublished: createdAt.toISOString(),
+        dateCreated: createdAt.toISOString(),
+        author: {
+          "@type": "Person",
+          name: "Yuwang Cai",
+          url: Astro.site,
+        },
+      })}
+    />
   </Fragment>
   <slot />
 </RootLayout>

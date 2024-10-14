@@ -1,4 +1,4 @@
-import { defineConfig, presetIcons, presetUno } from "unocss";
+import { defineConfig, presetIcons, presetTypography, presetUno } from "unocss";
 import { presetScrollbar } from "unocss-preset-scrollbar";
 
 export default defineConfig({
@@ -10,6 +10,7 @@ export default defineConfig({
   presets: [
     presetUno(),
     presetIcons({ extraProperties: { display: "block" } }),
+    presetTypography(),
     presetScrollbar(),
   ],
 });
