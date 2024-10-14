@@ -3,9 +3,17 @@ import Footer from "@/components/footer.astro";
 import Header from "@/components/header";
 import "@fontsource-variable/inter";
 
-const title = "Yuwang Cai";
-const description =
-  "Chinese student. Full-stack developer. Tech enthusiast. He/him.";
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title: subtitle,
+  description = "Chinese student. Full-stack developer. Tech enthusiast. He/him.",
+} = Astro.props;
+
+const title = subtitle ? subtitle + " | Yuwang Cai" : "Yuwang Cai";
 const url = new URL(Astro.url.pathname, Astro.site);
 ---
 
