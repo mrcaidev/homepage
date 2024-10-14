@@ -3,47 +3,25 @@ import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
 
 interface Props {
-  name: string;
-  description: string;
-  logo: ImageMetadata;
-  sourceUrl: string;
-  liveUrl: string | null;
+  title: string;
+  icon: ImageMetadata;
+  link: string;
 }
 
-const { name, description, logo, sourceUrl, liveUrl } = Astro.props;
+const { title, icon, link } = Astro.props;
 ---
 
 <div
-  class="flex flex-col gap-2 border border-slate-800 rounded-md bg-slate-900 px-6 pb-3 pt-4"
+  class="flex items-center gap-4 sm:gap-5 relative h-full px-3 py-2.5 sm:px-5 sm:py-4 rounded-lg hover:bg-gray-900 transition"
 >
-  <div class="flex items-center gap-3">
-    <Image src={logo} alt={"Project logo of " + name} class="w-5.5" />
-    <span class="font-medium sm:text-lg">
-      {name}
-    </span>
+  <Image src={icon} alt="" class="size-9 sm:size-10" />
+  <div class="space-y-0.5">
+    <h2 class="font-medium sm:text-lg">{title}</h2>
+    <p class="text-sm text-gray-400">
+      <slot />
+    </p>
   </div>
-  <p class="text-sm text-slate-400 sm:text-base">{description}</p>
-  <div class="mt-auto min-h-10 flex items-center justify-between">
-    <a
-      href={sourceUrl}
-      target="_blank"
-      rel="noreferrer"
-      class="text-sm text-blue-300 underline-offset-4 hover:underline"
-    >
-      Source code
-    </a>
-    {
-      liveUrl && (
-        <a
-          href={liveUrl}
-          target="_blank"
-          rel="noreferrer"
-          class="group inline-flex items-center justify-center gap-0.5 border border-slate-600 rounded-md py-2 pl-4 pr-3 text-sm font-medium transition-colors hover:bg-slate-800"
-        >
-          Live
-          <span class="i-lucide-chevron-right text-base transition-transform group-hover:translate-x-0.5" />
-        </a>
-      )
-    }
-  </div>
+  <a href={link} target="_blank" class="absolute inset-0 rounded-lg">
+    <span class="sr-only size-0">Visit project</span>
+  </a>
 </div>
