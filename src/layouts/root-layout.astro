@@ -4,14 +4,11 @@ import Header from "@/components/header";
 import "@fontsource-variable/inter";
 
 interface Props {
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
 }
 
-const {
-  title: subtitle,
-  description = "Chinese student. Full-stack developer. Tech enthusiast. He/him.",
-} = Astro.props;
+const { title: subtitle, description } = Astro.props;
 
 const title = subtitle ? subtitle + " | Yuwang Cai" : "Yuwang Cai";
 const url = new URL(Astro.url.pathname, Astro.site);
@@ -27,7 +24,10 @@ const url = new URL(Astro.url.pathname, Astro.site);
     <meta name="author" content="Yuwang Cai" />
     <meta name="description" content={description} />
     <meta name="generator" content="Astro" />
-    <meta name="keywords" content="yuwang cai, homepage, full-stack" />
+    <meta
+      name="keywords"
+      content="yuwang cai, yuwang, cai, technology, full-stack, web, software"
+    />
     <meta name="theme-color" content="#030712" />
     <meta name="color-scheme" content="dark" />
     <meta name="creator" content="Yuwang Cai" />
@@ -35,11 +35,7 @@ const url = new URL(Astro.url.pathname, Astro.site);
     <meta name="robots" content="index, follow" />
 
     <meta property="og:title" content={title} />
-    <meta property="og:type" content="profile" />
-    <meta property="profile:first_name" content="Yuwang" />
-    <meta property="profile:last_name" content="Cai" />
-    <meta property="profile:username" content="mrcaidev" />
-    <meta property="profile:gender" content="male" />
+    <slot name="og-type" />
     <meta property="og:image" content={new URL("/og-image.png", Astro.site)} />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="1200" />

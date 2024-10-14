@@ -1,0 +1,17 @@
+---
+import RootLayout from "./root-layout.astro";
+---
+
+<RootLayout
+  title=""
+  description="Chinese student. Full-stack developer. Tech enthusiast. He/him."
+>
+  <Fragment slot="og-type">
+    <meta property="og:type" content="profile" />
+    <meta property="profile:first_name" content="Yuwang" />
+    <meta property="profile:last_name" content="Cai" />
+    <meta property="profile:username" content="mrcaidev" />
+    <meta property="profile:gender" content="male" />
+  </Fragment>
+  <slot />
+</RootLayout>

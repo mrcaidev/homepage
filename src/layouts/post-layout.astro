@@ -1,0 +1,19 @@
+---
+import RootLayout from "./root-layout.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<RootLayout title={title} description={description}>
+  <Fragment slot="og-type">
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content="Yuwang Cai" />
+    <meta property="article:section" content="Technology" />
+  </Fragment>
+  <slot />
+</RootLayout>
