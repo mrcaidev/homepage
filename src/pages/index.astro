@@ -12,73 +12,71 @@ import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <div class="space-y-4 sm:space-y-5 w-full max-w-3xl mx-auto overflow-hidden">
-    <section>
-      <h1
-        class="w-fit mb-4 sm:mb-5 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-extrabold text-3xl sm:text-4xl text-transparent"
+  <div class="w-full max-w-3xl mx-auto overflow-hidden">
+    <h1
+      class="w-fit bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-extrabold text-3xl sm:text-4xl text-transparent"
+    >
+      Yuwang Cai
+    </h1>
+    <p class="mt-4 sm:mt-5 text-gray-400">
+      Chinese student. Full-stack developer. Tech enthusiast. He/him.
+    </p>
+    <nav
+      aria-label="Contact links"
+      class="flex items-center gap-1.5 sm:gap-2 flex-wrap mt-3 sm:mt-4"
+    >
+      <ContactLink
+        to="mailto:mrcaidev@gmail.com"
+        icon="i-simple-icons-gmail"
+        title="Email"
+        class="hover:text-red-500"
       >
-        Yuwang Cai
-      </h1>
-      <p class="mb-3 sm:mb-4 text-gray-400">
-        Chinese student. Full-stack developer. Tech enthusiast. He/him.
-      </p>
-      <nav
-        aria-label="Contact links"
-        class="flex items-center gap-1.5 sm:gap-2 flex-wrap"
+        Email
+      </ContactLink>
+      <ContactLink
+        to="https://github.com/mrcaidev"
+        icon="i-simple-icons-github"
+        title="GitHub"
+        class="hover:text-gray-400"
       >
-        <ContactLink
-          to="mailto:mrcaidev@gmail.com"
-          icon="i-simple-icons-gmail"
-          title="Email"
-          class="hover:text-red-500"
-        >
-          Email
-        </ContactLink>
-        <ContactLink
-          to="https://github.com/mrcaidev"
-          icon="i-simple-icons-github"
-          title="GitHub"
-          class="hover:text-gray-400"
-        >
-          GitHub
-        </ContactLink>
-        <ContactLink
-          to="https://www.linkedin.com/in/mrcaidev"
-          icon="i-simple-icons-linkedin"
-          title="LinkedIn"
-          class="hover:text-blue-500"
-        >
-          LinkedIn
-        </ContactLink>
-        <ContactLink
-          to="https://x.com/mrcaidev"
-          icon="i-simple-icons-x"
-          title="X"
-          class="hover:text-gray-400"
-        >
-          X
-        </ContactLink>
-        <ContactLink
-          to="https://space.bilibili.com/35364718"
-          icon="i-simple-icons-bilibili"
-          title="Bilibili"
-          class="hover:text-pink-400"
-        >
-          Bilibili
-        </ContactLink>
-        <ContactLink
-          to="https://steamcommunity.com/id/mrcaidev"
-          icon="i-simple-icons-steam"
-          title="Steam"
-          class="hover:text-blue-600"
-        >
-          Steam
-        </ContactLink>
-      </nav>
-    </section>
-    <hr class="border-1 border-gray-900" />
-    <section>
-      <h2 class="mb-4 font-bold text-xl sm:text-2xl">HIGHLIGHTS</h2>
+        GitHub
+      </ContactLink>
+      <ContactLink
+        to="https://www.linkedin.com/in/mrcaidev"
+        icon="i-simple-icons-linkedin"
+        title="LinkedIn"
+        class="hover:text-blue-500"
+      >
+        LinkedIn
+      </ContactLink>
+      <ContactLink
+        to="https://x.com/mrcaidev"
+        icon="i-simple-icons-x"
+        title="X"
+        class="hover:text-gray-400"
+      >
+        X
+      </ContactLink>
+      <ContactLink
+        to="https://space.bilibili.com/35364718"
+        icon="i-simple-icons-bilibili"
+        title="Bilibili"
+        class="hover:text-pink-400"
+      >
+        Bilibili
+      </ContactLink>
+      <ContactLink
+        to="https://steamcommunity.com/id/mrcaidev"
+        icon="i-simple-icons-steam"
+        title="Steam"
+        class="hover:text-blue-600"
+      >
+        Steam
+      </ContactLink>
+    </nav>
+    <hr class="mt-4 sm:mt-5 border-1 border-gray-900" />
+    <section class="mt-4 sm:mt-5">
+      <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">HIGHLIGHTS</h2>
       <div
         class="flex sm:grid sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-3 md:gap-4 pb-2 sm:pb-0 overflow-auto snap-x snap-mandatory scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-gray-800"
       >
@@ -148,8 +146,8 @@ import Layout from "./_layout.astro";
         Scroll to learn more →
       </p>
     </section>
-    <section>
-      <h2 class="mb-4 font-bold text-xl sm:text-2xl">SKILLS</h2>
+    <section class="mt-8 sm:mt-10">
+      <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">SKILLS</h2>
       <p class="mb-3">I can help with...</p>
       <ul class="space-y-2 leading-relaxed">
         <li class="pl-3 border-l-2 border-red-500">
@@ -178,8 +176,8 @@ import Layout from "./_layout.astro";
         </li>
       </ul>
     </section>
-    <section>
-      <h2 class="mb-4 font-bold text-xl sm:text-2xl">OTHERS</h2>
+    <section class="mt-8 sm:mt-10">
+      <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">OTHERS</h2>
       <div class="space-y-2 text-gray-400 leading-relaxed">
         <p>
           🎸 I love music. My favorite singers include Fall Out Boy, Starset,
