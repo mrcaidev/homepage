@@ -17,7 +17,7 @@ const isActive = Astro.url.pathname.startsWith(to);
     isActive || "text-gray-400 hover:text-gray-200 transition-colors",
   ]}
 >
-  <span class:list={[icon, "block sm:hidden size-5"]}></span>
+  <span class:list={[icon, "sm:hidden size-5"]}></span>
   <span class="hidden sm:inline">
     <slot />
   </span>

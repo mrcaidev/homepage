@@ -7,5 +7,9 @@ export default defineConfig({
       sans: ["Inter Variable", "ui-sans-serif", "system-ui"],
     },
   },
-  presets: [presetUno(), presetIcons(), presetScrollbar()],
+  presets: [
+    presetUno(),
+    presetIcons({ extraProperties: { display: "block" } }),
+    presetScrollbar(),
+  ],
 });
