@@ -1,0 +1,68 @@
+---
+import mrThanlon from "@/assets/mr-thanlon.webp";
+import qyInvoLing from "@/assets/qy-invo-ling.webp";
+import sake from "@/assets/sake.webp";
+import sumijie from "@/assets/sumijie.webp";
+import yaossg from "@/assets/yaossg.webp";
+import zbwer from "@/assets/zbwer.webp";
+import FriendCard from "@/components/friends/friend-card.astro";
+import Layout from "./_layout.astro";
+---
+
+<Layout>
+  <div class="w-full max-w-3xl mx-auto">
+    <h1 class="font-extrabold text-3xl sm:text-4xl">Friends</h1>
+    <p class="mt-4 sm:mt-5 text-gray-400">
+      Big shoutout to my friends who have supported me along the way.
+    </p>
+    <hr class="mt-4 sm:mt-5 border border-gray-900" />
+    <ul class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 mt-4 sm:mt-5">
+      <li>
+        <FriendCard
+          title="Sake"
+          avatar={sake}
+          link="https://fullstack-sake.github.io"
+        >
+          Pythonist. Machine Learning. Computer vision.
+        </FriendCard>
+      </li>
+      <li>
+        <FriendCard title="sumijie" avatar={sumijie} link="https://focess.top">
+          Java developer. Minecraft mod creator. ACMer.
+        </FriendCard>
+      </li>
+      <li>
+        <FriendCard
+          title="QyInvoLing"
+          avatar={qyInvoLing}
+          link="https://qyinvoling.tech"
+        >
+          Silly web developer. Modest self-describer.
+        </FriendCard>
+      </li>
+      <li>
+        <FriendCard
+          title="MrThanlon"
+          avatar={mrThanlon}
+          link="https://blog.ch34k.xyz"
+        >
+          Sell code for living. Impl Bug for Code.
+        </FriendCard>
+      </li>
+      <li>
+        <FriendCard title="Yaossg" avatar={yaossg} link="https://yaossg.com">
+          C++ programmer. Hardcore Minecraft player.
+        </FriendCard>
+      </li>
+      <li>
+        <FriendCard
+          title="Bowen Zhang"
+          avatar={zbwer}
+          link="https://blog.zbwer.work"
+        >
+          Aspiring frontend dev. Charismatic actionist.
+        </FriendCard>
+      </li>
+    </ul>
+  </div>
+</Layout>
