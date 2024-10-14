@@ -1,0 +1,23 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+}
+
+const { slug, title, description } = Astro.props;
+---
+
+<div
+  class="group relative px-4 py-3 rounded-md hover:bg-gray-900 transition-colors"
+>
+  <h2 class="font-medium text-lg">{title}</h2>
+  <p class="mt-1 text-sm text-gray-400">{description}</p>
+  <a href={`/blog/${slug}`} class="absolute inset-0 rounded-md">
+    <span class="sr-only size-0">Read</span>
+  </a>
+  <div
+    class="absolute top-4.75 -left-4.75 size-3 rounded-full border-2 border-blue-400 bg-gray-950 group-hover:bg-blue-400 transition-colors"
+  >
+  </div>
+</div>
