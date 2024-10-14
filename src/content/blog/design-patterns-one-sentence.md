@@ -1,6 +1,7 @@
 ---
 title: Design Patterns in One Sentence
 description: Describe 23 mostly commonly used design patterns each in one sentence.
+createdAt: 2023-01-16
 ---
 
 ## Factory Method

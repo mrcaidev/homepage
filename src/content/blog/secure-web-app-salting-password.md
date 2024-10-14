@@ -1,6 +1,7 @@
 ---
 title: Secure Your Web App - Salting Passwords
 description: Salting makes it harder for hackers to decode passwords, thus securing your database.
+createdAt: 2024-09-22
 ---
 
 Bad developers store passwords in cleartext. Ordinary developers store them in hashes. Good developers, on the other hand, utilize a technique called "salting", which adds another layer of security to their databases.

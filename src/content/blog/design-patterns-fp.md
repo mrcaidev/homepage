@@ -1,6 +1,7 @@
 ---
 title: Design Patterns in Functional Programming
 description: Design patterns in functional programming paradigm has two distinct features - decoupling of data and methods, and first-class functions.
+createdAt: 2023-01-16
 ---
 
 The emergence of design patterns is primarily due to the fact that OOP organizes code into classes with data-centric methods.

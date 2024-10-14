@@ -1,6 +1,7 @@
 ---
 title: Optimize Your Web App - Images Performance
 description: Images are the leading cause of web performance issues. Learn how to optimize images for better performance.
+createdAt: 2024-09-21
 ---
 
 We love high-resolution images. A clear and vivid image makes a website visually more appealing, leaves a stronger impression on customers, and helps to better convey personal insight or business vision.

@@ -1,6 +1,7 @@
 ---
 title: Everything You Need To Know About 100 Continue
 description: The HTTP status code "100 Continue" indicates that the server feels good about the initial part of a request, and the client can go on with it.
+createdAt: 2023-01-15
 ---
 
 The HTTP status code "100 Continue" indicates that the server feels good about the initial part of a request, and the client can go on with it.

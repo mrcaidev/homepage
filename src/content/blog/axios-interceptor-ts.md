@@ -1,6 +1,7 @@
 ---
 title: How to Use Axios Interceptor in TypeScript
 description: It's a common practice to retrieve res.data in an Axios response interceptor, but TypeScript knows nothing about it. How can we inform the type system?
+createdAt: 2023-01-15
 ---
 
 It's a common practice to retrieve res.data in an Axios response interceptor, but TypeScript knows nothing about it. How can we inform the type system?

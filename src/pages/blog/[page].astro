@@ -7,8 +7,10 @@ import { getCollection } from "astro:content";
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getCollection("blog");
   return paginate(
-    posts.map(({ slug, data }) => ({ slug, ...data })),
-    { pageSize: 5 },
+    posts
+      .sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime())
+      .map(({ slug, data }) => ({ slug, ...data })),
+    { pageSize: 4 },
   );
 }) satisfies GetStaticPaths;
 

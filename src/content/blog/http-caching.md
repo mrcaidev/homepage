@@ -1,6 +1,7 @@
 ---
 title: HTTP Caching - Fresh, Stale and Revalidation
 description: HTTP caching is critical to the performance of a website. Resources can be reused for a set period of time, and then revalidated to keep their freshness.
+createdAt: 2023-01-17
 ---
 
 HTTP caching is critical to the performance of a website. Resources can be reused for a set period of time, and then revalidated to keep their freshness.
