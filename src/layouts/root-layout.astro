@@ -52,7 +52,7 @@ const url = new URL(Astro.url.pathname, Astro.site);
     class="bg-gray-950 font-sans text-gray-200 antialiased scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-gray-800"
   >
     <Header />
-    <main class="grid min-h-screen px-8 py-24">
+    <main class="flex flex-col max-w-3xl min-h-screen px-8 py-24 mx-auto">
       <slot />
     </main>
     <Footer />

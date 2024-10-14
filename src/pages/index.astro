@@ -12,192 +12,190 @@ import HomeLayout from "@/layouts/home-layout.astro";
 ---
 
 <HomeLayout>
-  <div class="w-full max-w-3xl mx-auto overflow-hidden">
-    <h1
-      class="w-fit bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-extrabold text-3xl sm:text-4xl text-transparent"
+  <h1
+    class="w-fit bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-extrabold text-3xl sm:text-4xl text-transparent"
+  >
+    Yuwang Cai
+  </h1>
+  <p class="mt-4 sm:mt-5 text-gray-400">
+    Chinese student. Full-stack developer. Tech enthusiast. He/him.
+  </p>
+  <nav
+    aria-label="Contact links"
+    class="flex items-center gap-1.5 sm:gap-2 flex-wrap pl-0.5 mt-3 sm:mt-4"
+  >
+    <ContactLink
+      to="mailto:mrcaidev@gmail.com"
+      icon="i-simple-icons-gmail"
+      title="Email"
+      class="hover:text-red-500 focus-within:text-red-500"
     >
-      Yuwang Cai
-    </h1>
-    <p class="mt-4 sm:mt-5 text-gray-400">
-      Chinese student. Full-stack developer. Tech enthusiast. He/him.
+      Email
+    </ContactLink>
+    <ContactLink
+      to="https://github.com/mrcaidev"
+      icon="i-simple-icons-github"
+      title="GitHub"
+      class="hover:text-gray-400 focus-within:text-gray-400"
+    >
+      GitHub
+    </ContactLink>
+    <ContactLink
+      to="https://www.linkedin.com/in/mrcaidev"
+      icon="i-simple-icons-linkedin"
+      title="LinkedIn"
+      class="hover:text-blue-500 focus-within:text-blue-500"
+    >
+      LinkedIn
+    </ContactLink>
+    <ContactLink
+      to="https://x.com/mrcaidev"
+      icon="i-simple-icons-x"
+      title="X"
+      class="hover:text-gray-400 focus-within:text-gray-400"
+    >
+      X
+    </ContactLink>
+    <ContactLink
+      to="https://space.bilibili.com/35364718"
+      icon="i-simple-icons-bilibili"
+      title="Bilibili"
+      class="hover:text-pink-400 focus-within:text-pink-400"
+    >
+      Bilibili
+    </ContactLink>
+    <ContactLink
+      to="https://steamcommunity.com/id/mrcaidev"
+      icon="i-simple-icons-steam"
+      title="Steam"
+      class="hover:text-blue-600 focus-within:text-blue-600"
+    >
+      Steam
+    </ContactLink>
+  </nav>
+  <hr class="mt-4 sm:mt-5 border border-gray-900" />
+  <section class="mt-4 sm:mt-5">
+    <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">SKILLS</h2>
+    <p class="mb-3">I can help with...</p>
+    <ul class="space-y-2 leading-relaxed">
+      <li class="pl-3 border-l-2 border-red-500">
+        <strong>Architecture:</strong>
+        <span class="text-gray-400">
+          DDD, microservice, cloud native, OOAD, UML, design patterns
+        </span>
+      </li>
+      <li class="pl-3 border-l-2 border-green-700">
+        <strong>Frontend:</strong>
+        <span class="text-gray-400">
+          TypeScript, React.js, Next.js, Astro, Tailwind CSS, Vite
+        </span>
+      </li>
+      <li class="pl-3 border-l-2 border-yellow-500">
+        <strong>Backend:</strong>
+        <span class="text-gray-400">
+          Express.js, Hono.js, PostgreSQL, MongoDB, Rabbit MQ, Go
+        </span>
+      </li>
+      <li class="pl-3 border-l-2 border-blue-500">
+        <strong>DevSecOps:</strong>
+        <span class="text-gray-400">
+          Scrum Master, Docker Compose, test automation, GitHub Actions
+        </span>
+      </li>
+    </ul>
+    <p class="mt-3 text-gray-400 -translate-x-1">
+      &#65310; See how I demonstrate these skills in
+      <a href="/projects" class="text-blue-400 underline underline-offset-2">
+        my projects</a
+      >.
     </p>
-    <nav
-      aria-label="Contact links"
-      class="flex items-center gap-1.5 sm:gap-2 flex-wrap pl-0.5 mt-3 sm:mt-4"
+  </section>
+  <section class="mt-6 sm:mt-8">
+    <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">HIGHLIGHTS</h2>
+    <div
+      class="flex sm:grid sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-3 md:gap-4 pb-2 sm:pb-0 overflow-auto snap-x snap-mandatory scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-gray-800"
     >
-      <ContactLink
-        to="mailto:mrcaidev@gmail.com"
-        icon="i-simple-icons-gmail"
-        title="Email"
-        class="hover:text-red-500 focus-within:text-red-500"
+      <HighlightCard
+        title="Certified Scrum Master"
+        icon={csm}
+        class="sm:row-start-1 sm:row-end-2 sm:col-start-1 sm:col-end-2 md:row-start-1 md:row-end-2 md:col-start-1 md:col-end-4"
       >
-        Email
-      </ContactLink>
-      <ContactLink
-        to="https://github.com/mrcaidev"
-        icon="i-simple-icons-github"
-        title="GitHub"
-        class="hover:text-gray-400 focus-within:text-gray-400"
+        Sprinting towards a brighter future
+      </HighlightCard>
+      <HighlightCard
+        title="400+ Stars on GitHub"
+        icon={stars}
+        class="sm:row-start-2 sm:row-end-4 sm:col-start-2 sm:col-end-3 md:row-start-2 md:row-end-6 md:col-start-3 md:col-end-5"
       >
-        GitHub
-      </ContactLink>
-      <ContactLink
-        to="https://www.linkedin.com/in/mrcaidev"
-        icon="i-simple-icons-linkedin"
-        title="LinkedIn"
-        class="hover:text-blue-500 focus-within:text-blue-500"
+        From open source software, libraries and plugins
+      </HighlightCard>
+      <HighlightCard
+        title="Master of Technology @NUS"
+        icon={nus}
+        class="sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3 md:row-start-1 md:row-end-2 md:col-start-4 md:col-end-7"
       >
-        LinkedIn
-      </ContactLink>
-      <ContactLink
-        to="https://x.com/mrcaidev"
-        icon="i-simple-icons-x"
-        title="X"
-        class="hover:text-gray-400 focus-within:text-gray-400"
+        Software Engineering, 2024 - current
+      </HighlightCard>
+      <HighlightCard
+        title="Bachelor of Engineering @UESTC"
+        icon={uestc}
+        class="sm:row-start-4 sm:row-end-5 sm:col-start-2 sm:col-end-3 md:row-start-2 md:row-end-4 md:col-start-5 md:col-end-7"
       >
-        X
-      </ContactLink>
-      <ContactLink
-        to="https://space.bilibili.com/35364718"
-        icon="i-simple-icons-bilibili"
-        title="Bilibili"
-        class="hover:text-pink-400 focus-within:text-pink-400"
+        Computer Science and Technology, 2020 - 2024
+      </HighlightCard>
+      <HighlightCard
+        title="Bachelor of Science @UESTC"
+        icon={uestc}
+        class="sm:row-start-5 sm:row-end-6 sm:col-start-1 sm:col-end-2 md:row-start-4 md:row-end-6 md:col-start-5 md:col-end-7"
       >
-        Bilibili
-      </ContactLink>
-      <ContactLink
-        to="https://steamcommunity.com/id/mrcaidev"
-        icon="i-simple-icons-steam"
-        title="Steam"
-        class="hover:text-blue-600 focus-within:text-blue-600"
+        Data Science and Big Data Technology, 2020 - 2024
+      </HighlightCard>
+      <HighlightCard
+        title="Rank 1st"
+        icon={rankFirst}
+        class="sm:row-start-2 sm:row-end-5 sm:col-start-1 sm:col-end-2 md:row-start-2 md:row-end-5 md:col-start-1 md:col-end-3"
       >
-        Steam
-      </ContactLink>
-    </nav>
-    <hr class="mt-4 sm:mt-5 border border-gray-900" />
-    <section class="mt-4 sm:mt-5">
-      <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">SKILLS</h2>
-      <p class="mb-3">I can help with...</p>
-      <ul class="space-y-2 leading-relaxed">
-        <li class="pl-3 border-l-2 border-red-500">
-          <strong>Architecture:</strong>
-          <span class="text-gray-400">
-            DDD, microservice, cloud native, OOAD, UML, design patterns
-          </span>
-        </li>
-        <li class="pl-3 border-l-2 border-green-700">
-          <strong>Frontend:</strong>
-          <span class="text-gray-400">
-            TypeScript, React.js, Next.js, Astro, Tailwind CSS, Vite
-          </span>
-        </li>
-        <li class="pl-3 border-l-2 border-yellow-500">
-          <strong>Backend:</strong>
-          <span class="text-gray-400">
-            Express.js, Hono.js, PostgreSQL, MongoDB, Rabbit MQ, Go
-          </span>
-        </li>
-        <li class="pl-3 border-l-2 border-blue-500">
-          <strong>DevSecOps:</strong>
-          <span class="text-gray-400">
-            Scrum Master, Docker Compose, test automation, GitHub Actions
-          </span>
-        </li>
-      </ul>
-      <p class="mt-3 text-gray-400 -translate-x-1">
-        &#65310; See how I demonstrate these skills in
-        <a href="/projects" class="text-blue-400 underline underline-offset-2">
-          my projects</a
-        >.
+        Among 2,767 students in Baidu Frontend Summer Workshop, 2022
+      </HighlightCard>
+      <HighlightCard
+        title="President of Student's Union"
+        icon={president}
+        class="sm:row-start-5 sm:row-end-7 sm:col-start-2 sm:col-end-3 md:row-start-6 md:row-end-7 md:col-start-3 md:col-end-7"
+      >
+        UESTC "Internet+" Student's Union, 2023
+      </HighlightCard>
+      <HighlightCard
+        title="Outstanding Student Scholarship"
+        icon={scholarship}
+        class="sm:row-start-6 sm:row-end-7 sm:col-start-1 sm:col-end-2 md:row-start-5 md:row-end-7 md:col-start-1 md:col-end-3"
+      >
+        @UESTC, 2021 & 2022
+      </HighlightCard>
+    </div>
+    <p class="sm:hidden mt-2 text-xs text-gray-400 text-center">
+      Scroll to learn more →
+    </p>
+  </section>
+  <section class="mt-6 sm:mt-8">
+    <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">OTHERS</h2>
+    <div class="space-y-2 text-gray-400 leading-relaxed">
+      <p>
+        🎸 I love music. My favorite singers include Fall Out Boy, Starset, Jay
+        Chou and Imagine Dragons.
       </p>
-    </section>
-    <section class="mt-6 sm:mt-8">
-      <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">HIGHLIGHTS</h2>
-      <div
-        class="flex sm:grid sm:grid-cols-2 md:grid-cols-6 gap-4 sm:gap-3 md:gap-4 pb-2 sm:pb-0 overflow-auto snap-x snap-mandatory scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-gray-800"
-      >
-        <HighlightCard
-          title="Certified Scrum Master"
-          icon={csm}
-          class="sm:row-start-1 sm:row-end-2 sm:col-start-1 sm:col-end-2 md:row-start-1 md:row-end-2 md:col-start-1 md:col-end-4"
-        >
-          Sprinting towards a brighter future
-        </HighlightCard>
-        <HighlightCard
-          title="400+ Stars on GitHub"
-          icon={stars}
-          class="sm:row-start-2 sm:row-end-4 sm:col-start-2 sm:col-end-3 md:row-start-2 md:row-end-6 md:col-start-3 md:col-end-5"
-        >
-          From open source software, libraries and plugins
-        </HighlightCard>
-        <HighlightCard
-          title="Master of Technology @NUS"
-          icon={nus}
-          class="sm:row-start-1 sm:row-end-2 sm:col-start-2 sm:col-end-3 md:row-start-1 md:row-end-2 md:col-start-4 md:col-end-7"
-        >
-          Software Engineering, 2024 - current
-        </HighlightCard>
-        <HighlightCard
-          title="Bachelor of Engineering @UESTC"
-          icon={uestc}
-          class="sm:row-start-4 sm:row-end-5 sm:col-start-2 sm:col-end-3 md:row-start-2 md:row-end-4 md:col-start-5 md:col-end-7"
-        >
-          Computer Science and Technology, 2020 - 2024
-        </HighlightCard>
-        <HighlightCard
-          title="Bachelor of Science @UESTC"
-          icon={uestc}
-          class="sm:row-start-5 sm:row-end-6 sm:col-start-1 sm:col-end-2 md:row-start-4 md:row-end-6 md:col-start-5 md:col-end-7"
-        >
-          Data Science and Big Data Technology, 2020 - 2024
-        </HighlightCard>
-        <HighlightCard
-          title="Rank 1st"
-          icon={rankFirst}
-          class="sm:row-start-2 sm:row-end-5 sm:col-start-1 sm:col-end-2 md:row-start-2 md:row-end-5 md:col-start-1 md:col-end-3"
-        >
-          Among 2,767 students in Baidu Frontend Summer Workshop, 2022
-        </HighlightCard>
-        <HighlightCard
-          title="President of Student's Union"
-          icon={president}
-          class="sm:row-start-5 sm:row-end-7 sm:col-start-2 sm:col-end-3 md:row-start-6 md:row-end-7 md:col-start-3 md:col-end-7"
-        >
-          UESTC "Internet+" Student's Union, 2023
-        </HighlightCard>
-        <HighlightCard
-          title="Outstanding Student Scholarship"
-          icon={scholarship}
-          class="sm:row-start-6 sm:row-end-7 sm:col-start-1 sm:col-end-2 md:row-start-5 md:row-end-7 md:col-start-1 md:col-end-3"
-        >
-          @UESTC, 2021 & 2022
-        </HighlightCard>
-      </div>
-      <p class="sm:hidden mt-2 text-xs text-gray-400 text-center">
-        Scroll to learn more →
+      <p>
+        🎮 I play indie games a lot, and I'm a perfectionist on 100%
+        achievements. Outer Wilds, Deep Rock Galactic, Monster Hunter, Hollow
+        Knight, just to name a few.
       </p>
-    </section>
-    <section class="mt-6 sm:mt-8">
-      <h2 class="mb-3 sm:mb-4 font-bold text-xl sm:text-2xl">OTHERS</h2>
-      <div class="space-y-2 text-gray-400 leading-relaxed">
-        <p>
-          🎸 I love music. My favorite singers include Fall Out Boy, Starset,
-          Jay Chou and Imagine Dragons.
-        </p>
-        <p>
-          🎮 I play indie games a lot, and I'm a perfectionist on 100%
-          achievements. Outer Wilds, Deep Rock Galactic, Monster Hunter, Hollow
-          Knight, just to name a few.
-        </p>
-        <p>
-          ⚗️ I won the first prize in the 33rd China Chemistry Olympiad
-          (preliminary round). I used to dream of becoming a pharmacist!
-        </p>
-        <p>
-          📺 I also love anime. BanG Dream! is my recent favorite, some bands in
-          which got really nice songs, like Roselia, Afterglow and MyGO.
-        </p>
-      </div>
-    </section>
-  </div>
+      <p>
+        ⚗️ I won the first prize in the 33rd China Chemistry Olympiad
+        (preliminary round). I used to dream of becoming a pharmacist!
+      </p>
+      <p>
+        📺 I also love anime. BanG Dream! is my recent favorite, some bands in
+        which got really nice songs, like Roselia, Afterglow and MyGO.
+      </p>
+    </div>
+  </section>
 </HomeLayout>
