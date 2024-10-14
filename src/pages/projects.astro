@@ -1,0 +1,128 @@
+---
+import cue from "@/assets/cue.svg";
+import hint from "@/assets/hint.svg";
+import hooks from "@/assets/hooks.svg";
+import intelligentLogistics from "@/assets/intelligent-logistics.svg";
+import iwallpaper from "@/assets/iwallpaper.svg";
+import kgqa from "@/assets/kgqa.svg";
+import nshm from "@/assets/nshm.svg";
+import oauth from "@/assets/oauth.svg";
+import tailwindcssRadixColors from "@/assets/tailwindcss-radix-colors.svg";
+import uestc from "@/assets/uestc.svg";
+import ProjectCard from "@/components/project-card.astro";
+import WebsiteLayout from "@/layouts/website-layout.astro";
+---
+
+<WebsiteLayout
+  title="Projects"
+  description="I take pride in my software, libraries and plugins."
+>
+  <h1 class="font-extrabold text-3xl sm:text-4xl">Projects</h1>
+  <p class="mt-4 sm:mt-5 text-gray-400">
+    I take pride in my software, libraries and plugins.
+  </p>
+  <hr class="mt-4 sm:mt-5 border border-gray-900" />
+  <ul class="grid sm:grid-cols-2 mt-4 sm:mt-5">
+    <li>
+      <ProjectCard
+        title="NSHM"
+        icon={nshm}
+        link="https://github.com/se-row-1/nus-secondhand-market"
+      >
+        NUS second-hand market.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="iWallpaper"
+        icon={iwallpaper}
+        link="https://github.com/mrcaidev/iwallpaper"
+      >
+        AI-Powered wallpaper discovery platform.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="Intelligent Logistics"
+        icon={intelligentLogistics}
+        link="https://github.com/mrcaidev/intelligent-logistics"
+      >
+        One-stop platform for goods delivery.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="Tailwind CSS Radix Colors"
+        icon={tailwindcssRadixColors}
+        link="https://tailwindcss-radix-colors.mrcai.dev"
+      >
+        Bring Radix's color system to Tailwind.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="@mrcaidev/hooks"
+        icon={hooks}
+        link="https://hooks.mrcai.dev"
+      >
+        My React hooks collection.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="Hint"
+        icon={hint}
+        link="https://github.com/mrcaidev/hint"
+      >
+        Quick app for schedule management.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="@mrcaidev/cue"
+        icon={cue}
+        link="https://github.com/mrcaidev/cue"
+      >
+        Minimal MVVM framework.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="OAuth zh-Hans"
+        icon={oauth}
+        link="https://oauth21.mrcai.dev"
+      >
+        OAuth 2.1 in Simplified Chinese.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="UESTC"
+        icon={uestc}
+        link="https://github.com/mrcaidev/uestc"
+      >
+        UESTC coursework collection.
+      </ProjectCard>
+    </li>
+    <li>
+      <ProjectCard
+        title="KGQA"
+        icon={kgqa}
+        link="https://github.com/mrcaidev/kgqa"
+      >
+        Movie question answering chatbot.
+      </ProjectCard>
+    </li>
+  </ul>
+  <p class="mt-6 text-sm text-gray-400 text-center">
+    Check out the
+    <a
+      href="https://github.com/mrcaidev?tab=repositories"
+      target="_blank"
+      class="text-blue-400 underline underline-offset-2"
+    >
+      full list</a
+    >
+    on my GitHub.
+  </p>
+</WebsiteLayout>

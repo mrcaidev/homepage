@@ -1,0 +1,83 @@
+---
+import PostCard from "@/components/post-card.astro";
+import WebsiteLayout from "@/layouts/website-layout.astro";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
+import { getCollection } from "astro:content";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const posts = await getCollection("blog");
+  return paginate(
+    posts
+      .sort((a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime())
+      .map(({ slug, data }) => ({ slug, ...data })),
+    { pageSize: 4 },
+  );
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const { page } = Astro.props;
+---
+
+<WebsiteLayout title="Blog" description="I learn. I grow. I write. I share.">
+  <h1 class="font-extrabold text-3xl sm:text-4xl">Blog</h1>
+  <p class="mt-4 sm:mt-5 text-gray-400">I learn. I grow. I write. I share.</p>
+  <hr class="mt-4 sm:mt-5 border border-gray-900" />
+  <div class="grow flex flex-col">
+    <ol class="space-y-1 pl-3 my-4 sm:my-5 border-l-2 border-blue-400">
+      {
+        page.data.map((post) => (
+          <li>
+            <PostCard {...post} />
+          </li>
+        ))
+      }
+    </ol>
+    <div class="flex justify-center items-center mt-auto">
+      <a
+        href={page.url.first}
+        class:list={[
+          "p-2 rounded-md hover:bg-gray-900 text-gray-400 hover:text-gray-200 transition-colors",
+          page.url.first === undefined && "pointer-events-none opacity-50",
+        ]}
+      >
+        <span class="i-lucide-chevrons-left size-4"></span>
+        <span class="sr-only">First page</span>
+      </a>
+      <a
+        href={page.url.prev}
+        class:list={[
+          "p-2 rounded-md hover:bg-gray-900 text-gray-400 hover:text-gray-200 transition-colors",
+          page.url.prev === undefined && "pointer-events-none opacity-50",
+        ]}
+      >
+        <span class="i-lucide-chevron-left size-4"></span>
+        <span class="sr-only">Previous page</span>
+      </a>
+      <span class="p-2">{page.currentPage} / {page.lastPage}</span>
+      <a
+        href={page.url.next}
+        class:list={[
+          "p-2 rounded-md hover:bg-gray-900 text-gray-400 hover:text-gray-200 transition-colors",
+          page.url.next === undefined && "pointer-events-none opacity-50",
+        ]}
+      >
+        <span class="i-lucide-chevron-right size-4"></span>
+        <span class="sr-only">Next page</span>
+      </a>
+      <a
+        href={page.url.last}
+        class:list={[
+          "p-2 rounded-md hover:bg-gray-900 text-gray-400 hover:text-gray-200 transition-colors",
+          page.url.last === undefined && "pointer-events-none opacity-50",
+        ]}
+      >
+        <span class="i-lucide-chevrons-right size-4"></span>
+        <span class="sr-only">Last page</span>
+      </a>
+    </div>
+    <p class="text-xs text-gray-400 text-center">
+      {page.start + 1}-{page.end + 1} of {page.total} posts
+    </p>
+  </div>
+</WebsiteLayout>

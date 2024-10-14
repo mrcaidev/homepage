@@ -1,0 +1,34 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  createdAt: Date;
+}
+
+const { slug, title, description, createdAt } = Astro.props;
+---
+
+<div
+  class="group relative px-4 py-3 rounded-md hover:bg-gray-900 transition-colors"
+>
+  <time
+    datetime={createdAt.toISOString()}
+    class="text-sm text-gray-400 group-hover:text-gray-200 transition-colors"
+  >
+    {createdAt.toLocaleDateString()}
+  </time>
+  <h2 class="mt-0.5 font-medium text-lg">{title}</h2>
+  <p
+    class="mt-1 text-sm text-gray-400 group-hover:text-gray-200 transition-colors"
+  >
+    {description}
+  </p>
+  <a href={`/blog/${slug}`} class="absolute inset-0 rounded-md">
+    <span class="sr-only size-0">Read</span>
+  </a>
+  <div
+    class="absolute top-4.5 -left-4.75 size-3 rounded-full border-2 border-blue-400 bg-gray-950 group-hover:bg-blue-400 transition-colors"
+  >
+  </div>
+</div>

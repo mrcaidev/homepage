@@ -1,0 +1,25 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  title: string;
+  avatar: ImageMetadata;
+  link: string;
+}
+
+const { title, avatar, link } = Astro.props;
+---
+
+<div
+  class="grid place-items-center relative h-full rounded-lg p-5 hover:bg-gray-900 transition-colors"
+>
+  <Image src={avatar} alt="" class="size-16 sm:size-20 rounded-full" />
+  <h2 class="mt-3 text-lg">{title}</h2>
+  <p class="mt-1 text-sm text-gray-400 text-center text-balance">
+    <slot />
+  </p>
+  <a href={link} target="_blank" class="absolute inset-0 rounded-lg">
+    <span class="sr-only size-0">Visit project</span>
+  </a>
+</div>

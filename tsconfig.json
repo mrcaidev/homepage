@@ -15,6 +15,7 @@
     "noUnusedParameters": true,
     "strict": true,
     "strictBindCallApply": true,
+    "strictBuiltinIteratorReturn": true,
     "strictFunctionTypes": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
@@ -32,7 +33,7 @@
     "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "jsx": "preserve",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "target": "ESNext",
     "skipLibCheck": true
   }

@@ -1,10 +1,16 @@
-import { defineConfig, presetIcons, presetUno } from "unocss";
+import { defineConfig, presetIcons, presetTypography, presetUno } from "unocss";
+import { presetScrollbar } from "unocss-preset-scrollbar";
 
 export default defineConfig({
   theme: {
     fontFamily: {
-      sans: ["Inter", "ui-sans-serif", "system-ui"],
+      sans: ["Inter Variable", "ui-sans-serif", "system-ui"],
     },
   },
-  presets: [presetUno(), presetIcons()],
+  presets: [
+    presetUno(),
+    presetIcons({ extraProperties: { display: "block" } }),
+    presetTypography(),
+    presetScrollbar(),
+  ],
 });

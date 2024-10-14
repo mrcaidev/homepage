@@ -1,0 +1,60 @@
+---
+import Footer from "@/components/footer.astro";
+import Header from "@/components/header.astro";
+import "@fontsource-variable/inter";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title: subtitle, description } = Astro.props;
+
+const title = subtitle ? subtitle + " | Yuwang Cai" : "Yuwang Cai";
+const url = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="canonical" href={url} />
+    <meta name="author" content="Yuwang Cai" />
+    <meta name="description" content={description} />
+    <meta name="generator" content="Astro" />
+    <meta
+      name="keywords"
+      content="yuwang cai, yuwang, cai, technology, full-stack, web, software"
+    />
+    <meta name="theme-color" content="#030712" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="creator" content="Yuwang Cai" />
+    <meta name="publisher" content="Yuwang Cai" />
+    <meta name="robots" content="index, follow" />
+
+    <meta property="og:title" content={title} />
+    <slot name="og-type" />
+    <meta property="og:image" content={new URL("/og-image.png", Astro.site)} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Logo" />
+    <meta property="og:url" content={url} />
+    <meta property="og:description" content={description} />
+
+    <meta name="twitter:site" content="@mrcaidev" />
+    <meta name="twitter:creator" content="@mrcaidev" />
+  </head>
+
+  <body
+    class="bg-gray-950 font-sans text-gray-200 antialiased scrollbar scrollbar-rounded scrollbar-track-color-transparent scrollbar-thumb-color-gray-800"
+  >
+    <Header />
+    <main class="flex flex-col max-w-3xl min-h-screen px-8 pt-24 pb-16 mx-auto">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

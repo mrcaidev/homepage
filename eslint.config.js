@@ -1,5 +1,4 @@
 import js from "@eslint/js";
-import unocss from "@unocss/eslint-config/flat";
 import prettier from "eslint-config-prettier";
 import astro from "eslint-plugin-astro";
 import ts from "typescript-eslint";
@@ -10,7 +9,6 @@ export default ts.config(
   ...ts.configs.stylisticTypeChecked,
   ...astro.configs.recommended,
   ...astro.configs["jsx-a11y-recommended"],
-  unocss,
   prettier,
   {
     languageOptions: {
@@ -20,5 +18,5 @@ export default ts.config(
       },
     },
   },
-  { ignores: ["dist"] },
+  { ignores: [".astro/", "dist/"] },
 );
