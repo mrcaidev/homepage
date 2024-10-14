@@ -12,69 +12,71 @@ import Layout from "./_layout.astro";
 ---
 
 <Layout>
-  <div class="w-full max-w-3xl mx-auto overflow-hidden">
-    <h1
-      class="w-fit mb-4 sm:mb-5 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-extrabold text-3xl sm:text-4xl text-transparent"
-    >
-      Yuwang Cai
-    </h1>
-    <p class="mb-3 sm:mb-4 text-gray-400">
-      Chinese student. Full-stack developer. Tech enthusiast. He/him.
-    </p>
-    <nav
-      aria-label="Contact links"
-      class="flex items-center gap-1.5 sm:gap-2 flex-wrap"
-    >
-      <ContactLink
-        to="mailto:mrcaidev@gmail.com"
-        icon="i-simple-icons-gmail"
-        title="Email"
-        class="hover:text-red-500"
+  <div class="space-y-4 sm:space-y-5 w-full max-w-3xl mx-auto overflow-hidden">
+    <section>
+      <h1
+        class="w-fit mb-4 sm:mb-5 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text font-extrabold text-3xl sm:text-4xl text-transparent"
       >
-        Email
-      </ContactLink>
-      <ContactLink
-        to="https://github.com/mrcaidev"
-        icon="i-simple-icons-github"
-        title="GitHub"
-        class="hover:text-gray-400"
+        Yuwang Cai
+      </h1>
+      <p class="mb-3 sm:mb-4 text-gray-400">
+        Chinese student. Full-stack developer. Tech enthusiast. He/him.
+      </p>
+      <nav
+        aria-label="Contact links"
+        class="flex items-center gap-1.5 sm:gap-2 flex-wrap"
       >
-        GitHub
-      </ContactLink>
-      <ContactLink
-        to="https://www.linkedin.com/in/mrcaidev"
-        icon="i-simple-icons-linkedin"
-        title="LinkedIn"
-        class="hover:text-blue-500"
-      >
-        LinkedIn
-      </ContactLink>
-      <ContactLink
-        to="https://x.com/mrcaidev"
-        icon="i-simple-icons-x"
-        title="X"
-        class="hover:text-gray-400"
-      >
-        X
-      </ContactLink>
-      <ContactLink
-        to="https://space.bilibili.com/35364718"
-        icon="i-simple-icons-bilibili"
-        title="Bilibili"
-        class="hover:text-pink-400"
-      >
-        Bilibili
-      </ContactLink>
-      <ContactLink
-        to="https://steamcommunity.com/id/mrcaidev"
-        icon="i-simple-icons-steam"
-        title="Steam"
-        class="hover:text-blue-600"
-      >
-        Steam
-      </ContactLink>
-    </nav>
-    <hr class="my-4 sm:my-5 border-1 border-gray-900" />
+        <ContactLink
+          to="mailto:mrcaidev@gmail.com"
+          icon="i-simple-icons-gmail"
+          title="Email"
+          class="hover:text-red-500"
+        >
+          Email
+        </ContactLink>
+        <ContactLink
+          to="https://github.com/mrcaidev"
+          icon="i-simple-icons-github"
+          title="GitHub"
+          class="hover:text-gray-400"
+        >
+          GitHub
+        </ContactLink>
+        <ContactLink
+          to="https://www.linkedin.com/in/mrcaidev"
+          icon="i-simple-icons-linkedin"
+          title="LinkedIn"
+          class="hover:text-blue-500"
+        >
+          LinkedIn
+        </ContactLink>
+        <ContactLink
+          to="https://x.com/mrcaidev"
+          icon="i-simple-icons-x"
+          title="X"
+          class="hover:text-gray-400"
+        >
+          X
+        </ContactLink>
+        <ContactLink
+          to="https://space.bilibili.com/35364718"
+          icon="i-simple-icons-bilibili"
+          title="Bilibili"
+          class="hover:text-pink-400"
+        >
+          Bilibili
+        </ContactLink>
+        <ContactLink
+          to="https://steamcommunity.com/id/mrcaidev"
+          icon="i-simple-icons-steam"
+          title="Steam"
+          class="hover:text-blue-600"
+        >
+          Steam
+        </ContactLink>
+      </nav>
+    </section>
+    <hr class="border-1 border-gray-900" />
     <section>
       <h2 class="mb-4 font-bold text-xl sm:text-2xl">HIGHLIGHTS</h2>
       <div
@@ -145,6 +147,10 @@ import Layout from "./_layout.astro";
       <p class="sm:hidden mt-2 text-xs text-gray-400 text-center">
         Scroll to learn more →
       </p>
+    </section>
+    <section>
+      <h2 class="mb-4 font-bold text-xl sm:text-2xl">SKILLS</h2>
+      <div></div>
     </section>
   </div>
 </Layout>
